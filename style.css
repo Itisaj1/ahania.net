@@ -1,0 +1,78 @@
+/* --- Global Styles --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333; /* A softer black for text */
+    background-color: #fff;
+    margin: 0;
+}
+
+.content-wrapper {
+    max-width: 720px; /* Sets the width of the main content column */
+    margin: 0 auto;   /* This is the magic that centers the column */
+    padding: 50px 25px; /* Adds space on the top/bottom and sides */
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Header Styles --- */
+.site-header {
+    display: flex; /* This is the key to the layout! It makes children sit side-by-side. */
+    justify-content: space-between; /* Pushes the name and nav to opposite ends */
+    align-items: center; /* Vertically aligns them perfectly */
+    margin-bottom: 60px; /* Space between the header and the content below */
+}
+
+.site-name a {
+    font-weight: bold;
+    font-size: 22px;
+}
+.site-name a:hover {
+    text-decoration: none; /* We don't want the name to be underlined */
+}
+
+.site-nav ul {
+    list-style: none; /* Removes the ugly bullets from the list */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Puts the nav links side-by-side */
+    gap: 25px; /* Creates space between each nav link */
+}
+
+/* --- Main Content Styles --- */
+section {
+    margin-bottom: 50px; /* Space between the 'About' and 'Writing' sections */
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 12px; /* Space between the heading text and the line */
+    border-bottom: 1px solid #e5e5e5; /* The signature faint gray line! */
+    margin-bottom: 25px; /* Space between the line and the content below it */
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8; /* Generous spacing between lines makes it easy to read */
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 600px) {
+    .site-header {
+        flex-direction: column; /* Stacks the name and nav vertically */
+        align-items: flex-start; /* Aligns both to the left */
+        gap: 15px; /* Adds a small space between the stacked name and nav */
+    }
+
+    .content-wrapper {
+        padding-top: 25px;
+    }
+}
