@@ -1,54 +1,25 @@
-/* --- Shippori Mincho Font Declarations --- */
+
+/* --- Business Font Declaration --- */
 
 @font-face {
-  font-family: 'Shippori Mincho';
-  src: url('Shippori_Mincho/ShipporiMincho-Regular.ttf') format('truetype');
-  font-weight: 400; /* Regular */
+  font-family: 'Business Font'; /* We're giving our font a new name */
+  src: url('business_font.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Shippori Mincho';
-  src: url('Shippori_Mincho/ShipporiMincho-Medium.ttf') format('truetype');
-  font-weight: 500; /* Medium */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Shippori Mincho';
-  src: url('Shippori_Mincho/ShipporiMincho-SemiBold.ttf') format('truetype');
-  font-weight: 600; /* SemiBold */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Shippori Mincho';
-  src: url('Shippori_Mincho/ShipporiMincho-Bold.ttf') format('truetype');
-  font-weight: 700; /* Bold */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Shippori Mincho';
-  src: url('Shippori_Mincho/ShipporiMincho-ExtraBold.ttf') format('truetype');
-  font-weight: 800; /* ExtraBold */
-  font-style: normal;
-}
-
-/* Update the body to use the new font by default */
+/* Update the body to use the new font */
 body {
     background-color: #fff;
     color: #333;
     /* This is the main change */
-    font-family: 'Shippori Mincho', serif; /* Use Shippori Mincho, with serif as a fallback */
-    font-weight: 400; /* Set the default weight to Regular */
+    font-family: 'Business Font', sans-serif;
 }
 
-/* Update your h1 to use a heavier weight */
+/* Update your h1 */
 h1 {
-    font-size: 2.5em; /* Example size */
-    font-weight: 800; /* Use the ExtraBold weight */
-    letter-spacing: 0.1em; /* Gives it that spaced-out look */
+    font-size: 2.5em; 
+    letter-spacing: 0.1em; 
     text-align: center;
     margin-bottom: 30px;
 }
