@@ -5,42 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Austin Hania</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-image-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            max-width: 80%; /* Adjust as needed */
+            height: auto;
+            border-radius: 8px; /* Optional: rounded corners */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+        }
+
+        .current-time {
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .main-navigation {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-navigation a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .main-navigation a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="padding-top: 40px; padding-bottom: 60px;">
 
-        <header class="site-header">
-            <div class="site-name">
-                <a href="/">Austin Hania</a>
-            </div>
-            <nav class="site-nav">
-                <ul>
-                    <li><a href="/about.html">about</a></li>
-                    <li><a href="/projects.html">projects</a></li>
-                    <li><a href="/resume.html">resume</a></li>
-                    <li><a href="/contact.html">contact</a></li>
-                </ul>
-            </nav>
-        </header>
+        <h1>AUSTIN HANIA</h1>
 
-        <main>
-            <section>
-                <h2>About</h2>
-                <p>
-                    This is where you'll write a short paragraph about yourself, your work, or your interests. The key is to be concise and let the simple design speak for itself. You can add another paragraph by simply adding another set of &lt;p&gt; &lt;/p&gt; tags.
-                </p>
-            </section>
+        <div class="hero-image-container">
+            <img src="your-image.jpg" alt="A visually appealing image" class="hero-image">
+        </div>
 
-            <section>
-                <h2>Selected Projects</h2>
-                <ul class="item-list">
-                    <li><a href="#">Project/Article 1: A brief description of the work.</a></li>
-                    <li><a href="#">Project/Article 2: Another interesting thing you've created.</a></li>
-                    <li><a href="#">Project/Article 3: Something else you're proud to share.</a></li>
-                </ul>
-            </section>
-        </main>
+        <div id="current-time" class="current-time">
+            Loading current time...
+        </div>
 
-    </div></body>
+        <nav class="main-navigation">
+            <a href="/about.html">about</a>
+            <span>//</span>
+            <a href="/projects.html">projects</a>
+            <span>//</span>
+            <a href="/resume.html">resume</a>
+            <span>//</span>
+            <a href="/contact.html">contact</a>
+        </nav>
+
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const seattleOffset = -7 * 60; // Seattle is UTC-7
+            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const seattleTime = new Date(utc + (seattleOffset * 60000));
+
+            const options = { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, month: 'short', day: 'numeric' };
+            document.getElementById('current-time').textContent = `TIME IN SEATTLE - ${seattleTime.toLocaleTimeString('en-US', options)} PDT`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateTime();
+            setInterval(updateTime, 1000); // Update every second
+        });
+    </script>
+
+</body>
 </html>
