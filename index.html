@@ -74,7 +74,7 @@
             const seattleTime = new Date(utc + (seattleOffset * 60000));
 
             const options = { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, month: 'short', day: 'numeric' };
-            document.getElementById('current-time').textContent = `time in seattle - ${seattleTime.toLocaleTimeString('en-US', options)} PDT`;
+            document.getElementById('current-time').textContent = `austins local time - ${seattleTime.toLocaleTimeString('en-US', options)} PDT`;
         }
 
         document.addEventListener('DOMContentLoaded', () => {
