@@ -1,9 +1,64 @@
-/* --- Global Styles --- */
+/* --- Shippori Mincho Font Declarations --- */
+
+@font-face {
+  font-family: 'Shippori Mincho';
+  src: url('Shippori_Mincho/ShipporiMincho-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shippori Mincho';
+  src: url('Shippori_Mincho/ShipporiMincho-Medium.ttf') format('truetype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shippori Mincho';
+  src: url('Shippori_Mincho/ShipporiMincho-SemiBold.ttf') format('truetype');
+  font-weight: 600; /* SemiBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shippori Mincho';
+  src: url('Shippori_Mincho/ShipporiMincho-Bold.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shippori Mincho';
+  src: url('Shippori_Mincho/ShipporiMincho-ExtraBold.ttf') format('truetype');
+  font-weight: 800; /* ExtraBold */
+  font-style: normal;
+}
+
+/* Update the body to use the new font by default */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #333; /* A softer black for text */
     background-color: #fff;
-    margin: 0;
+    color: #333;
+    /* This is the main change */
+    font-family: 'Shippori Mincho', serif; /* Use Shippori Mincho, with serif as a fallback */
+    font-weight: 400; /* Set the default weight to Regular */
+}
+
+/* Update your h1 to use a heavier weight */
+h1 {
+    font-size: 2.5em; /* Example size */
+    font-weight: 800; /* Use the ExtraBold weight */
+    letter-spacing: 0.1em; /* Gives it that spaced-out look */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Update the navigation to use a medium weight */
+.main-navigation a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600; /* Use the SemiBold weight */
 }
 
 .content-wrapper {
