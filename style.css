@@ -1,104 +1,211 @@
-
-/* --- Business Font Declaration --- */
+/* Font imports */
+@font-face {
+    font-family: 'NewYork';
+    src: url('FONT_newyork/NewYorkExtraLarge-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
-  font-family: 'Business Font'; /* We're giving our font a new name */
-  src: url('business_font.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Courier';
+    src: url('FONT_courier/CourierPrime-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* Update the body to use the new font */
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #fff;
-    color: #333;
-    /* This is the main change */
-    font-family: 'Business Font', sans-serif;
+    background-color: #8a8a8a;
+    font-family: 'Courier', monospace;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Update your h1 */
-h1 {
-    font-size: 2.5em; 
-    letter-spacing: 0.05em; 
-    text-align: center;
-    margin-bottom: 30px;
+/* Notebook container */
+.notebook-container {
+    width: 95%;
+    max-width: 1200px;
+    height: 90vh;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
-/* Update the navigation to use a medium weight */
-.main-navigation a {
-    color: #333;
+/* Notebook page with lines */
+.notebook-page {
+    width: 100%;
+    height: 100%;
+    background-image: 
+        /* Red margin line */
+        linear-gradient(to right, transparent 60px, #ff0000 60px, #ff0000 61px, transparent 61px),
+        /* Blue horizontal lines */
+        repeating-linear-gradient(
+            transparent 0px,
+            transparent 27px,
+            #0066cc 27px,
+            #0066cc 28px
+        );
+    background-color: white;
+    padding: 40px 80px 40px 80px;
+    position: relative;
+}
+
+/* Main title styling */
+.main-title {
+    font-family: 'NewYork', serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    font-weight: normal;
+    color: #000;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 160px;
+    line-height: 0.85;
+    letter-spacing: -3px;
+}
+
+/* Navigation styling */
+.main-nav {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.nav-link {
+    position: absolute;
+    font-family: 'Courier', monospace;
+    font-size: 1.1rem;
+    color: #000;
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: 600; /* Use the SemiBold weight */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: text-decoration 0.2s ease;
 }
 
-.content-wrapper {
-    max-width: 720px; /* Sets the width of the main content column */
-    margin: 0 auto;   /* This is the magic that centers the column */
-    padding: 50px 25px; /* Adds space on the top/bottom and sides */
-}
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-a:hover {
+.nav-link:hover {
     text-decoration: underline;
 }
 
-/* --- Header Styles --- */
-.site-header {
-    display: flex; /* This is the key to the layout! It makes children sit side-by-side. */
-    justify-content: space-between; /* Pushes the name and nav to opposite ends */
-    align-items: center; /* Vertically aligns them perfectly */
-    margin-bottom: 60px; /* Space between the header and the content below */
+/* Specific positioning for each nav item */
+.nav-link:nth-child(1) { /* ABOUT */
+    top: 0px;
+    left: 20px;
 }
 
-.site-name a {
-    font-weight: bold;
-    font-size: 22px;
-}
-.site-name a:hover {
-    text-decoration: none; /* We don't want the name to be underlined */
+.nav-link:nth-child(2) { /* MY WORK */
+    top: 70px;
+    left: 20px;
 }
 
-.site-nav ul {
-    list-style: none; /* Removes the ugly bullets from the list */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Puts the nav links side-by-side */
-    gap: 25px; /* Creates space between each nav link */
+.nav-link:nth-child(3) { /* RESUME */
+    top: 140px;
+    right: 40px;
 }
 
-/* --- Main Content Styles --- */
-section {
-    margin-bottom: 50px; /* Space between the 'About' and 'Writing' sections */
+.nav-link:nth-child(4) { /* CONTACT */
+    top: 210px;
+    right: 40px;
 }
 
-h2 {
-    font-size: 18px;
-    font-weight: bold;
-    padding-bottom: 12px; /* Space between the heading text and the line */
-    border-bottom: 1px solid #e5e5e5; /* The signature faint gray line! */
-    margin-bottom: 25px; /* Space between the line and the content below it */
+/* Attribution styling */
+.attribution {
+    position: absolute;
+    bottom: 30px;
+    left: 80px;
+    font-family: 'Courier', monospace;
+    font-size: 0.9rem;
+    color: #000;
 }
 
-.item-list {
-    list-style: none;
-    padding: 0;
-    line-height: 1.8; /* Generous spacing between lines makes it easy to read */
-}
-
-/* --- Responsive Design for Mobile --- */
-@media (max-width: 600px) {
-    .site-header {
-        flex-direction: column; /* Stacks the name and nav vertically */
-        align-items: flex-start; /* Aligns both to the left */
-        gap: 15px; /* Adds a small space between the stacked name and nav */
+/* Responsive design */
+@media (max-width: 768px) {
+    .notebook-page {
+        padding: 30px 40px;
     }
+    
+    .main-title {
+        font-size: clamp(2.5rem, 10vw, 5rem);
+        margin-bottom: 120px;
+    }
+    
+    .main-nav {
+        height: 250px;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+    }
+    
+    .nav-link:nth-child(1) {
+        left: 10px;
+    }
+    
+    .nav-link:nth-child(2) {
+        left: 10px;
+    }
+    
+    .nav-link:nth-child(3) {
+        right: 20px;
+    }
+    
+    .nav-link:nth-child(4) {
+        right: 20px;
+    }
+    
+    .attribution {
+        left: 40px;
+    }
+}
 
-    .content-wrapper {
-        padding-top: 25px;
+@media (max-width: 480px) {
+    .notebook-container {
+        width: 98%;
+        height: 95vh;
+    }
+    
+    .notebook-page {
+        padding: 20px 25px;
+        background-image: 
+            linear-gradient(to right, transparent 40px, #ff0000 40px, #ff0000 41px, transparent 41px),
+            repeating-linear-gradient(
+                transparent 0px,
+                transparent 22px,
+                #0066cc 22px,
+                #0066cc 23px
+            );
+    }
+    
+    .main-title {
+        margin-bottom: 80px;
+        font-size: clamp(2rem, 8vw, 3.5rem);
+    }
+    
+    .main-nav {
+        height: 200px;
+    }
+    
+    .nav-link:nth-child(1) {
+        left: 5px;
+    }
+    
+    .nav-link:nth-child(2) {
+        left: 5px;
+    }
+    
+    .nav-link:nth-child(3) {
+        right: 10px;
+        top: 100px;
+    }
+    
+    .nav-link:nth-child(4) {
+        right: 10px;
+        top: 140px;
     }
 }

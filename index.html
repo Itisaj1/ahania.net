@@ -3,85 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Austin Hania</title>
+    <title>Ahania</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .hero-image-container {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .hero-image {
-            max-width: 80%;
-            height: auto;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .current-time {
-            text-align: center;
-            font-size: 0.9em;
-            color: #777;
-            margin-bottom: 20px;
-        }
-
-        .main-navigation {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .main-navigation a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .main-navigation a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
-
-    <div class="content-wrapper" style="padding-top: 40px; padding-bottom: 60px;">
-
-        <h1>austin hania</h1>
-
-        <div class="hero-image-container">
-            <img src="your-image.jpg" alt="A visually appealing image" class="hero-image">
+    <div class="notebook-container">
+        <div class="notebook-page">
+            <!-- Main title -->
+            <h1 class="main-title">"AHANIA"</h1>
+            
+            <!-- Navigation menu -->
+            <nav class="main-nav">
+                <a href="about.html" class="nav-link">ABOUT</a>
+                <a href="projects.html" class="nav-link">MY WORK</a>
+                <a href="resume.html" class="nav-link">RESUME</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+            </nav>
+            
+            <!-- Attribution -->
+            <div class="attribution">
+                by austin hania
+            </div>
         </div>
-
-        <div id="current-time" class="current-time">
-            Loading current time...
-        </div>
-
-        <nav class="main-navigation">
-            <a href="/about.html">about</a>
-            <span>//</span>
-            <a href="/projects.html">projects</a>
-            <span>//</span>
-            <a href="/resume.html">resume</a>
-            <span>//</span>
-            <a href="/contact.html">contact</a>
-        </nav>
-
     </div>
-
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const seattleOffset = -7 * 60; // Seattle is UTC-7
-            const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-            const seattleTime = new Date(utc + (seattleOffset * 60000));
-
-            const options = { timeZone: 'America/Los_Angeles', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true, month: 'short', day: 'numeric' };
-            document.getElementById('current-time').textContent = `austins local time - ${seattleTime.toLocaleTimeString('en-US', options)} PDT`;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            updateTime();
-            setInterval(updateTime, 1000); // Update every second
-        });
-    </script>
-
 </body>
 </html>
