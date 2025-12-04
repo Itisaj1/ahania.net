@@ -28,8 +28,9 @@ body {
 
 .name {
     font-size: 3.5rem;
-    font-weight: bold;
+    font-weight: normal;
     font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
     letter-spacing: 2px;
     margin-bottom: 40px;
     color: #000;
@@ -56,6 +57,16 @@ body {
 
 .time {
     color: #0000EE;
+}
+
+.time-link {
+    color: #000;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.time-link:hover {
+    text-decoration: underline;
 }
 
 .navigation {

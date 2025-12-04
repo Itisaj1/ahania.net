@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Scholz</title>
+    <title>Austin Hania</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
         </div>
         
         <p class="time-info">
-            TIME IN SPOKANE - <span class="time">9:37:51 AM MDT</span>
+            <a href="https://24timezones.com/time-zone/pst" target="_blank" class="time-link">TIME IN SPOKANE</a> - <span class="time" id="current-time">9:37:51 AM PST</span>
         </p>
         
         <nav class="navigation">
@@ -24,5 +24,35 @@
             <a href="contact.html">contact</a>
         </nav>
     </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            
+            // Convert to Spokane time (PST/PDT)
+            const spokaneTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
+            
+            let hours = spokaneTime.getHours();
+            const minutes = spokaneTime.getMinutes().toString().padStart(2, '0');
+            const seconds = spokaneTime.getSeconds().toString().padStart(2, '0');
+            
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Convert 0 to 12
+            
+            // Determine if PST or PDT (simplified check)
+            const timeZoneName = now.toLocaleString('en-US', { 
+                timeZone: 'America/Los_Angeles', 
+                timeZoneName: 'short' 
+            }).split(' ').pop();
+            
+            document.getElementById('current-time').textContent = 
+                `${hours}:${minutes}:${seconds} ${ampm} ${timeZoneName}`;
+        }
+        
+        // Update immediately and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
