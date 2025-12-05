@@ -12,7 +12,7 @@
         <h1 class="name">AUSTIN HANIA</h1>
         
         <div class="image-container">
-            <img src="building.jpg" alt="spokane, wa">
+            <img id="random-image" src="building.jpg" alt="spokane, wa">
         </div>
         
         <p class="time-info">
@@ -20,13 +20,46 @@
         </p>
         
         <nav class="navigation">
-            <a href="/blog">blog</a> // 
+            <a href="about.html">about</a> // 
             <a href="resume.html">resume</a> // 
             <a href="contact.html">contact</a>
         </nav>
     </div>
 
     <script>
+        // Random image selector - manual list for static hosting
+        const images = [
+            'images/building.JPG',
+            'images/DSC03905.JPG',
+            'images/DSC04333.JPG',
+            'images/DSC06556.JPG',
+            'images/DSC06642.JPG',
+            'images/DSC06873.JPG',
+            'images/DSC07319.png',
+            'images/DSC07694.JPG',
+            'images/DSC07900.JPG',
+            'images/DSC07917.JPG',
+            'images/DSC08139.JPG',
+            'images/DSC08249.JPG',
+            'images/DSC08334.JPG',
+            'images/image1.jpg',
+            'images/image2.JPG',
+            'images/image3.jpeg',
+            'images/IMG_5819.jpeg',
+            'images/IMG_8646.jpeg',
+            'images/IMG_8685.jpeg'
+        ];
+        
+        function setRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const randomImage = images[randomIndex];
+            document.getElementById('random-image').src = randomImage;
+        }
+        
+        // Set random image when page loads
+        setRandomImage();
+        
+        // Time function
         function updateTime() {
             const now = new Date();
             
