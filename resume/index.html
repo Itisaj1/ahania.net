@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Austin Hania</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            display: block;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .resume-page {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .resume-header {
+            margin-bottom: 24px;
+        }
+
+        .resume-header h1 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            font-style: italic;
+            font-family: 'Times New Roman', Times, serif;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            color: #000;
+        }
+
+        .resume-actions {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .resume-actions a {
+            color: #0000EE;
+            text-decoration: underline;
+            margin: 0 8px;
+        }
+
+        .resume-actions a:visited {
+            color: #551A8B;
+        }
+
+        .resume-actions a:hover {
+            color: #EE0000;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: calc(100vh - 180px);
+            min-height: 600px;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .resume-header h1 {
+                font-size: 2rem;
+            }
+
+            .pdf-viewer {
+                height: calc(100vh - 200px);
+                min-height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-page">
+        <div class="resume-header">
+            <h1>Resume</h1>
+            <div class="resume-actions">
+                <a href="../index.html">home</a> //
+                <a href="AHania-Resume.pdf" download>download pdf</a>
+            </div>
+        </div>
+
+        <iframe
+            class="pdf-viewer"
+            src="AHania-Resume.pdf"
+            title="Austin Hania Resume"
+        ></iframe>
+    </div>
+</body>
+</html>
