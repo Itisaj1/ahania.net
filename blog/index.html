@@ -149,16 +149,6 @@
     </div>
 
     <script>
-        // Manual list of blog posts
-        // Update this array whenever you add a new blog post
-        const blogPosts = [
-            { filename: 'aboutme.html', date: '05-Dec-2025 12:00' },
-            { filename: 'firefox_extensions.html', date: '06-Dec-2025 8:55' },
-            { filename: 'college.html', date: '06-Dec-2025 11:59' },
-            { filename: 'mastery.html', date: '06-Dec-2025 12:04' }
-            // Add more posts here as you create them
-        ];
-
         function formatDate() {
             const now = new Date();
             const day = String(now.getDate()).padStart(2, '0');
@@ -168,13 +158,11 @@
             return `${day}-${month}-${year}`;
         }
 
-        function renderBlogPosts() {
+        function renderBlogPosts(posts) {
             const container = document.getElementById('file-listing');
-            
-            // Sort posts alphabetically
-            blogPosts.sort((a, b) => a.filename.localeCompare(b.filename));
-            
-            blogPosts.forEach(post => {
+            container.innerHTML = '';
+
+            posts.forEach(post => {
                 const row = document.createElement('div');
                 row.className = 'file-row';
                 row.innerHTML = `
@@ -182,20 +170,41 @@
                         <span class="file-icon">📄</span>
                         <a href="${post.filename}">${post.filename}</a>
                     </div>
-                    <div class="file-size">-</div>
+                    <div class="file-size">${post.size}</div>
                     <div class="file-date">${post.date}</div>
                 `;
                 container.appendChild(row);
             });
         }
 
-        // Set dates
+        async function loadBlogPosts() {
+            const container = document.getElementById('file-listing');
+
+            try {
+                const response = await fetch('posts.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load posts.json');
+                }
+
+                const posts = await response.json();
+                posts.sort((a, b) => a.filename.localeCompare(b.filename));
+                renderBlogPosts(posts);
+            } catch (error) {
+                container.innerHTML = `
+                    <div class="file-row">
+                        <div class="file-name">Could not load blog posts.</div>
+                        <div class="file-size">-</div>
+                        <div class="file-date">-</div>
+                    </div>
+                `;
+            }
+        }
+
         const currentDate = formatDate();
         document.getElementById('current-date').textContent = currentDate;
         document.getElementById('footer-date').textContent = currentDate;
 
-        // Render the blog posts
-        renderBlogPosts();
+        loadBlogPosts();
     </script>
 </body>
 </html>

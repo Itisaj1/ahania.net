@@ -1,0 +1,3 @@
+[build]
+  command = "python3 scripts/generate-blog-posts.py"
+  publish = "."

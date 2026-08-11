@@ -1,0 +1,7 @@
+{
+  "name": "ahania.net",
+  "private": true,
+  "scripts": {
+    "generate:blog": "python3 scripts/generate-blog-posts.py"
+  }
+}
