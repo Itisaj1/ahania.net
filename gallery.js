@@ -41,6 +41,11 @@
         }
     }
 
+    // Thumbnail widths by distance from the selected item, largest first.
+    const THUMB_WIDTHS = [120, 100, 84, 68];
+    const THUMB_WIDTHS_NARROW = [92, 78, 66, 54];
+    const THUMB_ASPECT = 0.7;
+
     function mediaPath(base, filename) {
         return base + encodeURIComponent(filename);
     }
@@ -86,13 +91,35 @@
                 thumb.classList.toggle('is-active', thumbIndex === index);
             });
 
-            // Scroll the strip directly; scrollIntoView would also scroll the
-            // hidden slide container and knock the panels out of alignment.
-            const activeThumb = strip.children[index];
-            if (activeThumb) {
-                const offset = activeThumb.offsetLeft - (strip.clientWidth - activeThumb.clientWidth) / 2;
-                strip.scrollLeft = Math.max(0, offset);
+            sizeThumbs(index);
+            centerThumb(index);
+        }
+
+        function thumbWidth(index, activeIndex) {
+            const widths = window.innerWidth <= 768 ? THUMB_WIDTHS_NARROW : THUMB_WIDTHS;
+            const distance = Math.min(widths.length - 1, Math.abs(index - activeIndex));
+            return widths[distance];
+        }
+
+        function sizeThumbs(activeIndex) {
+            Array.prototype.forEach.call(strip.children, (thumb, index) => {
+                const width = thumbWidth(index, activeIndex);
+                thumb.style.width = `${width}px`;
+                thumb.style.height = `${Math.round(width * THUMB_ASPECT)}px`;
+            });
+        }
+
+        // Measuring the thumbs would read sizes mid-transition, so the target
+        // scroll position is summed from the widths instead.
+        function centerThumb(activeIndex) {
+            const gap = parseFloat(getComputedStyle(strip).columnGap) || 0;
+            let offset = 0;
+
+            for (let index = 0; index < activeIndex; index += 1) {
+                offset += thumbWidth(index, activeIndex) + gap;
             }
+
+            strip.scrollLeft = offset - (strip.clientWidth - thumbWidth(activeIndex, activeIndex)) / 2;
         }
 
         function renderStrip() {
@@ -123,6 +150,15 @@
             } else if (event.key === 'ArrowLeft') {
                 show((currentIndex - 1 + items.length) % items.length);
             }
+        });
+
+        window.addEventListener('resize', () => {
+            if (!items.length) {
+                return;
+            }
+
+            sizeThumbs(currentIndex);
+            centerThumb(currentIndex);
         });
 
         return loadManifest(options.manifest).then((media) => {
