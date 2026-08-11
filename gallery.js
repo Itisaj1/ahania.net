@@ -1,7 +1,7 @@
 (function () {
     function openGallery(track) {
         track.classList.add('show-gallery');
-        document.body.classList.add('gallery-open');
+        document.body.classList.add('showing-gallery');
         if (window.history && window.history.replaceState) {
             window.history.replaceState(null, '', '#photography');
         }
@@ -9,7 +9,7 @@
 
     function closeGallery(track) {
         track.classList.remove('show-gallery');
-        document.body.classList.remove('gallery-open');
+        document.body.classList.remove('showing-gallery');
         if (window.history && window.history.replaceState) {
             const basePath = window.location.pathname + window.location.search;
             window.history.replaceState(null, '', basePath);
@@ -114,7 +114,7 @@
         }
 
         document.addEventListener('keydown', (event) => {
-            if (!document.body.classList.contains('gallery-open') || !items.length) {
+            if (!document.body.classList.contains('showing-gallery') || !items.length) {
                 return;
             }
 
@@ -134,7 +134,9 @@
             }
 
             renderStrip();
-            show(0);
+
+            const firstImage = items.findIndex((item) => item.type === 'image');
+            show(firstImage === -1 ? 0 : firstImage);
             return items;
         }).catch(() => {
             stage.innerHTML = '<p>Could not load photography portfolio.</p>';

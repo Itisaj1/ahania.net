@@ -2,6 +2,7 @@
     overflow: hidden;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
 }
 
 .page-track {
@@ -43,6 +44,8 @@
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
     color: #000;
+    padding: 0;
+    border: none;
 }
 
 .gallery-back,
@@ -89,7 +92,7 @@
     text-decoration: underline;
 }
 
-body.gallery-open .gallery-open {
+body.showing-gallery .gallery-open {
     display: none;
 }
 
@@ -101,13 +104,20 @@ body.gallery-open .gallery-open {
     justify-content: center;
 }
 
-.gallery-stage img,
-.gallery-stage video {
+.gallery-stage img {
     max-width: 100%;
     max-height: 100%;
     display: block;
     border: 1px solid #ddd;
     background-color: #fff;
+}
+
+.gallery-stage video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background-color: #000;
 }
 
 .gallery-caption {
