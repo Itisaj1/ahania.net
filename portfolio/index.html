@@ -163,7 +163,9 @@
                     <button class="gallery-back" type="button" data-close-gallery>← back</button>
                     <h1>Photography portfolio</h1>
                 </div>
-                <div class="gallery" id="gallery"></div>
+                <div class="gallery-stage" id="gallery-stage"></div>
+                <p class="gallery-caption" id="gallery-caption"></p>
+                <div class="gallery-strip" id="gallery-strip"></div>
             </section>
         </div>
     </div>
@@ -231,7 +233,10 @@
         document.getElementById('footer-date').textContent = currentDate;
 
         Gallery.initPageSlider();
-        Gallery.loadGallery('../images/manifest.json');
+        Gallery.initViewer({
+            manifest: '../portfolio%20images/manifest.json',
+            base: '../portfolio%20images/'
+        });
         loadPortfolioItems();
     </script>
 </body>

@@ -1,122 +1,122 @@
 [
   {
     "filename": "building.JPG",
-    "path": "images/building.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "419.7 KB"
   },
   {
     "filename": "DSC03905.JPG",
-    "path": "images/DSC03905.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "264.7 KB"
   },
   {
     "filename": "DSC04333.JPG",
-    "path": "images/DSC04333.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "321.9 KB"
   },
   {
     "filename": "DSC06556.JPG",
-    "path": "images/DSC06556.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "407.7 KB"
   },
   {
     "filename": "DSC06642.JPG",
-    "path": "images/DSC06642.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "365.9 KB"
   },
   {
     "filename": "DSC06873.JPG",
-    "path": "images/DSC06873.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "307.4 KB"
   },
   {
     "filename": "DSC07319.png",
-    "path": "images/DSC07319.png",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
-    "size": "5795.1 KB"
+    "size": "5.7 MB"
   },
   {
     "filename": "DSC07694.JPG",
-    "path": "images/DSC07694.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "446.5 KB"
   },
   {
     "filename": "DSC07856.JPG",
-    "path": "images/DSC07856.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "540.2 KB"
   },
   {
     "filename": "DSC07900.JPG",
-    "path": "images/DSC07900.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "488.0 KB"
   },
   {
     "filename": "DSC07917.JPG",
-    "path": "images/DSC07917.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
-    "size": "1145.4 KB"
+    "size": "1.1 MB"
   },
   {
     "filename": "DSC08139.JPG",
-    "path": "images/DSC08139.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "435.8 KB"
   },
   {
     "filename": "DSC08249.JPG",
-    "path": "images/DSC08249.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "456.7 KB"
   },
   {
     "filename": "DSC08334.JPG",
-    "path": "images/DSC08334.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "323.1 KB"
   },
   {
     "filename": "image1.jpg",
-    "path": "images/image1.jpg",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
-    "size": "1121.1 KB"
+    "size": "1.1 MB"
   },
   {
     "filename": "image2.JPG",
-    "path": "images/image2.JPG",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
     "size": "430.1 KB"
   },
   {
     "filename": "image3.jpeg",
-    "path": "images/image3.jpeg",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
-    "size": "2535.8 KB"
+    "size": "2.5 MB"
   },
   {
     "filename": "IMG_5819.jpeg",
-    "path": "images/IMG_5819.jpeg",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
-    "size": "1263.8 KB"
+    "size": "1.2 MB"
   },
   {
     "filename": "IMG_8646.jpeg",
-    "path": "images/IMG_8646.jpeg",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
-    "size": "2751.8 KB"
+    "size": "2.7 MB"
   },
   {
     "filename": "IMG_8685.jpeg",
-    "path": "images/IMG_8685.jpeg",
+    "type": "image",
     "date": "26-Jul-2026 21:12",
-    "size": "2432.1 KB"
+    "size": "2.4 MB"
   }
 ]
