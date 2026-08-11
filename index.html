@@ -6,86 +6,69 @@
     <title>Austin Hania</title>
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="name">AUSTIN HANIA</h1>
-        
-        <div class="image-container">
-            <img id="random-image" src="building.jpg" alt="photo taken by yours truly">
+    <div class="page-viewport">
+        <div class="page-track" id="page-track">
+            <section class="page-panel home-panel">
+                <div class="container">
+                    <h1 class="name">AUSTIN HANIA</h1>
+
+                    <div class="image-container">
+                        <img id="random-image" src="building.jpg" alt="photo taken by yours truly" data-open-gallery>
+                    </div>
+
+                    <p class="time-info">
+                        TIME IN SPOKANE - <a href="https://24timezones.com/time-zone/pst" target="_blank" class="time" id="current-time">9:37:51 AM PST</a>
+                    </p>
+
+                    <nav class="navigation">
+                        <a href="/blog/index.html">blog</a> //
+                        <a href="/portfolio/index.html">portfolio</a> //
+                        <a href="resume/AHania-Resume.pdf" download="Austin-Hania-Resume.pdf">resume</a> //
+                        <a href="contact.html">contact</a>
+                    </nav>
+                </div>
+            </section>
+
+            <section class="page-panel gallery-panel">
+                <div class="gallery-panel-header">
+                    <button class="gallery-back" type="button" data-close-gallery>← back</button>
+                    <h1>Photography portfolio</h1>
+                </div>
+                <div class="gallery" id="gallery"></div>
+            </section>
         </div>
-        
-        <p class="time-info">
-            TIME IN SPOKANE - <a href="https://24timezones.com/time-zone/pst" target="_blank" class="time" id="current-time">9:37:51 AM PST</a>
-        </p>
-        
-        <nav class="navigation">
-            <a href="/blog/index.html">blog</a> // 
-            <a href="/portfolio/index.html">portfolio</a> // 
-            <a href="resume/AHania-Resume.pdf" download="Austin-Hania-Resume.pdf">resume</a> // 
-            <a href="contact.html">contact</a>
-        </nav>
     </div>
 
+    <script src="gallery.js"></script>
     <script>
-        // Random image selector - manual list for static hosting
-        const images = [
-            'images/building.JPG',
-            'images/DSC03905.JPG',
-            'images/DSC04333.JPG',
-            'images/DSC06556.JPG',
-            'images/DSC06642.JPG',
-            'images/DSC06873.JPG',
-            'images/DSC07319.png',
-            'images/DSC07694.JPG',
-            'images/DSC07900.JPG',
-            'images/DSC07917.JPG',
-            'images/DSC08139.JPG',
-            'images/DSC08249.JPG',
-            'images/DSC08334.JPG',
-            'images/image1.jpg',
-            'images/image2.JPG',
-            'images/image3.jpeg',
-            'images/IMG_5819.jpeg',
-            'images/IMG_8646.jpeg',
-            'images/IMG_8685.jpeg'
-        ];
-        
-        function setRandomImage() {
-            const randomIndex = Math.floor(Math.random() * images.length);
-            const randomImage = images[randomIndex];
-            document.getElementById('random-image').src = randomImage;
-        }
-        
-        // Set random image when page loads
-        setRandomImage();
-        
-        // Time function
+        Gallery.initPageSlider();
+        Gallery.initRandomImage('images/manifest.json', 'random-image');
+
         function updateTime() {
             const now = new Date();
-            
-            // Convert to Spokane time (PST/PDT)
+
             const spokaneTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-            
+
             let hours = spokaneTime.getHours();
             const minutes = spokaneTime.getMinutes().toString().padStart(2, '0');
             const seconds = spokaneTime.getSeconds().toString().padStart(2, '0');
-            
+
             const ampm = hours >= 12 ? 'PM' : 'AM';
             hours = hours % 12;
-            hours = hours ? hours : 12; // Convert 0 to 12
-            
-            // Determine if PST or PDT (simplified check)
-            const timeZoneName = now.toLocaleString('en-US', { 
-                timeZone: 'America/Los_Angeles', 
-                timeZoneName: 'short' 
+            hours = hours ? hours : 12;
+
+            const timeZoneName = now.toLocaleString('en-US', {
+                timeZone: 'America/Los_Angeles',
+                timeZoneName: 'short'
             }).split(' ').pop();
-            
-            document.getElementById('current-time').textContent = 
+
+            document.getElementById('current-time').textContent =
                 `${hours}:${minutes}:${seconds} ${ampm} ${timeZoneName}`;
         }
-        
-        // Update immediately and then every second
+
         updateTime();
         setInterval(updateTime, 1000);
     </script>
