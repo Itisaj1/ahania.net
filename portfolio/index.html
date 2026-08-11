@@ -162,9 +162,12 @@
             <section class="page-panel gallery-panel">
                 <div class="gallery-panel-header">
                     <button class="gallery-back" type="button" data-close-gallery>← back</button>
-                    <h1>photography portfolio</h1>
+                    <h1>photos i've taken</h1>
                 </div>
-                <div class="gallery-stage" id="gallery-stage"></div>
+                <div class="gallery-stage" id="gallery-stage">
+                    <div class="gallery-media" id="gallery-media"></div>
+                    <aside class="gallery-story" id="gallery-story" hidden></aside>
+                </div>
                 <p class="gallery-caption" id="gallery-caption"></p>
                 <div class="gallery-strip" id="gallery-strip"></div>
             </section>
@@ -173,7 +176,7 @@
 
     <button class="gallery-open" type="button" data-open-gallery>
         <span class="arrow">→</span>
-        <span class="label">Photography portfolio</span>
+        <span class="label">photos i've taken</span>
     </button>
 
     <script src="../gallery.js"></script>
@@ -236,6 +239,7 @@
         Gallery.initPageSlider();
         Gallery.initViewer({
             manifest: '../portfolio%20images/manifest.json',
+            stories: '../portfolio%20images/stories.json',
             base: '../portfolio%20images/'
         });
         loadPortfolioItems();

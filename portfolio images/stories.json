@@ -1,0 +1,9 @@
+{
+  "_README": "Write the story behind a photo here. Add one line per file: the key is the exact filename as it appears in this folder, and the value is the text shown to the right of the photo. Photos with no entry simply show no text column. Use \\n\\n for a paragraph break. Keys starting with an underscore are ignored.",
+
+  "DSC01127.JPG": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+
+  "DSC01200.JPG": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+
+  "DSC01285.JPG": "Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.\n\nAccusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis."
+}

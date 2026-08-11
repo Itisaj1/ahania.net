@@ -58,16 +58,34 @@
         return response.json();
     }
 
+    // Stories are hand written, so a missing or malformed file should leave the
+    // gallery working rather than break it.
+    async function loadStories(storiesPath) {
+        if (!storiesPath) {
+            return {};
+        }
+
+        try {
+            const response = await fetch(storiesPath);
+            return response.ok ? await response.json() : {};
+        } catch (error) {
+            return {};
+        }
+    }
+
     function initViewer(options) {
         const stage = document.getElementById('gallery-stage');
+        const media = document.getElementById('gallery-media');
+        const story = document.getElementById('gallery-story');
         const strip = document.getElementById('gallery-strip');
         const caption = document.getElementById('gallery-caption');
 
-        if (!stage || !strip) {
+        if (!stage || !media || !strip) {
             return;
         }
 
         let items = [];
+        let stories = {};
         let currentIndex = 0;
 
         function show(index) {
@@ -79,9 +97,15 @@
             currentIndex = index;
             const path = mediaPath(options.base, item.filename);
 
-            stage.innerHTML = item.type === 'video'
+            media.innerHTML = item.type === 'video'
                 ? `<video src="${path}" controls preload="metadata"></video>`
                 : `<img src="${path}" alt="${item.filename}">`;
+
+            if (story) {
+                const text = stories[item.filename] || '';
+                story.textContent = text;
+                story.hidden = !text;
+            }
 
             if (caption) {
                 caption.textContent = `${item.filename} — ${index + 1} of ${items.length}`;
@@ -161,11 +185,15 @@
             centerThumb(currentIndex);
         });
 
-        return loadManifest(options.manifest).then((media) => {
-            items = media;
+        return Promise.all([
+            loadManifest(options.manifest),
+            loadStories(options.stories)
+        ]).then(([mediaItems, storyText]) => {
+            items = mediaItems;
+            stories = storyText;
 
             if (!items.length) {
-                stage.innerHTML = '<p>No photos or videos yet.</p>';
+                media.innerHTML = '<p>No photos or videos yet.</p>';
                 return [];
             }
 
@@ -175,7 +203,7 @@
             show(firstImage === -1 ? 0 : firstImage);
             return items;
         }).catch(() => {
-            stage.innerHTML = '<p>Could not load photography portfolio.</p>';
+            media.innerHTML = '<p>Could not load photos.</p>';
             return [];
         });
     }
