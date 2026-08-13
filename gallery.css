@@ -55,7 +55,7 @@
     padding: 0;
     cursor: pointer;
     color: #0000EE;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: 'Times New Roman', Times, serif;
     text-decoration: underline;
 }
 
@@ -127,7 +127,7 @@ body.showing-gallery .gallery-open {
     max-height: 100%;
     overflow-y: auto;
     text-align: left;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 0.9rem;
     line-height: 1.65;
     color: #333;
