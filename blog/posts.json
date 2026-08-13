@@ -1,38 +1,44 @@
 [
   {
-    "filename": "about_judo.html",
+    "filename": "about_judo.md",
+    "url": "about_judo.html",
     "title": "about judo",
-    "date": "12-Aug-2026 22:43",
-    "size": "2.4 KB"
+    "date": "12-Aug-2026 22:50",
+    "size": "1.8 KB"
   },
   {
-    "filename": "aboutme.html",
+    "filename": "aboutme.md",
+    "url": "aboutme.html",
     "title": "about this website and about me",
-    "date": "12-Aug-2026 22:43",
-    "size": "1.7 KB"
+    "date": "12-Aug-2026 22:50",
+    "size": "1.1 KB"
   },
   {
-    "filename": "college.html",
+    "filename": "college.md",
+    "url": "college.html",
     "title": "college",
-    "date": "12-Aug-2026 22:43",
-    "size": "4.5 KB"
+    "date": "12-Aug-2026 22:50",
+    "size": "3.9 KB"
   },
   {
-    "filename": "firefox_extensions.html",
+    "filename": "firefox_extensions.md",
+    "url": "firefox_extensions.html",
     "title": "my firefox extensions",
-    "date": "12-Aug-2026 22:43",
-    "size": "3.6 KB"
+    "date": "12-Aug-2026 22:50",
+    "size": "2.8 KB"
   },
   {
-    "filename": "mastery.html",
+    "filename": "mastery.md",
+    "url": "mastery.html",
     "title": "things i should master before i get old",
-    "date": "12-Aug-2026 22:43",
-    "size": "971 B"
+    "date": "12-Aug-2026 22:50",
+    "size": "318 B"
   },
   {
-    "filename": "trust.html",
+    "filename": "trust.md",
+    "url": "trust.html",
     "title": "how do we trust eachother so much?",
-    "date": "12-Aug-2026 22:43",
-    "size": "3.3 KB"
+    "date": "12-Aug-2026 22:50",
+    "size": "2.7 KB"
   }
 ]
