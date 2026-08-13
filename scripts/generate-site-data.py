@@ -11,7 +11,6 @@ IMAGES_DIR = ROOT / "images"
 GALLERY_DIR = ROOT / "portfolio images"
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp", ".tif", ".tiff", ".heic"}
-VIDEO_EXTENSIONS = {".mp4", ".mov", ".m4v", ".webm", ".ogv"}
 
 
 def format_file_date(mtime: float) -> str:
@@ -61,12 +60,10 @@ def collect_media(directory: Path, label: str) -> None:
             continue
 
         suffix = file_path.suffix.lower()
-        if suffix in IMAGE_EXTENSIONS:
-            media_type = "image"
-        elif suffix in VIDEO_EXTENSIONS:
-            media_type = "video"
-        else:
+        if suffix not in IMAGE_EXTENSIONS:
             continue
+
+        media_type = "image"
 
         stat = file_path.stat()
         media.append(

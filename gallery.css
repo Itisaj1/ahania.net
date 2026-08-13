@@ -122,14 +122,6 @@ body.showing-gallery .gallery-open {
     background-color: #fff;
 }
 
-.gallery-media video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    background-color: #000;
-}
-
 .gallery-story {
     flex: 0 0 300px;
     max-height: 100%;
@@ -185,15 +177,6 @@ body.showing-gallery .gallery-open {
     height: 100%;
     object-fit: cover;
     display: block;
-}
-
-.gallery-thumb.is-video {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1rem;
-    color: #000;
 }
 
 .gallery-thumb.is-active {

@@ -97,9 +97,7 @@
             currentIndex = index;
             const path = mediaPath(options.base, item.filename);
 
-            media.innerHTML = item.type === 'video'
-                ? `<video src="${path}" controls preload="metadata"></video>`
-                : `<img src="${path}" alt="${item.filename}">`;
+            media.innerHTML = `<img src="${path}" alt="${item.filename}">`;
 
             if (story) {
                 const text = stories[item.filename] || '';
@@ -149,12 +147,7 @@
         function renderStrip() {
             strip.innerHTML = items.map((item, index) => {
                 const path = mediaPath(options.base, item.filename);
-                const inner = item.type === 'video'
-                    ? '▶'
-                    : `<img src="${path}" alt="" loading="lazy">`;
-                const videoClass = item.type === 'video' ? ' is-video' : '';
-
-                return `<button class="gallery-thumb${videoClass}" type="button" data-index="${index}" title="${item.filename}">${inner}</button>`;
+                return `<button class="gallery-thumb" type="button" data-index="${index}" title="${item.filename}"><img src="${path}" alt="" loading="lazy"></button>`;
             }).join('');
 
             strip.querySelectorAll('.gallery-thumb').forEach((thumb) => {
@@ -193,14 +186,12 @@
             stories = storyText;
 
             if (!items.length) {
-                media.innerHTML = '<p>No photos or videos yet.</p>';
+                media.innerHTML = '<p>No photos yet.</p>';
                 return [];
             }
 
             renderStrip();
-
-            const firstImage = items.findIndex((item) => item.type === 'image');
-            show(firstImage === -1 ? 0 : firstImage);
+            show(0);
             return items;
         }).catch(() => {
             media.innerHTML = '<p>Could not load photos.</p>';
@@ -214,8 +205,7 @@
             return;
         }
 
-        loadManifest(options.manifest).then((media) => {
-            const images = media.filter((item) => item.type === 'image');
+        loadManifest(options.manifest).then((images) => {
             if (!images.length) {
                 return;
             }
