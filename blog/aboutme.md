@@ -1,0 +1,9 @@
+---
+title: about this website and about me
+---
+
+I believe I've been needing to put together a personal website of sorts to hold record of all my travels, projects, and business ventures. Though I could just journal, it makes it kind of difficult to share those things with family, freinds, and folks who care. As well, it would be nice to have an online project portfolio to share with (hiring) folks who see value in that kind of thing. I also would really like to understand what it takes to run and maintain a website... so here we are.
+
+for reference, i'm using freecodecamp.org, khanacademy, as well as my own exploration as resources to build out this website. its hosted by netlify, drawing its files from a github repository, making it very cheap (or even free!) to host. currently its sort of barebones, but i (hope to) will eventually fill it with all kinds of easter eggs, personal projects, and tidbits of tinkering from my interest in the web.
+
+I hope for those who have the opportunity to read this, as well as explore my website, that you find some value in it. feel free to reach out through the channels - you know where to find me.

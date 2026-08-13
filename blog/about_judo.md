@@ -1,0 +1,9 @@
+I recently talked with a freind who asked me about judo and the place it holds in my life. i figured it would be a fairly short conversation, but it quickly slipped into a more exploratory one. I realized how much judo has influenced my life and shaped how i talk, work, and live. I figure since people might ask about my "judo olympian" title nowadays, i might as well write about it to document how i really feel about it.
+
+when i was young, around 10 years old, my parents got sick of my couch potato tendencies and signed me up for a judo class in the slightly run down, strip mall judo gym down two blocks south of our house. I had judged that it was in a strip mall; that it had water stained drop-cielings; that some of the people there seemed to totally unaware of the head-sized hole in the dry wall beside them. I picked apart every part of that space that i could - resisted liking any part of it.
+
+What i didn't consider at the time was, despite my attempts to ignore it, the people who participated in the sport were some of the most welcoming, friendly people i had ever met. Josh, the head sensei, constantly encouraged me when i gave zero effort. When the only reason i showed up was because my parents wanted me to, they were there, ready to practice.
+
+As odd as that is to say, i'm thankful i had the opportunity to be that way when i was young. After (10 plus) years of doing judo, its taught me that I really have no clue what people are like until i spend time with them. i judged others so heavily when i was younger without realizing the effect it had on myself: the more negativity i spit towards others, the more i spit towards myself. Over the years, i lost this tendency. I owe it to the people there for teaching me - not in words, but in practice.
+
+fin. i cant think anymore... I'll come back to this one later

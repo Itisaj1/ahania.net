@@ -1,32 +1,38 @@
 [
   {
     "filename": "about_judo.html",
-    "date": "11-Aug-2026 9:49",
-    "size": "1.9 KB"
+    "title": "about judo",
+    "date": "12-Aug-2026 22:43",
+    "size": "2.4 KB"
   },
   {
     "filename": "aboutme.html",
-    "date": "26-Jul-2026 21:12",
-    "size": "1.2 KB"
+    "title": "about this website and about me",
+    "date": "12-Aug-2026 22:43",
+    "size": "1.7 KB"
   },
   {
     "filename": "college.html",
-    "date": "26-Jul-2026 21:12",
-    "size": "4.1 KB"
+    "title": "college",
+    "date": "12-Aug-2026 22:43",
+    "size": "4.5 KB"
   },
   {
     "filename": "firefox_extensions.html",
-    "date": "26-Jul-2026 21:12",
-    "size": "3.0 KB"
+    "title": "my firefox extensions",
+    "date": "12-Aug-2026 22:43",
+    "size": "3.6 KB"
   },
   {
     "filename": "mastery.html",
-    "date": "26-Jul-2026 21:12",
-    "size": "648 B"
+    "title": "things i should master before i get old",
+    "date": "12-Aug-2026 22:43",
+    "size": "971 B"
   },
   {
     "filename": "trust.html",
-    "date": "26-Jul-2026 21:12",
-    "size": "2.8 KB"
+    "title": "how do we trust eachother so much?",
+    "date": "12-Aug-2026 22:43",
+    "size": "3.3 KB"
   }
 ]
