@@ -10,7 +10,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 BLOG_DIR = ROOT / "blog"
 PORTFOLIO_DIR = ROOT / "portfolio"
-IMAGES_DIR = ROOT / "images"
 GALLERY_DIR = ROOT / "portfolio images"
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 MONTH_NAMES = [
@@ -226,5 +225,4 @@ def collect_media(directory: Path, label: str) -> None:
 
 build_markdown_pages(BLOG_DIR, BLOG_DIR / "posts.json", "blog", "blog posts")
 build_markdown_pages(PORTFOLIO_DIR, PORTFOLIO_DIR / "items.json", "portfolio", "portfolio items")
-collect_media(IMAGES_DIR, "landing images")
 collect_media(GALLERY_DIR, "gallery media")
