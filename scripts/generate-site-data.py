@@ -19,18 +19,32 @@ MONTH_NAMES = [
 ]
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp", ".tif", ".tiff", ".heic"}
 
+SITE = "https://ahania.net"
+OG_IMAGE = f"{SITE}/og-image.jpg"
+
 PAGE_TEMPLATE = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title} - Austin Hania</title>
+    <title>{title_text} - Austin Hania</title>
+    <meta name="description" content="{description}">
+    <meta property="og:site_name" content="Austin Hania">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{title}">
+    <meta property="og:description" content="{description}">
+    <meta property="og:url" content="{url}">
+    <meta property="og:image" content="{image}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{title}">
+    <meta name="twitter:description" content="{description}">
+    <meta name="twitter:image" content="{image}">
     <link rel="stylesheet" href="/post.css">
     <link rel="stylesheet" href="/transitions.css">
 </head>
 <body>
     <article class="post">
-        <h1>{title}</h1>
+        <h1>{title_text}</h1>
 {body}
         <p class="post-updated">updated on {updated}</p>
     </article>
@@ -70,6 +84,19 @@ def last_updated(path: Path) -> datetime:
         pass
 
     return datetime.fromtimestamp(path.stat().st_mtime)
+
+
+def plain_description(body: str, fallback: str, limit: int = 160) -> str:
+    """First readable sentence-ish chunk from markdown, for OG/meta description."""
+    text = re.sub(r"^---\n.*?\n---\n", "", body, count=1, flags=re.S)
+    text = re.sub(r"[#>*_`\[\]()]", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    if not text:
+        return fallback
+    if len(text) <= limit:
+        return text
+    clipped = text[: limit - 1].rsplit(" ", 1)[0]
+    return f"{clipped}…"
 
 
 def split_front_matter(text: str) -> tuple[dict, str]:
@@ -158,19 +185,28 @@ def indent(text: str, spaces: int) -> str:
 def build_markdown_pages(directory: Path, output_path: Path, label: str) -> None:
     """Render every .md in a folder to a sibling .html page, then index the sources."""
     items = []
+    section = directory.name
 
     for source in sorted(directory.glob("*.md")):
         meta, body = split_front_matter(source.read_text(encoding="utf-8"))
         title = meta.get("title") or source.stem.replace("_", " ").replace("-", " ")
         updated = last_updated(source)
-
-        page = PAGE_TEMPLATE.format(
-            title=html.escape(title, quote=False),
-            body=indent(render_markdown(body), 8),
-            updated=f"{MONTH_NAMES[updated.month - 1]} {updated.day}, {updated.year}",
+        target = source.with_suffix(".html")
+        page_url = f"{SITE}/{section}/{target.name}"
+        description = meta.get("description") or plain_description(
+            body, f"{title} — Austin Hania"
         )
 
-        target = source.with_suffix(".html")
+        page = PAGE_TEMPLATE.format(
+            title=html.escape(title, quote=True),
+            description=html.escape(description, quote=True),
+            url=html.escape(page_url, quote=True),
+            image=html.escape(OG_IMAGE, quote=True),
+            body=indent(render_markdown(body), 8),
+            updated=f"{MONTH_NAMES[updated.month - 1]} {updated.day}, {updated.year}",
+            title_text=html.escape(title, quote=False),
+        )
+
         target.write_text(page, encoding="utf-8")
 
         items.append(
