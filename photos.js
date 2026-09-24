@@ -193,6 +193,8 @@
         var cardById = {};
         var lastFocus = null;
         var pendingFrame = 0;
+        var reorderTimer = 0;
+        var REORDER_DELAY_MS = 180;
         var selection = { hue: 0, chroma: 0 };
 
         function updateSwatch(sel) {
@@ -282,13 +284,15 @@
 
         function scheduleSelection(sel) {
             selection = sel;
-            if (pendingFrame) {
-                return;
+            // Swatch updates immediately; grid waits so dragging stays light.
+            updateSwatch(sel);
+            if (reorderTimer) {
+                clearTimeout(reorderTimer);
             }
-            pendingFrame = requestAnimationFrame(function () {
-                pendingFrame = 0;
-                applySelection(selection);
-            });
+            reorderTimer = setTimeout(function () {
+                reorderTimer = 0;
+                flipReorder(sortedPhotos(selection));
+            }, REORDER_DELAY_MS);
         }
 
         function openDetail(photo) {
