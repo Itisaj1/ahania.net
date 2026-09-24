@@ -192,9 +192,8 @@
         var pantones = [];
         var cardById = {};
         var lastFocus = null;
-        var pendingFrame = 0;
         var reorderTimer = 0;
-        var REORDER_DELAY_MS = 180;
+        var REORDER_DELAY_MS = 380;
         var selection = { hue: 0, chroma: 0 };
 
         function updateSwatch(sel) {
@@ -263,7 +262,7 @@
                 el.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
                 // Force reflow then animate back.
                 el.getBoundingClientRect();
-                el.style.transition = 'transform 0.28s ease';
+                el.style.transition = 'transform 0.55s ease';
                 el.style.transform = '';
                 el.addEventListener(
                     'transitionend',
