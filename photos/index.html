@@ -14,23 +14,27 @@
         <h1>photos i've taken</h1>
     </header>
 
-    <section class="photos-controls" aria-label="Color filter">
-        <div id="photos-wheel"></div>
-        <aside class="photos-swatch" aria-live="polite">
-            <div class="photos-swatch__chip" id="swatch-chip"></div>
-            <dl class="photos-swatch__meta">
-                <dt>HEX</dt>
-                <dd id="swatch-hex">#ffffff</dd>
-                <dt>HSL</dt>
-                <dd id="swatch-hsl">0°, 0%, 100%</dd>
-                <dt>Pantone</dt>
-                <dd id="swatch-pantone">—</dd>
-            </dl>
+    <div class="photos-layout">
+        <aside class="photos-sidebar" aria-label="Color filter">
+            <div id="photos-wheel"></div>
+            <div class="photos-swatch" aria-live="polite">
+                <div class="photos-swatch__chip" id="swatch-chip"></div>
+                <dl class="photos-swatch__meta">
+                    <dt>HEX</dt>
+                    <dd id="swatch-hex">#ffffff</dd>
+                    <dt>HSL</dt>
+                    <dd id="swatch-hsl">0°, 0%, 100%</dd>
+                    <dt>Pantone</dt>
+                    <dd id="swatch-pantone">—</dd>
+                </dl>
+            </div>
         </aside>
-    </section>
 
-    <div class="photos-grid" id="photos-grid"></div>
-    <p class="photos-status" id="photos-status">loading photos…</p>
+        <div class="photos-main">
+            <div class="photos-grid" id="photos-grid"></div>
+            <p class="photos-status" id="photos-status">loading photos…</p>
+        </div>
+    </div>
 
     <div class="photos-detail" id="photos-detail" role="dialog" aria-modal="true" aria-label="Photo detail" hidden>
         <div class="photos-detail__top">

@@ -12,8 +12,8 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-bottom: 20px;
-    max-width: 1100px;
+    margin-bottom: 24px;
+    max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -39,23 +39,27 @@
     color: #EE0000;
 }
 
-.photos-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.photos-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
     gap: 36px;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: 0 auto 28px;
-    padding: 24px 20px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    align-items: start;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.photos-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    position: sticky;
+    top: 20px;
 }
 
 .photos-swatch {
-    min-width: 160px;
+    width: 100%;
+    max-width: 240px;
     text-align: left;
 }
 
@@ -63,7 +67,6 @@
     width: 72px;
     height: 72px;
     border: 1px solid #ddd;
-    border-radius: 3px;
     background: #fff;
     margin-bottom: 12px;
 }
@@ -84,12 +87,14 @@
     margin: 0 0 8px;
 }
 
+.photos-main {
+    min-width: 0;
+}
+
 .photos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 12px;
-    max-width: 1100px;
-    margin: 0 auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
     align-items: start;
 }
 
@@ -118,12 +123,10 @@
 }
 
 .photos-status {
-    max-width: 1100px;
-    margin: 12px auto 0;
+    margin-top: 14px;
     font-size: 0.85rem;
     font-style: italic;
     color: #666;
-    text-align: center;
 }
 
 /* Detail / lightbox */
@@ -210,6 +213,31 @@
     margin-top: 12px;
 }
 
+@media (max-width: 980px) {
+    .photos-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .photos-sidebar {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .photos-swatch {
+        max-width: 200px;
+    }
+
+    .photos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
+
 @media (max-width: 900px) {
     .photos-detail__body {
         flex-direction: column;
@@ -226,16 +254,6 @@
 @media (max-width: 768px) {
     .photos-header h1 {
         font-size: 1.25rem;
-    }
-
-    .photos-controls {
-        gap: 20px;
-        padding: 18px 14px;
-    }
-
-    .photos-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 8px;
     }
 }
 
