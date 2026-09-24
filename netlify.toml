@@ -1,3 +1,3 @@
 [build]
-  command = "python3 scripts/generate-site-data.py"
+  command = "pip install -r requirements.txt && python3 scripts/generate-site-data.py"
   publish = "."

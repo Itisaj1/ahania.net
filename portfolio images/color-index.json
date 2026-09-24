@@ -1,1861 +1,2101 @@
 [
   {
-    "id": "sample-01.jpg",
-    "src": "portfolio%20images/sample-01.jpg",
-    "hash": "a3c35bfef121",
+    "id": "Ajs Headshot.JPG",
+    "src": "portfolio%20images/Ajs Headshot.JPG",
+    "hash": "4ac7fc0d0602fc9d",
     "dominant": {
-      "hex": "#ee8266",
+      "hex": "#9e9e9e",
       "oklch": [
-        0.72,
-        0.14,
-        35
+        0.7007,
+        0.0,
+        89.81
       ]
     },
     "palette": [
       {
-        "hex": "#da6b70",
+        "hex": "#9e9e9e",
         "oklch": [
-          0.66,
-          0.14,
-          19
+          0.7007,
+          0.0,
+          89.81
         ],
-        "weight": 0.45
+        "weight": 0.3147
       },
       {
-        "hex": "#dd7b71",
+        "hex": "#b6b6b6",
         "oklch": [
-          0.69,
-          0.1232,
-          27
+          0.7755,
+          0.0,
+          89.81
         ],
-        "weight": 0.22
+        "weight": 0.2769
       },
       {
-        "hex": "#df8c77",
+        "hex": "#7e7e7e",
         "oklch": [
-          0.72,
-          0.1064,
-          35
+          0.5942,
+          0.0,
+          89.81
         ],
-        "weight": 0.15
+        "weight": 0.1927
       },
       {
-        "hex": "#df9c80",
+        "hex": "#020202",
         "oklch": [
-          0.75,
-          0.0896,
-          43
+          0.0905,
+          0.0,
+          89.81
         ],
-        "weight": 0.1
+        "weight": 0.1636
       },
       {
-        "hex": "#deab8d",
+        "hex": "#393939",
         "oklch": [
-          0.78,
-          0.0728,
-          51
+          0.3428,
+          0.0,
+          89.81
         ],
-        "weight": 0.08
+        "weight": 0.0521
       }
     ]
   },
   {
-    "id": "sample-02.jpg",
-    "src": "portfolio%20images/sample-02.jpg",
-    "hash": "930d120918aa",
+    "id": "Base of Gobblers Knob.JPG",
+    "src": "portfolio%20images/Base of Gobblers Knob.JPG",
+    "hash": "bdcee28d5f512d4b",
     "dominant": {
-      "hex": "#f37f58",
+      "hex": "#806d5a",
       "oklch": [
-        0.72,
-        0.152,
-        39
+        0.5475,
+        0.0375,
+        66.01
       ]
     },
     "palette": [
       {
-        "hex": "#e06765",
+        "hex": "#806d5a",
         "oklch": [
-          0.66,
-          0.152,
-          23
+          0.5475,
+          0.0375,
+          66.01
         ],
-        "weight": 0.45
+        "weight": 0.3755
       },
       {
-        "hex": "#e27967",
+        "hex": "#53453d",
         "oklch": [
-          0.69,
-          0.1338,
-          31
+          0.4023,
+          0.023,
+          53.3
         ],
-        "weight": 0.22
+        "weight": 0.2109
       },
       {
-        "hex": "#e28a6d",
+        "hex": "#030204",
         "oklch": [
-          0.72,
-          0.1155,
-          39
+          0.0922,
+          0.0063,
+          288.32
         ],
-        "weight": 0.15
+        "weight": 0.1827
       },
       {
-        "hex": "#e19b78",
+        "hex": "#1a161c",
         "oklch": [
-          0.75,
-          0.0973,
-          47
+          0.2084,
+          0.0127,
+          316.45
         ],
-        "weight": 0.1
+        "weight": 0.1389
       },
       {
-        "hex": "#e0aa87",
+        "hex": "#b8ab98",
         "oklch": [
-          0.78,
-          0.079,
-          55
+          0.7467,
+          0.031,
+          76.01
         ],
-        "weight": 0.08
+        "weight": 0.092
       }
     ]
   },
   {
-    "id": "sample-03.jpg",
-    "src": "portfolio%20images/sample-03.jpg",
-    "hash": "57be89e6ff1a",
+    "id": "building.JPG",
+    "src": "portfolio%20images/building.JPG",
+    "hash": "1194bd9039d914db",
     "dominant": {
-      "hex": "#f77d48",
+      "hex": "#090906",
       "oklch": [
-        0.72,
-        0.164,
-        43
+        0.1362,
+        0.0058,
+        106.28
       ]
     },
     "palette": [
       {
-        "hex": "#e56359",
+        "hex": "#090906",
         "oklch": [
-          0.66,
-          0.164,
-          27
+          0.1362,
+          0.0058,
+          106.28
         ],
-        "weight": 0.45
+        "weight": 0.3655
       },
       {
-        "hex": "#e6775b",
+        "hex": "#020201",
         "oklch": [
-          0.69,
-          0.1443,
-          35
+          0.0813,
+          0.0039,
+          116.09
         ],
-        "weight": 0.22
+        "weight": 0.3268
       },
       {
-        "hex": "#e58963",
+        "hex": "#dfdfdd",
         "oklch": [
-          0.72,
-          0.1246,
-          43
+          0.9025,
+          0.0019,
+          109.86
         ],
-        "weight": 0.15
+        "weight": 0.1363
       },
       {
-        "hex": "#e39a6f",
+        "hex": "#908077",
         "oklch": [
-          0.75,
-          0.105,
-          51
+          0.6125,
+          0.0241,
+          50.46
         ],
-        "weight": 0.1
+        "weight": 0.1098
       },
       {
-        "hex": "#e1aa80",
+        "hex": "#272a2a",
         "oklch": [
-          0.78,
-          0.0853,
-          59
+          0.2828,
+          0.0051,
+          189.4
         ],
-        "weight": 0.08
+        "weight": 0.0616
       }
     ]
   },
   {
-    "id": "sample-04.jpg",
-    "src": "portfolio%20images/sample-04.jpg",
-    "hash": "77cb6a50bc71",
+    "id": "Chilean Mafioso.JPG",
+    "src": "portfolio%20images/Chilean Mafioso.JPG",
+    "hash": "295a4658e6396ef0",
     "dominant": {
-      "hex": "#fa7b31",
+      "hex": "#030302",
       "oklch": [
-        0.72,
-        0.176,
-        47
+        0.0955,
+        0.004,
+        95.36
       ]
     },
     "palette": [
       {
-        "hex": "#ea5f4a",
+        "hex": "#030302",
         "oklch": [
-          0.66,
-          0.176,
-          31
+          0.0955,
+          0.004,
+          95.36
         ],
-        "weight": 0.45
+        "weight": 0.2843
       },
       {
-        "hex": "#ea754d",
+        "hex": "#181811",
         "oklch": [
-          0.69,
-          0.1549,
-          39
+          0.2055,
+          0.0134,
+          105.0
         ],
-        "weight": 0.22
+        "weight": 0.2001
       },
       {
-        "hex": "#e88857",
+        "hex": "#6c6253",
         "oklch": [
-          0.72,
-          0.1338,
-          47
+          0.501,
+          0.0255,
+          77.92
         ],
-        "weight": 0.15
+        "weight": 0.1953
       },
       {
-        "hex": "#e59a66",
+        "hex": "#b8ad96",
         "oklch": [
-          0.75,
-          0.1126,
-          55
+          0.7509,
+          0.0349,
+          85.25
         ],
-        "weight": 0.1
+        "weight": 0.1693
       },
       {
-        "hex": "#e1ab79",
+        "hex": "#393428",
         "oklch": [
-          0.78,
-          0.0915,
-          63
+          0.3273,
+          0.0216,
+          87.49
         ],
-        "weight": 0.08
+        "weight": 0.151
       }
     ]
   },
   {
-    "id": "sample-05.jpg",
-    "src": "portfolio%20images/sample-05.jpg",
-    "hash": "6266ecc34618",
+    "id": "DSC06873.JPG",
+    "src": "portfolio%20images/DSC06873.JPG",
+    "hash": "c82c3a8be5d68755",
     "dominant": {
-      "hex": "#fd7a00",
+      "hex": "#030100",
       "oklch": [
-        0.72,
-        0.188,
-        51
+        0.0715,
+        0.0142,
+        40.69
       ]
     },
     "palette": [
       {
-        "hex": "#ee5c38",
+        "hex": "#030100",
         "oklch": [
-          0.66,
-          0.188,
-          35
+          0.0715,
+          0.0142,
+          40.69
         ],
-        "weight": 0.45
+        "weight": 0.4019
       },
       {
-        "hex": "#ed733c",
+        "hex": "#200e07",
         "oklch": [
-          0.69,
-          0.1654,
-          43
+          0.1888,
+          0.0342,
+          42.02
         ],
-        "weight": 0.22
+        "weight": 0.2092
       },
       {
-        "hex": "#ea8849",
+        "hex": "#6f7664",
         "oklch": [
-          0.72,
-          0.1429,
-          51
+          0.5547,
+          0.0278,
+          123.74
         ],
-        "weight": 0.15
+        "weight": 0.1558
       },
       {
-        "hex": "#e69a5c",
+        "hex": "#40332a",
         "oklch": [
-          0.75,
-          0.1203,
-          59
+          0.3326,
+          0.0238,
+          58.43
         ],
-        "weight": 0.1
+        "weight": 0.1532
       },
       {
-        "hex": "#e2ab72",
+        "hex": "#aaaead",
         "oklch": [
-          0.78,
-          0.0978,
-          67
+          0.7467,
+          0.0048,
+          175.25
         ],
-        "weight": 0.08
+        "weight": 0.0799
       }
     ]
   },
   {
-    "id": "sample-06.jpg",
-    "src": "portfolio%20images/sample-06.jpg",
-    "hash": "a871f32067f4",
+    "id": "Ducks @ Manito.JPG",
+    "src": "portfolio%20images/Ducks @ Manito.JPG",
+    "hash": "8cd1adc7faf767b0",
     "dominant": {
-      "hex": "#ff7900",
+      "hex": "#121409",
       "oklch": [
-        0.72,
-        0.2,
-        55
+        0.1838,
+        0.0214,
+        116.41
       ]
     },
     "palette": [
       {
-        "hex": "#f2591b",
+        "hex": "#121409",
         "oklch": [
-          0.66,
-          0.2,
-          39
+          0.1838,
+          0.0214,
+          116.41
         ],
-        "weight": 0.45
+        "weight": 0.2952
       },
       {
-        "hex": "#f07224",
+        "hex": "#060604",
         "oklch": [
-          0.69,
-          0.176,
-          47
+          0.1199,
+          0.0076,
+          96.91
         ],
-        "weight": 0.22
+        "weight": 0.2391
       },
       {
-        "hex": "#ec8738",
+        "hex": "#232517",
         "oklch": [
-          0.72,
-          0.152,
-          55
+          0.2586,
+          0.0265,
+          116.6
         ],
-        "weight": 0.15
+        "weight": 0.1962
       },
       {
-        "hex": "#e79b50",
+        "hex": "#63625a",
         "oklch": [
-          0.75,
-          0.128,
-          63
+          0.4945,
+          0.0126,
+          97.54
         ],
-        "weight": 0.1
+        "weight": 0.1419
       },
       {
-        "hex": "#e1ac6a",
+        "hex": "#404135",
         "oklch": [
-          0.78,
-          0.104,
-          71
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-07.jpg",
-    "src": "portfolio%20images/sample-07.jpg",
-    "hash": "c481cbe210e2",
-    "dominant": {
-      "hex": "#449ac0",
-      "oklch": [
-        0.65,
-        0.1,
-        230
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#148ca1",
-        "oklch": [
-          0.59,
-          0.1,
-          214
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#4092ac",
-        "oklch": [
-          0.62,
-          0.088,
-          222
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#5c98b5",
-        "oklch": [
-          0.65,
-          0.076,
-          230
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#739fbc",
-        "oklch": [
-          0.68,
-          0.064,
-          238
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#87a5c1",
-        "oklch": [
-          0.71,
-          0.052,
-          246
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-08.jpg",
-    "src": "portfolio%20images/sample-08.jpg",
-    "hash": "43f2b35b3f29",
-    "dominant": {
-      "hex": "#399acb",
-      "oklch": [
-        0.65,
-        0.115,
-        235
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#008cab",
-        "oklch": [
-          0.59,
-          0.115,
-          219
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#3392b5",
-        "oklch": [
-          0.62,
-          0.1012,
-          227
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#5698bd",
-        "oklch": [
-          0.65,
-          0.0874,
-          235
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#709ec3",
-        "oklch": [
-          0.68,
-          0.0736,
-          243
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#86a5c6",
-        "oklch": [
-          0.71,
-          0.0598,
-          251
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-09.jpg",
-    "src": "portfolio%20images/sample-09.jpg",
-    "hash": "54748fb7471d",
-    "dominant": {
-      "hex": "#3198d6",
-      "oklch": [
-        0.65,
-        0.13,
-        240
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#008cb6",
-        "oklch": [
-          0.59,
-          0.13,
-          224
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#2791bf",
-        "oklch": [
-          0.62,
-          0.1144,
-          232
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#5297c5",
-        "oklch": [
-          0.65,
-          0.0988,
-          240
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#6e9dca",
-        "oklch": [
-          0.68,
-          0.0832,
-          248
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#86a4cc",
-        "oklch": [
-          0.71,
-          0.0676,
-          256
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-10.jpg",
-    "src": "portfolio%20images/sample-10.jpg",
-    "hash": "45b4f340766b",
-    "dominant": {
-      "hex": "#2d96e1",
-      "oklch": [
-        0.65,
-        0.145,
-        245
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#008bc1",
-        "oklch": [
-          0.59,
-          0.145,
-          229
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#1d90c9",
-        "oklch": [
-          0.62,
-          0.1276,
-          237
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#5096ce",
-        "oklch": [
-          0.65,
-          0.1102,
-          245
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#6e9cd0",
-        "oklch": [
-          0.68,
-          0.0928,
-          253
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#87a2d1",
-        "oklch": [
-          0.71,
-          0.0754,
-          261
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-11.jpg",
-    "src": "portfolio%20images/sample-11.jpg",
-    "hash": "3a0400cb70f4",
-    "dominant": {
-      "hex": "#3093ec",
-      "oklch": [
-        0.65,
-        0.16,
-        250
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#0089cd",
-        "oklch": [
-          0.59,
-          0.16,
-          234
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#178ed3",
-        "oklch": [
-          0.62,
-          0.1408,
-          242
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#5094d6",
-        "oklch": [
-          0.65,
-          0.1216,
-          250
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#709ad7",
-        "oklch": [
-          0.68,
-          0.1024,
-          258
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#89a1d6",
-        "oklch": [
-          0.71,
-          0.0832,
-          266
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-12.jpg",
-    "src": "portfolio%20images/sample-12.jpg",
-    "hash": "c8e3a40819ae",
-    "dominant": {
-      "hex": "#388ff6",
-      "oklch": [
-        0.65,
-        0.175,
-        255
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#0086d8",
-        "oklch": [
-          0.59,
-          0.175,
-          239
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#1b8bdd",
-        "oklch": [
-          0.62,
-          0.154,
-          247
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#5391de",
-        "oklch": [
-          0.65,
-          0.133,
-          255
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#7397de",
-        "oklch": [
-          0.68,
-          0.112,
-          263
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#8c9fdb",
-        "oklch": [
-          0.71,
-          0.091,
-          271
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-13.jpg",
-    "src": "portfolio%20images/sample-13.jpg",
-    "hash": "4c60ffbb9d9d",
-    "dominant": {
-      "hex": "#438aff",
-      "oklch": [
-        0.65,
-        0.19,
-        260
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#0083e4",
-        "oklch": [
-          0.59,
-          0.19,
-          244
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#2588e6",
-        "oklch": [
-          0.62,
-          0.1672,
-          252
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#598ee6",
-        "oklch": [
-          0.65,
-          0.1444,
-          260
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#7895e4",
-        "oklch": [
-          0.68,
-          0.1216,
-          268
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#919cdf",
-        "oklch": [
-          0.71,
-          0.0988,
-          276
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-14.jpg",
-    "src": "portfolio%20images/sample-14.jpg",
-    "hash": "394d90782215",
-    "dominant": {
-      "hex": "#86ab72",
-      "oklch": [
-        0.7,
-        0.09,
-        135
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#869453",
-        "oklch": [
-          0.64,
-          0.09,
-          119
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#889f69",
-        "oklch": [
-          0.67,
-          0.0792,
-          127
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#8ca87d",
-        "oklch": [
-          0.7,
-          0.0684,
-          135
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#93b291",
-        "oklch": [
-          0.73,
-          0.0576,
-          143
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#9cbaa2",
-        "oklch": [
-          0.76,
-          0.0468,
-          151
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-15.jpg",
-    "src": "portfolio%20images/sample-15.jpg",
-    "hash": "ccbde5c34905",
-    "dominant": {
-      "hex": "#7dae70",
-      "oklch": [
-        0.7,
-        0.102,
-        139
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#80964d",
-        "oklch": [
-          0.64,
-          0.102,
-          123
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#82a166",
-        "oklch": [
-          0.67,
-          0.0898,
-          131
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#86aa7c",
-        "oklch": [
-          0.7,
-          0.0775,
-          139
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#8db390",
-        "oklch": [
-          0.73,
-          0.0653,
-          147
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#97bca3",
-        "oklch": [
-          0.76,
-          0.053,
-          155
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-16.jpg",
-    "src": "portfolio%20images/sample-16.jpg",
-    "hash": "a7029201a169",
-    "dominant": {
-      "hex": "#72b16f",
-      "oklch": [
-        0.7,
-        0.114,
-        143
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#799948",
-        "oklch": [
-          0.64,
-          0.114,
-          127
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#7aa363",
-        "oklch": [
-          0.67,
-          0.1003,
-          135
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#7ead7b",
-        "oklch": [
-          0.7,
-          0.0866,
-          143
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#86b590",
-        "oklch": [
-          0.73,
-          0.073,
-          151
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#91bda4",
-        "oklch": [
-          0.76,
-          0.0593,
-          159
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-17.jpg",
-    "src": "portfolio%20images/sample-17.jpg",
-    "hash": "016d4f60a104",
-    "dominant": {
-      "hex": "#65b36f",
-      "oklch": [
-        0.7,
-        0.126,
-        147
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#719b45",
-        "oklch": [
-          0.64,
-          0.126,
-          131
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#71a662",
-        "oklch": [
-          0.67,
-          0.1109,
-          139
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#75af7b",
-        "oklch": [
-          0.7,
-          0.0958,
-          147
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#7eb792",
-        "oklch": [
-          0.73,
-          0.0806,
-          155
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#8bbfa5",
-        "oklch": [
-          0.76,
-          0.0655,
-          163
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-18.jpg",
-    "src": "portfolio%20images/sample-18.jpg",
-    "hash": "155e30dbd13f",
-    "dominant": {
-      "hex": "#53b671",
-      "oklch": [
-        0.7,
-        0.138,
-        151
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#669e42",
-        "oklch": [
-          0.64,
-          0.138,
-          135
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#66a862",
-        "oklch": [
-          0.67,
-          0.1214,
-          143
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#6bb17d",
-        "oklch": [
-          0.7,
-          0.1049,
-          151
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#75b994",
-        "oklch": [
-          0.73,
-          0.0883,
-          159
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#84c0a7",
-        "oklch": [
-          0.76,
-          0.0718,
-          167
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-19.jpg",
-    "src": "portfolio%20images/sample-19.jpg",
-    "hash": "69df5dc0aa36",
-    "dominant": {
-      "hex": "#ceb0a3",
-      "oklch": [
-        0.78,
-        0.04,
-        45
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#bd9c96",
-        "oklch": [
-          0.72,
-          0.04,
-          29
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#c3a79e",
-        "oklch": [
-          0.75,
-          0.0352,
-          37
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#c9b2a8",
-        "oklch": [
-          0.78,
-          0.0304,
-          45
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#cfbdb2",
-        "oklch": [
-          0.81,
-          0.0256,
-          53
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#d5c8bd",
-        "oklch": [
-          0.84,
-          0.0208,
-          61
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-20.jpg",
-    "src": "portfolio%20images/sample-20.jpg",
-    "hash": "14a13a8a3a65",
-    "dominant": {
-      "hex": "#d2af9d",
-      "oklch": [
-        0.78,
-        0.048,
-        48
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#c19a92",
-        "oklch": [
-          0.72,
-          0.048,
-          32
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#c7a69a",
-        "oklch": [
-          0.75,
-          0.0422,
-          40
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#ccb1a4",
-        "oklch": [
-          0.78,
-          0.0365,
-          48
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#d1bcae",
-        "oklch": [
-          0.81,
-          0.0307,
-          56
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#d7c8ba",
-        "oklch": [
-          0.84,
-          0.025,
-          64
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-21.jpg",
-    "src": "portfolio%20images/sample-21.jpg",
-    "hash": "5f14ae106920",
-    "dominant": {
-      "hex": "#d6ae97",
-      "oklch": [
-        0.78,
-        0.056,
-        51
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#c5998d",
-        "oklch": [
-          0.72,
-          0.056,
-          35
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#caa495",
-        "oklch": [
-          0.75,
-          0.0493,
-          43
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#cfb09f",
-        "oklch": [
-          0.78,
-          0.0426,
-          51
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#d3bcab",
-        "oklch": [
-          0.81,
-          0.0358,
-          59
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#d8c7b7",
-        "oklch": [
-          0.84,
-          0.0291,
-          67
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-22.jpg",
-    "src": "portfolio%20images/sample-22.jpg",
-    "hash": "d1afdc65974e",
-    "dominant": {
-      "hex": "#d9ad91",
-      "oklch": [
-        0.78,
-        0.064,
-        54
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#c99788",
-        "oklch": [
-          0.72,
-          0.064,
-          38
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#cda490",
-        "oklch": [
-          0.75,
-          0.0563,
-          46
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#d1b09b",
-        "oklch": [
-          0.78,
-          0.0486,
-          54
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#d5bca7",
-        "oklch": [
-          0.81,
-          0.041,
-          62
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#d9c7b4",
-        "oklch": [
-          0.84,
-          0.0333,
-          70
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-23.jpg",
-    "src": "portfolio%20images/sample-23.jpg",
-    "hash": "51d7f38c02f1",
-    "dominant": {
-      "hex": "#dbac8a",
-      "oklch": [
-        0.78,
-        0.072,
-        57
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#cc9682",
-        "oklch": [
-          0.72,
-          0.072,
-          41
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#d0a38b",
-        "oklch": [
-          0.75,
-          0.0634,
-          49
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#d3af96",
-        "oklch": [
-          0.78,
-          0.0547,
-          57
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#d6bba2",
-        "oklch": [
-          0.81,
-          0.0461,
-          65
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#dac7b0",
-        "oklch": [
-          0.84,
-          0.0374,
-          73
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-24.jpg",
-    "src": "portfolio%20images/sample-24.jpg",
-    "hash": "997c2f0b340f",
-    "dominant": {
-      "hex": "#687475",
-      "oklch": [
-        0.55,
-        0.015,
-        200
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#576361",
-        "oklch": [
-          0.49,
-          0.015,
-          184
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#616b6b",
-        "oklch": [
-          0.52,
-          0.0132,
-          192
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#6a7474",
-        "oklch": [
-          0.55,
-          0.0114,
-          200
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#747c7d",
-        "oklch": [
-          0.58,
-          0.01,
-          208
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#7d8587",
-        "oklch": [
-          0.61,
-          0.01,
-          216
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-25.jpg",
-    "src": "portfolio%20images/sample-25.jpg",
-    "hash": "a55eef01e0b6",
-    "dominant": {
-      "hex": "#748389",
-      "oklch": [
-        0.6,
-        0.02,
-        220
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#627274",
-        "oklch": [
-          0.54,
-          0.02,
-          204
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#6c7a7d",
-        "oklch": [
-          0.57,
-          0.0176,
-          212
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#778387",
-        "oklch": [
-          0.6,
-          0.0152,
-          220
-        ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#828b8f",
-        "oklch": [
-          0.63,
-          0.0128,
-          228
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#8c9398",
-        "oklch": [
-          0.66,
-          0.0104,
-          236
-        ],
-        "weight": 0.08
-      }
-    ]
-  },
-  {
-    "id": "sample-26.jpg",
-    "src": "portfolio%20images/sample-26.jpg",
-    "hash": "b32c55cae8b8",
-    "dominant": {
-      "hex": "#82929d",
-      "oklch": [
-        0.65,
-        0.025,
-        240
-      ]
-    },
-    "palette": [
-      {
-        "hex": "#6e8188",
-        "oklch": [
-          0.59,
-          0.025,
-          224
-        ],
-        "weight": 0.45
-      },
-      {
-        "hex": "#7a8991",
-        "oklch": [
-          0.62,
-          0.022,
-          232
-        ],
-        "weight": 0.22
-      },
-      {
-        "hex": "#85919a",
-        "oklch": [
-          0.65,
+          0.3695,
           0.019,
-          240
+          109.49
         ],
-        "weight": 0.15
-      },
-      {
-        "hex": "#9199a2",
-        "oklch": [
-          0.68,
-          0.016,
-          248
-        ],
-        "weight": 0.1
-      },
-      {
-        "hex": "#9ca2aa",
-        "oklch": [
-          0.71,
-          0.013,
-          256
-        ],
-        "weight": 0.08
+        "weight": 0.1276
       }
     ]
   },
   {
-    "id": "sample-27.jpg",
-    "src": "portfolio%20images/sample-27.jpg",
-    "hash": "e9023bea19d5",
+    "id": "flight.JPG",
+    "src": "portfolio%20images/flight.JPG",
+    "hash": "fa250ea3bd595f47",
     "dominant": {
-      "hex": "#949fb2",
+      "hex": "#142457",
       "oklch": [
-        0.7,
+        0.2808,
+        0.0939,
+        267.11
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#142457",
+        "oklch": [
+          0.2808,
+          0.0939,
+          267.11
+        ],
+        "weight": 0.3758
+      },
+      {
+        "hex": "#29467d",
+        "oklch": [
+          0.4004,
+          0.099,
+          262.19
+        ],
+        "weight": 0.2205
+      },
+      {
+        "hex": "#5877b3",
+        "oklch": [
+          0.5723,
+          0.0998,
+          262.61
+        ],
+        "weight": 0.1667
+      },
+      {
+        "hex": "#04091c",
+        "oklch": [
+          0.1474,
+          0.0423,
+          268.23
+        ],
+        "weight": 0.1393
+      },
+      {
+        "hex": "#97b4dd",
+        "oklch": [
+          0.7629,
+          0.0677,
+          257.03
+        ],
+        "weight": 0.0977
+      }
+    ]
+  },
+  {
+    "id": "Flower 1.JPG",
+    "src": "portfolio%20images/Flower 1.JPG",
+    "hash": "57bba7adebf7908f",
+    "dominant": {
+      "hex": "#030700",
+      "oklch": [
+        0.1164,
+        0.0306,
+        129.84
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#030700",
+        "oklch": [
+          0.1164,
+          0.0306,
+          129.84
+        ],
+        "weight": 0.2908
+      },
+      {
+        "hex": "#0f1701",
+        "oklch": [
+          0.188,
+          0.0459,
+          125.29
+        ],
+        "weight": 0.2739
+      },
+      {
+        "hex": "#ac8c53",
+        "oklch": [
+          0.6577,
+          0.085,
+          81.8
+        ],
+        "weight": 0.2235
+      },
+      {
+        "hex": "#7e5e30",
+        "oklch": [
+          0.5039,
+          0.0749,
+          73.87
+        ],
+        "weight": 0.1328
+      },
+      {
+        "hex": "#3e3607",
+        "oklch": [
+          0.3325,
+          0.0638,
+          99.63
+        ],
+        "weight": 0.079
+      }
+    ]
+  },
+  {
+    "id": "Flower 2.JPG",
+    "src": "portfolio%20images/Flower 2.JPG",
+    "hash": "2515e33c61c68889",
+    "dominant": {
+      "hex": "#a86374",
+      "oklch": [
+        0.5813,
+        0.0903,
+        4.44
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#a86374",
+        "oklch": [
+          0.5813,
+          0.0903,
+          4.44
+        ],
+        "weight": 0.2466
+      },
+      {
+        "hex": "#5f1f29",
+        "oklch": [
+          0.3404,
+          0.093,
+          13.78
+        ],
+        "weight": 0.2222
+      },
+      {
+        "hex": "#83434d",
+        "oklch": [
+          0.4652,
+          0.0881,
+          11.59
+        ],
+        "weight": 0.2031
+      },
+      {
+        "hex": "#2c1d07",
+        "oklch": [
+          0.2439,
+          0.0419,
+          75.44
+        ],
+        "weight": 0.1684
+      },
+      {
+        "hex": "#c7909f",
+        "oklch": [
+          0.7106,
+          0.0693,
+          0.42
+        ],
+        "weight": 0.1597
+      }
+    ]
+  },
+  {
+    "id": "Flower 3.JPG",
+    "src": "portfolio%20images/Flower 3.JPG",
+    "hash": "7fa365e05b10b9bc",
+    "dominant": {
+      "hex": "#111b01",
+      "oklch": [
+        0.2052,
+        0.051,
+        127.1
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#111b01",
+        "oklch": [
+          0.2052,
+          0.051,
+          127.1
+        ],
+        "weight": 0.2899
+      },
+      {
+        "hex": "#1d2b04",
+        "oklch": [
+          0.2673,
+          0.0644,
+          127.83
+        ],
+        "weight": 0.2804
+      },
+      {
+        "hex": "#293d03",
+        "oklch": [
+          0.3304,
+          0.0831,
+          127.61
+        ],
+        "weight": 0.2552
+      },
+      {
+        "hex": "#040700",
+        "oklch": [
+          0.1208,
+          0.0283,
+          125.99
+        ],
+        "weight": 0.1298
+      },
+      {
+        "hex": "#594353",
+        "oklch": [
+          0.4113,
+          0.0387,
+          336.4
+        ],
+        "weight": 0.0447
+      }
+    ]
+  },
+  {
+    "id": "french press.JPG",
+    "src": "portfolio%20images/french press.JPG",
+    "hash": "fc0bc6e0377eea3c",
+    "dominant": {
+      "hex": "#b1a17c",
+      "oklch": [
+        0.7131,
+        0.0542,
+        86.44
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#b1a17c",
+        "oklch": [
+          0.7131,
+          0.0542,
+          86.44
+        ],
+        "weight": 0.253
+      },
+      {
+        "hex": "#7d6b4a",
+        "oklch": [
+          0.5363,
+          0.0529,
+          83.11
+        ],
+        "weight": 0.2483
+      },
+      {
+        "hex": "#463921",
+        "oklch": [
+          0.3522,
+          0.0422,
+          80.76
+        ],
+        "weight": 0.1901
+      },
+      {
+        "hex": "#060402",
+        "oklch": [
+          0.1118,
+          0.0099,
+          83.38
+        ],
+        "weight": 0.1688
+      },
+      {
+        "hex": "#e6dfc9",
+        "oklch": [
+          0.9026,
+          0.0295,
+          90.73
+        ],
+        "weight": 0.1398
+      }
+    ]
+  },
+  {
+    "id": "Gaiser Conservatory.JPG",
+    "src": "portfolio%20images/Gaiser Conservatory.JPG",
+    "hash": "16db1621bf5a4409",
+    "dominant": {
+      "hex": "#bd4a18",
+      "oklch": [
+        0.5581,
+        0.1593,
+        40.71
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#bd4a18",
+        "oklch": [
+          0.5581,
+          0.1593,
+          40.71
+        ],
+        "weight": 0.2959
+      },
+      {
+        "hex": "#232700",
+        "oklch": [
+          0.2605,
+          0.0633,
+          115.91
+        ],
+        "weight": 0.2435
+      },
+      {
+        "hex": "#374000",
+        "oklch": [
+          0.3514,
+          0.0884,
+          118.36
+        ],
+        "weight": 0.1858
+      },
+      {
+        "hex": "#a9000f",
+        "oklch": [
+          0.4461,
+          0.206,
+          23.3
+        ],
+        "weight": 0.1641
+      },
+      {
+        "hex": "#0e0e00",
+        "oklch": [
+          0.1586,
+          0.0446,
+          112.34
+        ],
+        "weight": 0.1107
+      }
+    ]
+  },
+  {
+    "id": "Gimli Ridge.jpeg",
+    "src": "portfolio%20images/Gimli Ridge.jpeg",
+    "hash": "e78f83e96b3d49ee",
+    "dominant": {
+      "hex": "#313233",
+      "oklch": [
+        0.3161,
+        0.0032,
+        272.01
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#313233",
+        "oklch": [
+          0.3161,
+          0.0032,
+          272.01
+        ],
+        "weight": 0.3133
+      },
+      {
+        "hex": "#585351",
+        "oklch": [
+          0.4465,
+          0.0068,
+          39.53
+        ],
+        "weight": 0.2096
+      },
+      {
+        "hex": "#cdc39d",
+        "oklch": [
+          0.8158,
+          0.0519,
+          94.11
+        ],
+        "weight": 0.1745
+      },
+      {
+        "hex": "#111211",
+        "oklch": [
+          0.1801,
+          0.0006,
+          158.99
+        ],
+        "weight": 0.1576
+      },
+      {
+        "hex": "#9c948b",
+        "oklch": [
+          0.6702,
+          0.0155,
+          67.86
+        ],
+        "weight": 0.145
+      }
+    ]
+  },
+  {
+    "id": "home for christmas.jpeg",
+    "src": "portfolio%20images/home for christmas.jpeg",
+    "hash": "509a0ccc694e191a",
+    "dominant": {
+      "hex": "#020302",
+      "oklch": [
+        0.0944,
+        0.0036,
+        147.06
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#020302",
+        "oklch": [
+          0.0944,
+          0.0036,
+          147.06
+        ],
+        "weight": 0.2562
+      },
+      {
+        "hex": "#050504",
+        "oklch": [
+          0.1169,
+          0.0044,
+          116.49
+        ],
+        "weight": 0.2555
+      },
+      {
+        "hex": "#010100",
+        "oklch": [
+          0.0614,
+          0.0054,
+          110.45
+        ],
+        "weight": 0.2331
+      },
+      {
+        "hex": "#0e0c06",
+        "oklch": [
+          0.1552,
+          0.0128,
+          93.59
+        ],
+        "weight": 0.2331
+      },
+      {
+        "hex": "#321f0c",
+        "oklch": [
+          0.2594,
+          0.0419,
+          66.12
+        ],
+        "weight": 0.0221
+      }
+    ]
+  },
+  {
+    "id": "House Cat.JPG",
+    "src": "portfolio%20images/House Cat.JPG",
+    "hash": "f42fa133c37979eb",
+    "dominant": {
+      "hex": "#774e1d",
+      "oklch": [
+        0.4604,
+        0.0844,
+        66.62
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#774e1d",
+        "oklch": [
+          0.4604,
+          0.0844,
+          66.62
+        ],
+        "weight": 0.2326
+      },
+      {
+        "hex": "#1c0d03",
+        "oklch": [
+          0.1778,
+          0.0326,
+          58.65
+        ],
+        "weight": 0.2088
+      },
+      {
+        "hex": "#ceae7b",
+        "oklch": [
+          0.7662,
+          0.0767,
+          78.68
+        ],
+        "weight": 0.2049
+      },
+      {
+        "hex": "#a47a45",
+        "oklch": [
+          0.6105,
+          0.0873,
+          71.96
+        ],
+        "weight": 0.1801
+      },
+      {
+        "hex": "#482b0f",
+        "oklch": [
+          0.32,
+          0.0593,
+          62.6
+        ],
+        "weight": 0.1736
+      }
+    ]
+  },
+  {
+    "id": "image3.jpeg",
+    "src": "portfolio%20images/image3.jpeg",
+    "hash": "c4eb224ac431be0d",
+    "dominant": {
+      "hex": "#020201",
+      "oklch": [
+        0.0834,
+        0.0037,
+        102.47
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#020201",
+        "oklch": [
+          0.0834,
+          0.0037,
+          102.47
+        ],
+        "weight": 0.3177
+      },
+      {
+        "hex": "#6d6351",
+        "oklch": [
+          0.5029,
+          0.0295,
+          81.93
+        ],
+        "weight": 0.2259
+      },
+      {
+        "hex": "#19150e",
+        "oklch": [
+          0.1984,
+          0.0149,
+          82.5
+        ],
+        "weight": 0.1973
+      },
+      {
+        "hex": "#40392e",
+        "oklch": [
+          0.3487,
+          0.021,
+          82.13
+        ],
+        "weight": 0.1839
+      },
+      {
+        "hex": "#a7a194",
+        "oklch": [
+          0.7095,
+          0.0199,
+          83.19
+        ],
+        "weight": 0.0752
+      }
+    ]
+  },
+  {
+    "id": "Jacobs Headshot.JPG",
+    "src": "portfolio%20images/Jacobs Headshot.JPG",
+    "hash": "cee69b842ce26d4c",
+    "dominant": {
+      "hex": "#d0d0d0",
+      "oklch": [
+        0.8566,
+        0.0,
+        89.81
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#d0d0d0",
+        "oklch": [
+          0.8566,
+          0.0,
+          89.81
+        ],
+        "weight": 0.2813
+      },
+      {
+        "hex": "#b8b8b8",
+        "oklch": [
+          0.7822,
+          0.0,
+          89.81
+        ],
+        "weight": 0.2773
+      },
+      {
+        "hex": "#a0a0a0",
+        "oklch": [
+          0.7058,
+          0.0,
+          89.81
+        ],
+        "weight": 0.2344
+      },
+      {
+        "hex": "#202020",
+        "oklch": [
+          0.2453,
+          0.0,
+          89.81
+        ],
+        "weight": 0.1506
+      },
+      {
+        "hex": "#666666",
+        "oklch": [
+          0.5095,
+          0.0,
+          89.81
+        ],
+        "weight": 0.0564
+      }
+    ]
+  },
+  {
+    "id": "James @ Kaiser.JPG",
+    "src": "portfolio%20images/James @ Kaiser.JPG",
+    "hash": "46849b971420bd67",
+    "dominant": {
+      "hex": "#010000",
+      "oklch": [
+        0.049,
+        0.0095,
+        73.43
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#010000",
+        "oklch": [
+          0.049,
+          0.0095,
+          73.43
+        ],
+        "weight": 0.4124
+      },
+      {
+        "hex": "#180a00",
+        "oklch": [
+          0.1615,
+          0.0348,
+          64.8
+        ],
+        "weight": 0.1788
+      },
+      {
+        "hex": "#e2b663",
+        "oklch": [
+          0.7985,
+          0.1139,
+          81.64
+        ],
+        "weight": 0.1502
+      },
+      {
+        "hex": "#4e2d01",
+        "oklch": [
+          0.3324,
+          0.0723,
+          67.23
+        ],
+        "weight": 0.1345
+      },
+      {
+        "hex": "#9c6515",
+        "oklch": [
+          0.5544,
+          0.1124,
+          70.29
+        ],
+        "weight": 0.1241
+      }
+    ]
+  },
+  {
+    "id": "James and Jacob @ Kaiser.JPG",
+    "src": "portfolio%20images/James and Jacob @ Kaiser.JPG",
+    "hash": "7ed68d8d9b767059",
+    "dominant": {
+      "hex": "#000000",
+      "oklch": [
+        0.0417,
+        0.0014,
+        134.84
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#000000",
+        "oklch": [
+          0.0417,
+          0.0014,
+          134.84
+        ],
+        "weight": 0.4727
+      },
+      {
+        "hex": "#cdb7ae",
+        "oklch": [
+          0.7945,
+          0.0284,
+          41.93
+        ],
+        "weight": 0.2066
+      },
+      {
+        "hex": "#797e92",
+        "oklch": [
+          0.5966,
+          0.0304,
+          273.11
+        ],
+        "weight": 0.1484
+      },
+      {
+        "hex": "#141213",
+        "oklch": [
+          0.1851,
+          0.0032,
+          355.0
+        ],
+        "weight": 0.1063
+      },
+      {
+        "hex": "#4c3e3b",
+        "oklch": [
+          0.378,
+          0.0197,
+          34.61
+        ],
+        "weight": 0.066
+      }
+    ]
+  },
+  {
+    "id": "Jeans Hija.JPG",
+    "src": "portfolio%20images/Jeans Hija.JPG",
+    "hash": "5c0b03ad286b9e98",
+    "dominant": {
+      "hex": "#391e1c",
+      "oklch": [
+        0.2704,
+        0.0419,
+        25.14
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#391e1c",
+        "oklch": [
+          0.2704,
+          0.0419,
+          25.14
+        ],
+        "weight": 0.2994
+      },
+      {
+        "hex": "#553f3b",
+        "oklch": [
+          0.3904,
+          0.0316,
+          30.21
+        ],
+        "weight": 0.2726
+      },
+      {
+        "hex": "#180707",
+        "oklch": [
+          0.1567,
+          0.0305,
+          22.65
+        ],
+        "weight": 0.2231
+      },
+      {
+        "hex": "#756c68",
+        "oklch": [
+          0.5377,
+          0.0133,
+          44.94
+        ],
+        "weight": 0.168
+      },
+      {
+        "hex": "#b8c6b4",
+        "oklch": [
+          0.8098,
+          0.0286,
+          137.23
+        ],
+        "weight": 0.0369
+      }
+    ]
+  },
+  {
+    "id": "Kaiser.JPG",
+    "src": "portfolio%20images/Kaiser.JPG",
+    "hash": "219e9ac8bc8fc160",
+    "dominant": {
+      "hex": "#020000",
+      "oklch": [
+        0.0472,
         0.03,
-        260
+        25.54
       ]
     },
     "palette": [
       {
-        "hex": "#7d8f9d",
+        "hex": "#020000",
         "oklch": [
-          0.64,
+          0.0472,
           0.03,
-          244
+          25.54
         ],
-        "weight": 0.45
+        "weight": 0.3554
       },
       {
-        "hex": "#8a97a5",
+        "hex": "#0e0000",
         "oklch": [
-          0.67,
-          0.0264,
-          252
+          0.0898,
+          0.057,
+          25.53
         ],
-        "weight": 0.22
+        "weight": 0.2622
       },
       {
-        "hex": "#969fad",
+        "hex": "#000000",
         "oklch": [
-          0.7,
-          0.0228,
-          260
+          0.0145,
+          0.0079,
+          29.19
         ],
-        "weight": 0.15
+        "weight": 0.2296
       },
       {
-        "hex": "#a2a8b4",
+        "hex": "#300000",
         "oklch": [
-          0.73,
-          0.0192,
-          268
+          0.168,
+          0.1066,
+          25.55
         ],
-        "weight": 0.1
+        "weight": 0.1029
       },
       {
-        "hex": "#aeb0bb",
+        "hex": "#7c0000",
         "oklch": [
-          0.76,
-          0.0156,
-          276
+          0.3203,
+          0.2028,
+          25.62
         ],
-        "weight": 0.08
+        "weight": 0.0499
       }
     ]
   },
   {
-    "id": "sample-28.jpg",
-    "src": "portfolio%20images/sample-28.jpg",
-    "hash": "afb3cc005c1f",
+    "id": "Kootenay Lake.JPG",
+    "src": "portfolio%20images/Kootenay Lake.JPG",
+    "hash": "0d89ededf4f6c52b",
     "dominant": {
-      "hex": "#c27cbb",
+      "hex": "#190b05",
       "oklch": [
-        0.68,
-        0.12,
-        330
+        0.1697,
+        0.0275,
+        46.62
       ]
     },
     "palette": [
       {
-        "hex": "#a06fb8",
+        "hex": "#190b05",
         "oklch": [
-          0.62,
-          0.12,
-          314
+          0.1697,
+          0.0275,
+          46.62
         ],
-        "weight": 0.45
+        "weight": 0.5238
       },
       {
-        "hex": "#ad79b5",
+        "hex": "#2f200b",
         "oklch": [
-          0.65,
-          0.1056,
-          322
+          0.2565,
+          0.0404,
+          72.59
         ],
-        "weight": 0.22
+        "weight": 0.168
       },
       {
-        "hex": "#b984b3",
+        "hex": "#590000",
         "oklch": [
-          0.68,
-          0.0912,
-          330
+          0.2625,
+          0.1506,
+          25.02
         ],
-        "weight": 0.15
+        "weight": 0.1376
       },
       {
-        "hex": "#c28fb2",
+        "hex": "#050201",
         "oklch": [
-          0.71,
-          0.0768,
-          338
+          0.091,
+          0.0119,
+          37.56
         ],
-        "weight": 0.1
+        "weight": 0.1046
       },
       {
-        "hex": "#c99bb3",
+        "hex": "#a50000",
         "oklch": [
-          0.74,
-          0.0624,
-          346
+          0.4134,
+          0.2277,
+          27.71
         ],
-        "weight": 0.08
+        "weight": 0.066
       }
     ]
   },
   {
-    "id": "sample-29.jpg",
-    "src": "portfolio%20images/sample-29.jpg",
-    "hash": "b9be8bcced12",
+    "id": "Manito Park.JPG",
+    "src": "portfolio%20images/Manito Park.JPG",
+    "hash": "097d73bcd9a550dd",
     "dominant": {
-      "hex": "#c878b9",
+      "hex": "#321c00",
       "oklch": [
-        0.68,
-        0.13,
-        334
+        0.2487,
+        0.0637,
+        75.73
       ]
     },
     "palette": [
       {
-        "hex": "#a66bb9",
+        "hex": "#321c00",
         "oklch": [
-          0.62,
-          0.13,
-          318
+          0.2487,
+          0.0637,
+          75.73
         ],
-        "weight": 0.45
+        "weight": 0.2652
       },
       {
-        "hex": "#b376b4",
+        "hex": "#5d3700",
         "oklch": [
-          0.65,
-          0.1144,
-          326
+          0.3733,
+          0.098,
+          75.98
         ],
-        "weight": 0.22
+        "weight": 0.2652
       },
       {
-        "hex": "#be81b2",
+        "hex": "#110600",
         "oklch": [
-          0.68,
-          0.0988,
-          334
+          0.136,
+          0.0329,
+          67.26
         ],
-        "weight": 0.15
+        "weight": 0.217
       },
       {
-        "hex": "#c68db0",
+        "hex": "#8c6500",
         "oklch": [
-          0.71,
-          0.0832,
-          342
+          0.5322,
+          0.1097,
+          82.3
         ],
-        "weight": 0.1
+        "weight": 0.1762
       },
       {
-        "hex": "#cd9ab1",
+        "hex": "#cdbfa7",
         "oklch": [
-          0.74,
-          0.0676,
-          350
+          0.8099,
+          0.0358,
+          81.48
         ],
-        "weight": 0.08
+        "weight": 0.0764
       }
     ]
   },
   {
-    "id": "sample-30.jpg",
-    "src": "portfolio%20images/sample-30.jpg",
-    "hash": "c3fdad1b4fd7",
+    "id": "Maserati on Kootenay.JPG",
+    "src": "portfolio%20images/Maserati on Kootenay.JPG",
+    "hash": "f706d6946a5192bb",
     "dominant": {
-      "hex": "#cf74b6",
+      "hex": "#010100",
       "oklch": [
-        0.68,
-        0.14,
-        338
+        0.0625,
+        0.0073,
+        42.09
       ]
     },
     "palette": [
       {
-        "hex": "#ad67b8",
+        "hex": "#010100",
         "oklch": [
-          0.62,
-          0.14,
-          322
+          0.0625,
+          0.0073,
+          42.09
         ],
-        "weight": 0.45
+        "weight": 0.3403
       },
       {
-        "hex": "#b972b3",
+        "hex": "#070601",
         "oklch": [
-          0.65,
-          0.1232,
-          330
+          0.1185,
+          0.0168,
+          100.35
         ],
-        "weight": 0.22
+        "weight": 0.3277
       },
       {
-        "hex": "#c37eaf",
+        "hex": "#211811",
         "oklch": [
-          0.68,
-          0.1064,
-          338
+          0.2174,
+          0.0196,
+          59.48
         ],
-        "weight": 0.15
+        "weight": 0.2309
       },
       {
-        "hex": "#cb8bad",
+        "hex": "#453b37",
         "oklch": [
-          0.71,
-          0.0896,
-          346
+          0.3606,
+          0.0154,
+          44.29
         ],
-        "weight": 0.1
+        "weight": 0.0833
       },
       {
-        "hex": "#d098ae",
+        "hex": "#a8917c",
         "oklch": [
-          0.74,
-          0.0728,
-          354
+          0.6708,
+          0.0403,
+          63.6
         ],
-        "weight": 0.08
+        "weight": 0.0178
       }
     ]
   },
   {
-    "id": "sample-31.jpg",
-    "src": "portfolio%20images/sample-31.jpg",
-    "hash": "0c13e346ed6a",
+    "id": "Mt Ranier.JPG",
+    "src": "portfolio%20images/Mt Ranier.JPG",
+    "hash": "43901cd680b0aa96",
     "dominant": {
-      "hex": "#d56fb2",
+      "hex": "#969bbb",
       "oklch": [
-        0.68,
-        0.15,
-        342
+        0.6963,
+        0.0469,
+        277.52
       ]
     },
     "palette": [
       {
-        "hex": "#b362b6",
+        "hex": "#969bbb",
         "oklch": [
-          0.62,
-          0.15,
-          326
+          0.6963,
+          0.0469,
+          277.52
         ],
-        "weight": 0.45
+        "weight": 0.3076
       },
       {
-        "hex": "#bf6eb0",
+        "hex": "#0a0f10",
         "oklch": [
-          0.65,
-          0.132,
-          334
+          0.163,
+          0.0073,
+          220.27
         ],
-        "weight": 0.22
+        "weight": 0.2383
       },
       {
-        "hex": "#c87bac",
+        "hex": "#292c25",
         "oklch": [
-          0.68,
-          0.114,
-          342
+          0.2882,
+          0.0144,
+          125.67
         ],
-        "weight": 0.15
+        "weight": 0.2192
       },
       {
-        "hex": "#cf88aa",
+        "hex": "#b6b7cb",
         "oklch": [
-          0.71,
-          0.096,
-          350
+          0.7854,
+          0.0277,
+          283.42
         ],
-        "weight": 0.1
+        "weight": 0.1385
       },
       {
-        "hex": "#d496aa",
+        "hex": "#6d6555",
         "oklch": [
-          0.74,
-          0.078,
-          358
+          0.5089,
+          0.0269,
+          83.8
         ],
-        "weight": 0.08
+        "weight": 0.0964
+      }
+    ]
+  },
+  {
+    "id": "Puerto Montt.JPG",
+    "src": "portfolio%20images/Puerto Montt.JPG",
+    "hash": "eb57660d3e118324",
+    "dominant": {
+      "hex": "#010101",
+      "oklch": [
+        0.0738,
+        0.0038,
+        167.18
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#010101",
+        "oklch": [
+          0.0738,
+          0.0038,
+          167.18
+        ],
+        "weight": 0.3178
+      },
+      {
+        "hex": "#806c5a",
+        "oklch": [
+          0.5449,
+          0.0373,
+          61.97
+        ],
+        "weight": 0.309
+      },
+      {
+        "hex": "#0e1313",
+        "oklch": [
+          0.1812,
+          0.0073,
+          206.45
+        ],
+        "weight": 0.1584
+      },
+      {
+        "hex": "#394145",
+        "oklch": [
+          0.3682,
+          0.0133,
+          233.12
+        ],
+        "weight": 0.1228
+      },
+      {
+        "hex": "#e3bb55",
+        "oklch": [
+          0.8076,
+          0.1281,
+          87.53
+        ],
+        "weight": 0.092
+      }
+    ]
+  },
+  {
+    "id": "Pun\u0303ihuil 2.JPG",
+    "src": "portfolio%20images/Pun\u0303ihuil 2.JPG",
+    "hash": "3149c6b084df01b9",
+    "dominant": {
+      "hex": "#eaeae9",
+      "oklch": [
+        0.9361,
+        0.0007,
+        94.37
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#eaeae9",
+        "oklch": [
+          0.9361,
+          0.0007,
+          94.37
+        ],
+        "weight": 0.2925
+      },
+      {
+        "hex": "#bec2c6",
+        "oklch": [
+          0.813,
+          0.0069,
+          243.34
+        ],
+        "weight": 0.1936
+      },
+      {
+        "hex": "#211d16",
+        "oklch": [
+          0.232,
+          0.014,
+          76.66
+        ],
+        "weight": 0.1914
+      },
+      {
+        "hex": "#9b9996",
+        "oklch": [
+          0.6836,
+          0.0052,
+          84.22
+        ],
+        "weight": 0.1814
+      },
+      {
+        "hex": "#554c40",
+        "oklch": [
+          0.423,
+          0.0233,
+          77.43
+        ],
+        "weight": 0.1411
+      }
+    ]
+  },
+  {
+    "id": "Pun\u0303ihuil.JPG",
+    "src": "portfolio%20images/Pun\u0303ihuil.JPG",
+    "hash": "b3a800cc2967f8fb",
+    "dominant": {
+      "hex": "#504532",
+      "oklch": [
+        0.3965,
+        0.0331,
+        79.71
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#504532",
+        "oklch": [
+          0.3965,
+          0.0331,
+          79.71
+        ],
+        "weight": 0.2166
+      },
+      {
+        "hex": "#909ca7",
+        "oklch": [
+          0.6863,
+          0.0215,
+          247.88
+        ],
+        "weight": 0.2161
+      },
+      {
+        "hex": "#252113",
+        "oklch": [
+          0.2487,
+          0.0261,
+          95.91
+        ],
+        "weight": 0.1897
+      },
+      {
+        "hex": "#c6c6c8",
+        "oklch": [
+          0.8272,
+          0.0024,
+          288.65
+        ],
+        "weight": 0.1897
+      },
+      {
+        "hex": "#746959",
+        "oklch": [
+          0.5264,
+          0.0282,
+          76.45
+        ],
+        "weight": 0.1879
+      }
+    ]
+  },
+  {
+    "id": "Rare Snake 2.JPG",
+    "src": "portfolio%20images/Rare Snake 2.JPG",
+    "hash": "df43e805c4f6e7c8",
+    "dominant": {
+      "hex": "#030602",
+      "oklch": [
+        0.1122,
+        0.0195,
+        137.44
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#030602",
+        "oklch": [
+          0.1122,
+          0.0195,
+          137.44
+        ],
+        "weight": 0.349
+      },
+      {
+        "hex": "#000201",
+        "oklch": [
+          0.0724,
+          0.0134,
+          148.76
+        ],
+        "weight": 0.342
+      },
+      {
+        "hex": "#0d1006",
+        "oklch": [
+          0.1674,
+          0.022,
+          121.78
+        ],
+        "weight": 0.214
+      },
+      {
+        "hex": "#28311b",
+        "oklch": [
+          0.2983,
+          0.0389,
+          126.29
+        ],
+        "weight": 0.0716
+      },
+      {
+        "hex": "#617040",
+        "oklch": [
+          0.5204,
+          0.0722,
+          123.06
+        ],
+        "weight": 0.0234
+      }
+    ]
+  },
+  {
+    "id": "Rare Snake.JPG",
+    "src": "portfolio%20images/Rare Snake.JPG",
+    "hash": "13b8eb0ab27beda3",
+    "dominant": {
+      "hex": "#010201",
+      "oklch": [
+        0.0817,
+        0.0167,
+        141.22
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#010201",
+        "oklch": [
+          0.0817,
+          0.0167,
+          141.22
+        ],
+        "weight": 0.3446
+      },
+      {
+        "hex": "#040902",
+        "oklch": [
+          0.1287,
+          0.0223,
+          132.89
+        ],
+        "weight": 0.3394
+      },
+      {
+        "hex": "#14170b",
+        "oklch": [
+          0.1964,
+          0.0226,
+          117.28
+        ],
+        "weight": 0.2383
+      },
+      {
+        "hex": "#37412d",
+        "oklch": [
+          0.3614,
+          0.0358,
+          130.11
+        ],
+        "weight": 0.0551
+      },
+      {
+        "hex": "#8d9b70",
+        "oklch": [
+          0.6662,
+          0.0628,
+          122.21
+        ],
+        "weight": 0.0226
+      }
+    ]
+  },
+  {
+    "id": "Rotring.jpg",
+    "src": "portfolio%20images/Rotring.jpg",
+    "hash": "acb901335d2c57f0",
+    "dominant": {
+      "hex": "#f1f1ee",
+      "oklch": [
+        0.9576,
+        0.0047,
+        107.23
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#f1f1ee",
+        "oklch": [
+          0.9576,
+          0.0047,
+          107.23
+        ],
+        "weight": 0.497
+      },
+      {
+        "hex": "#010101",
+        "oklch": [
+          0.064,
+          0.0029,
+          269.67
+        ],
+        "weight": 0.2587
+      },
+      {
+        "hex": "#2c333e",
+        "oklch": [
+          0.3188,
+          0.0222,
+          259.38
+        ],
+        "weight": 0.1797
+      },
+      {
+        "hex": "#74787b",
+        "oklch": [
+          0.5688,
+          0.0065,
+          241.76
+        ],
+        "weight": 0.0334
+      },
+      {
+        "hex": "#babbba",
+        "oklch": [
+          0.7904,
+          0.0021,
+          147.38
+        ],
+        "weight": 0.0312
+      }
+    ]
+  },
+  {
+    "id": "Toms Coffee.JPG",
+    "src": "portfolio%20images/Toms Coffee.JPG",
+    "hash": "96cb6801d3690e29",
+    "dominant": {
+      "hex": "#020201",
+      "oklch": [
+        0.0807,
+        0.0046,
+        113.38
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#020201",
+        "oklch": [
+          0.0807,
+          0.0046,
+          113.38
+        ],
+        "weight": 0.4341
+      },
+      {
+        "hex": "#080604",
+        "oklch": [
+          0.1262,
+          0.0078,
+          73.09
+        ],
+        "weight": 0.2569
+      },
+      {
+        "hex": "#291e16",
+        "oklch": [
+          0.2443,
+          0.0221,
+          55.06
+        ],
+        "weight": 0.1393
+      },
+      {
+        "hex": "#5b4a3d",
+        "oklch": [
+          0.4224,
+          0.0308,
+          58.2
+        ],
+        "weight": 0.0898
+      },
+      {
+        "hex": "#ac8f77",
+        "oklch": [
+          0.6704,
+          0.0486,
+          61.45
+        ],
+        "weight": 0.0799
+      }
+    ]
+  },
+  {
+    "id": "valhalla provincial park.jpeg",
+    "src": "portfolio%20images/valhalla provincial park.jpeg",
+    "hash": "819f08326aed8bec",
+    "dominant": {
+      "hex": "#3460a4",
+      "oklch": [
+        0.4932,
+        0.1188,
+        258.52
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#3460a4",
+        "oklch": [
+          0.4932,
+          0.1188,
+          258.52
+        ],
+        "weight": 0.3759
+      },
+      {
+        "hex": "#19212b",
+        "oklch": [
+          0.2439,
+          0.0225,
+          256.25
+        ],
+        "weight": 0.2445
+      },
+      {
+        "hex": "#02050c",
+        "oklch": [
+          0.1128,
+          0.0222,
+          265.32
+        ],
+        "weight": 0.195
+      },
+      {
+        "hex": "#b68e5d",
+        "oklch": [
+          0.6727,
+          0.0809,
+          70.88
+        ],
+        "weight": 0.0928
+      },
+      {
+        "hex": "#4f4840",
+        "oklch": [
+          0.4069,
+          0.0168,
+          76.41
+        ],
+        "weight": 0.0918
+      }
+    ]
+  },
+  {
+    "id": "Valle de las Trancas.JPG",
+    "src": "portfolio%20images/Valle de las Trancas.JPG",
+    "hash": "0bc874f88f3e5c8c",
+    "dominant": {
+      "hex": "#030201",
+      "oklch": [
+        0.0826,
+        0.0065,
+        61.4
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#030201",
+        "oklch": [
+          0.0826,
+          0.0065,
+          61.4
+        ],
+        "weight": 0.3199
+      },
+      {
+        "hex": "#a99eb0",
+        "oklch": [
+          0.7144,
+          0.0293,
+          312.05
+        ],
+        "weight": 0.2799
+      },
+      {
+        "hex": "#988da3",
+        "oklch": [
+          0.661,
+          0.0333,
+          307.72
+        ],
+        "weight": 0.1979
+      },
+      {
+        "hex": "#271a1d",
+        "oklch": [
+          0.2364,
+          0.0214,
+          3.46
+        ],
+        "weight": 0.1272
+      },
+      {
+        "hex": "#81768a",
+        "oklch": [
+          0.5818,
+          0.0325,
+          309.37
+        ],
+        "weight": 0.0751
+      }
+    ]
+  },
+  {
+    "id": "Volcan Chillan.JPG",
+    "src": "portfolio%20images/Volcan Chillan.JPG",
+    "hash": "b7699acfcaf7daa9",
+    "dominant": {
+      "hex": "#050403",
+      "oklch": [
+        0.1051,
+        0.0057,
+        64.65
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#050403",
+        "oklch": [
+          0.1051,
+          0.0057,
+          64.65
+        ],
+        "weight": 0.3051
+      },
+      {
+        "hex": "#586173",
+        "oklch": [
+          0.493,
+          0.0309,
+          264.13
+        ],
+        "weight": 0.2808
+      },
+      {
+        "hex": "#5f7f9c",
+        "oklch": [
+          0.5819,
+          0.0579,
+          246.29
+        ],
+        "weight": 0.2344
+      },
+      {
+        "hex": "#99867c",
+        "oklch": [
+          0.6349,
+          0.0282,
+          49.98
+        ],
+        "weight": 0.0985
+      },
+      {
+        "hex": "#2c2829",
+        "oklch": [
+          0.2805,
+          0.0066,
+          358.18
+        ],
+        "weight": 0.0812
       }
     ]
   }
