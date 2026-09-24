@@ -226,12 +226,6 @@
     }
 }
 
-@media (max-width: 768px) {
-    .photos-header h1 {
-        font-size: 1.25rem;
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
     .photos-grid__item {
         transition: none !important;
