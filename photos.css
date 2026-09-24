@@ -5,7 +5,7 @@
     background-color: #f5f5f0;
     color: #000;
     min-height: 100dvh;
-    padding: 20px 4px;
+    padding: 20px 0;
 }
 
 .photos-header {
@@ -13,7 +13,8 @@
     align-items: center;
     gap: 16px;
     margin-bottom: 24px;
-    max-width: 1600px;
+    max-width: none;
+    padding: 0;
     margin-left: auto;
     margin-right: auto;
 }
@@ -44,8 +45,9 @@
     grid-template-columns: 260px minmax(0, 1fr);
     gap: 28px;
     align-items: start;
-    max-width: 1600px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
 }
 
 .photos-sidebar {
@@ -77,6 +79,19 @@
 
 .photos-swatch__meta dd {
     margin: 0 0 8px;
+}
+
+.photos-swatch__about {
+    margin-top: 4px;
+    font-size: 0.9rem;
+}
+
+.photos-swatch__about a {
+    color: #0000EE;
+}
+
+.photos-swatch__about a:hover {
+    color: #EE0000;
 }
 
 .photos-main {

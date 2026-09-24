@@ -10,11 +10,6 @@
         return Math.min(max, Math.max(min, v));
     }
 
-    function srgbToLinear(c) {
-        c = c / 255;
-        return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
-    }
-
     function linearToSrgb(c) {
         c = clamp(c, 0, 1);
         return c <= 0.0031308 ? 12.92 * c : 1.055 * Math.pow(c, 1 / 2.4) - 0.055;
@@ -39,32 +34,6 @@
             r: Math.round(linearToSrgb(r) * 255),
             g: Math.round(linearToSrgb(g) * 255),
             b: Math.round(linearToSrgb(bl) * 255),
-        };
-    }
-
-    function hexToRgb(hex) {
-        var h = hex.replace('#', '');
-        if (h.length === 3) {
-            h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
-        }
-        return {
-            r: parseInt(h.slice(0, 2), 16),
-            g: parseInt(h.slice(2, 4), 16),
-            b: parseInt(h.slice(4, 6), 16),
-        };
-    }
-
-    function rgbToOklab(r, g, b) {
-        var lr = srgbToLinear(r);
-        var lg = srgbToLinear(g);
-        var lb = srgbToLinear(b);
-        var l = Math.sqrt(0.4122214708 * lr + 0.5363325363 * lg + 0.0514459929 * lb);
-        var m = Math.sqrt(0.2119034982 * lr + 0.6806995451 * lg + 0.1073969566 * lb);
-        var s = Math.sqrt(0.0883024619 * lr + 0.2817188376 * lg + 0.6299787005 * lb);
-        return {
-            L: 0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s,
-            a: 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s,
-            b: 0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s,
         };
     }
 
@@ -135,30 +104,6 @@
         return total;
     }
 
-    function nearestPantone(hex, pantones) {
-        var rgb = hexToRgb(hex);
-        var lab = rgbToOklab(rgb.r, rgb.g, rgb.b);
-        var best = null;
-        var bestDist = Infinity;
-        for (var i = 0; i < pantones.length; i += 1) {
-            var p = pantones[i];
-            var d = abDistance(lab.a, lab.b, p.a, p.b) + Math.abs(lab.L - p.L) * 0.35;
-            if (d < bestDist) {
-                bestDist = d;
-                best = p;
-            }
-        }
-        return best;
-    }
-
-    function preparePantones(list) {
-        return list.map(function (item) {
-            var rgb = hexToRgb(item.hex);
-            var lab = rgbToOklab(rgb.r, rgb.g, rgb.b);
-            return { name: item.name, hex: item.hex, L: lab.L, a: lab.a, b: lab.b };
-        });
-    }
-
     function mediaPath(src) {
         if (!src) {
             return '';
@@ -175,7 +120,6 @@
         var status = document.getElementById('photos-status');
         var hexEl = document.getElementById('swatch-hex');
         var hslEl = document.getElementById('swatch-hsl');
-        var pantoneEl = document.getElementById('swatch-pantone');
         var detail = document.getElementById('photos-detail');
         var detailImg = document.getElementById('photos-detail-img');
         var detailStory = document.getElementById('photos-detail-story');
@@ -188,7 +132,6 @@
 
         var photos = [];
         var stories = {};
-        var pantones = [];
         var cardById = {};
         var lastFocus = null;
         var reorderTimer = 0;
@@ -202,12 +145,6 @@
             var hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
             hexEl.textContent = hex;
             hslEl.textContent = hsl.h + '°, ' + hsl.s + '%, ' + hsl.l + '%';
-            if (pantones.length) {
-                var match = nearestPantone(hex, pantones);
-                pantoneEl.textContent = match ? '≈ Pantone ' + match.name : '—';
-            } else {
-                pantoneEl.textContent = '—';
-            }
         }
 
         function sortedPhotos(sel) {
@@ -390,14 +327,6 @@
                 .catch(function () {
                     return {};
                 }),
-            fetch('/photos/pantone.json')
-                .then(function (r) {
-                    if (!r.ok) throw new Error('pantone');
-                    return r.json();
-                })
-                .catch(function () {
-                    return [];
-                }),
         ])
             .then(function (results) {
                 photos = results[0];
@@ -407,7 +336,6 @@
                         delete stories[key];
                     }
                 });
-                pantones = preparePantones(results[2] || []);
                 return wheel.loadIndex().then(function () {
                     buildGrid(photos);
                     applySelection(wheel.getSelection());
