@@ -30,7 +30,6 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 </head>
 <body>
     <article class="post">
-        <p class="post-back"><a href="{back_href}">&larr; {back_label}</a></p>
         <h1>{title}</h1>
 {body}
         <p class="post-updated">updated on {updated}</p>
@@ -156,7 +155,7 @@ def indent(text: str, spaces: int) -> str:
     return "\n".join(pad + line if line else line for line in text.split("\n"))
 
 
-def build_markdown_pages(directory: Path, output_path: Path, back_label: str, label: str) -> None:
+def build_markdown_pages(directory: Path, output_path: Path, label: str) -> None:
     """Render every .md in a folder to a sibling .html page, then index the sources."""
     items = []
 
@@ -169,8 +168,6 @@ def build_markdown_pages(directory: Path, output_path: Path, back_label: str, la
             title=html.escape(title, quote=False),
             body=indent(render_markdown(body), 8),
             updated=f"{MONTH_NAMES[updated.month - 1]} {updated.day}, {updated.year}",
-            back_href=f"/{directory.name}/",
-            back_label=back_label,
         )
 
         target = source.with_suffix(".html")
@@ -224,8 +221,8 @@ def collect_media(directory: Path, label: str) -> None:
     print(f"Generated {len(media)} {label} in {output_path.relative_to(ROOT)}")
 
 
-build_markdown_pages(BLOG_DIR, BLOG_DIR / "posts.json", "blog", "blog posts")
-build_markdown_pages(PORTFOLIO_DIR, PORTFOLIO_DIR / "items.json", "portfolio", "portfolio items")
+build_markdown_pages(BLOG_DIR, BLOG_DIR / "posts.json", "blog posts")
+build_markdown_pages(PORTFOLIO_DIR, PORTFOLIO_DIR / "items.json", "portfolio items")
 collect_media(GALLERY_DIR, "gallery media")
 
 color_index = subprocess.run(
