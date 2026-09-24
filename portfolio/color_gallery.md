@@ -1,5 +1,5 @@
 ---
-title: what is this?
+title: color gallery
 ---
 
 *if you clicked "what is this?" on the photos page, this is the long answer. its a write-up of how the color wheel gallery works, why i built it the way i did, and a few roads i didn't take.*
