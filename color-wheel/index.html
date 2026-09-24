@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color wheel (phase 1) - Austin Hania</title>
+    <link rel="stylesheet" href="/transitions.css">
+    <link rel="stylesheet" href="/color-wheel.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f5f5f0;
+            color: #000;
+            min-height: 100dvh;
+            padding: 24px 20px 48px;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: #0000EE;
+            text-decoration: underline;
+            font-size: 0.95rem;
+        }
+
+        .back:hover { color: #EE0000; }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 28px;
+            line-height: 1.5;
+        }
+
+        .panel {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 32px 20px 28px;
+        }
+
+        .status {
+            margin-top: 8px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .status code {
+            font-family: 'SFMono-Regular', Menlo, Consolas, monospace;
+            font-size: 0.8em;
+            background: #f1f0ee;
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <a class="back" href="/">&larr; home</a>
+        <h1>color wheel</h1>
+        <p class="note">Phase 1 preview. Sample photo dots from <code>portfolio images/color-index.json</code>. Drag the puck (or use arrow keys). Lightness slider omitted.</p>
+
+        <div class="panel">
+            <div id="wheel"></div>
+            <p class="color-wheel__readout" id="readout">neutral center</p>
+            <p class="status" id="status">loading sample index…</p>
+        </div>
+    </div>
+
+    <script src="/color-wheel.js"></script>
+    <script>
+        const readout = document.getElementById('readout');
+        const status = document.getElementById('status');
+
+        const wheel = ColorWheel.create(document.getElementById('wheel'), {
+            indexUrl: '/portfolio%20images/color-index.json',
+            onChange: function (sel) {
+                if (sel.chroma < 0.01) {
+                    readout.textContent = 'neutral center';
+                } else {
+                    readout.textContent =
+                        'hue ' + Math.round(sel.hue) + '° · chroma ' + sel.chroma.toFixed(3);
+                }
+            },
+        });
+
+        wheel.loadIndex()
+            .then(function (items) {
+                status.innerHTML = 'plotted <code>' + items.length + '</code> sample points';
+            })
+            .catch(function (err) {
+                status.textContent = 'could not load color-index.json';
+                console.error(err);
+            });
+    </script>
+</body>
+</html>

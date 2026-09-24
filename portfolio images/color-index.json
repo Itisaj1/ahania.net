@@ -1,0 +1,1862 @@
+[
+  {
+    "id": "sample-01.jpg",
+    "src": "portfolio%20images/sample-01.jpg",
+    "hash": "a3c35bfef121",
+    "dominant": {
+      "hex": "#ee8266",
+      "oklch": [
+        0.72,
+        0.14,
+        35
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#da6b70",
+        "oklch": [
+          0.66,
+          0.14,
+          19
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#dd7b71",
+        "oklch": [
+          0.69,
+          0.1232,
+          27
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#df8c77",
+        "oklch": [
+          0.72,
+          0.1064,
+          35
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#df9c80",
+        "oklch": [
+          0.75,
+          0.0896,
+          43
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#deab8d",
+        "oklch": [
+          0.78,
+          0.0728,
+          51
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-02.jpg",
+    "src": "portfolio%20images/sample-02.jpg",
+    "hash": "930d120918aa",
+    "dominant": {
+      "hex": "#f37f58",
+      "oklch": [
+        0.72,
+        0.152,
+        39
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#e06765",
+        "oklch": [
+          0.66,
+          0.152,
+          23
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#e27967",
+        "oklch": [
+          0.69,
+          0.1338,
+          31
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#e28a6d",
+        "oklch": [
+          0.72,
+          0.1155,
+          39
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#e19b78",
+        "oklch": [
+          0.75,
+          0.0973,
+          47
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#e0aa87",
+        "oklch": [
+          0.78,
+          0.079,
+          55
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-03.jpg",
+    "src": "portfolio%20images/sample-03.jpg",
+    "hash": "57be89e6ff1a",
+    "dominant": {
+      "hex": "#f77d48",
+      "oklch": [
+        0.72,
+        0.164,
+        43
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#e56359",
+        "oklch": [
+          0.66,
+          0.164,
+          27
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#e6775b",
+        "oklch": [
+          0.69,
+          0.1443,
+          35
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#e58963",
+        "oklch": [
+          0.72,
+          0.1246,
+          43
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#e39a6f",
+        "oklch": [
+          0.75,
+          0.105,
+          51
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#e1aa80",
+        "oklch": [
+          0.78,
+          0.0853,
+          59
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-04.jpg",
+    "src": "portfolio%20images/sample-04.jpg",
+    "hash": "77cb6a50bc71",
+    "dominant": {
+      "hex": "#fa7b31",
+      "oklch": [
+        0.72,
+        0.176,
+        47
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#ea5f4a",
+        "oklch": [
+          0.66,
+          0.176,
+          31
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#ea754d",
+        "oklch": [
+          0.69,
+          0.1549,
+          39
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#e88857",
+        "oklch": [
+          0.72,
+          0.1338,
+          47
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#e59a66",
+        "oklch": [
+          0.75,
+          0.1126,
+          55
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#e1ab79",
+        "oklch": [
+          0.78,
+          0.0915,
+          63
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-05.jpg",
+    "src": "portfolio%20images/sample-05.jpg",
+    "hash": "6266ecc34618",
+    "dominant": {
+      "hex": "#fd7a00",
+      "oklch": [
+        0.72,
+        0.188,
+        51
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#ee5c38",
+        "oklch": [
+          0.66,
+          0.188,
+          35
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#ed733c",
+        "oklch": [
+          0.69,
+          0.1654,
+          43
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#ea8849",
+        "oklch": [
+          0.72,
+          0.1429,
+          51
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#e69a5c",
+        "oklch": [
+          0.75,
+          0.1203,
+          59
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#e2ab72",
+        "oklch": [
+          0.78,
+          0.0978,
+          67
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-06.jpg",
+    "src": "portfolio%20images/sample-06.jpg",
+    "hash": "a871f32067f4",
+    "dominant": {
+      "hex": "#ff7900",
+      "oklch": [
+        0.72,
+        0.2,
+        55
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#f2591b",
+        "oklch": [
+          0.66,
+          0.2,
+          39
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#f07224",
+        "oklch": [
+          0.69,
+          0.176,
+          47
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#ec8738",
+        "oklch": [
+          0.72,
+          0.152,
+          55
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#e79b50",
+        "oklch": [
+          0.75,
+          0.128,
+          63
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#e1ac6a",
+        "oklch": [
+          0.78,
+          0.104,
+          71
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-07.jpg",
+    "src": "portfolio%20images/sample-07.jpg",
+    "hash": "c481cbe210e2",
+    "dominant": {
+      "hex": "#449ac0",
+      "oklch": [
+        0.65,
+        0.1,
+        230
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#148ca1",
+        "oklch": [
+          0.59,
+          0.1,
+          214
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#4092ac",
+        "oklch": [
+          0.62,
+          0.088,
+          222
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#5c98b5",
+        "oklch": [
+          0.65,
+          0.076,
+          230
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#739fbc",
+        "oklch": [
+          0.68,
+          0.064,
+          238
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#87a5c1",
+        "oklch": [
+          0.71,
+          0.052,
+          246
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-08.jpg",
+    "src": "portfolio%20images/sample-08.jpg",
+    "hash": "43f2b35b3f29",
+    "dominant": {
+      "hex": "#399acb",
+      "oklch": [
+        0.65,
+        0.115,
+        235
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#008cab",
+        "oklch": [
+          0.59,
+          0.115,
+          219
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#3392b5",
+        "oklch": [
+          0.62,
+          0.1012,
+          227
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#5698bd",
+        "oklch": [
+          0.65,
+          0.0874,
+          235
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#709ec3",
+        "oklch": [
+          0.68,
+          0.0736,
+          243
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#86a5c6",
+        "oklch": [
+          0.71,
+          0.0598,
+          251
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-09.jpg",
+    "src": "portfolio%20images/sample-09.jpg",
+    "hash": "54748fb7471d",
+    "dominant": {
+      "hex": "#3198d6",
+      "oklch": [
+        0.65,
+        0.13,
+        240
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#008cb6",
+        "oklch": [
+          0.59,
+          0.13,
+          224
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#2791bf",
+        "oklch": [
+          0.62,
+          0.1144,
+          232
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#5297c5",
+        "oklch": [
+          0.65,
+          0.0988,
+          240
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#6e9dca",
+        "oklch": [
+          0.68,
+          0.0832,
+          248
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#86a4cc",
+        "oklch": [
+          0.71,
+          0.0676,
+          256
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-10.jpg",
+    "src": "portfolio%20images/sample-10.jpg",
+    "hash": "45b4f340766b",
+    "dominant": {
+      "hex": "#2d96e1",
+      "oklch": [
+        0.65,
+        0.145,
+        245
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#008bc1",
+        "oklch": [
+          0.59,
+          0.145,
+          229
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#1d90c9",
+        "oklch": [
+          0.62,
+          0.1276,
+          237
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#5096ce",
+        "oklch": [
+          0.65,
+          0.1102,
+          245
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#6e9cd0",
+        "oklch": [
+          0.68,
+          0.0928,
+          253
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#87a2d1",
+        "oklch": [
+          0.71,
+          0.0754,
+          261
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-11.jpg",
+    "src": "portfolio%20images/sample-11.jpg",
+    "hash": "3a0400cb70f4",
+    "dominant": {
+      "hex": "#3093ec",
+      "oklch": [
+        0.65,
+        0.16,
+        250
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#0089cd",
+        "oklch": [
+          0.59,
+          0.16,
+          234
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#178ed3",
+        "oklch": [
+          0.62,
+          0.1408,
+          242
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#5094d6",
+        "oklch": [
+          0.65,
+          0.1216,
+          250
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#709ad7",
+        "oklch": [
+          0.68,
+          0.1024,
+          258
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#89a1d6",
+        "oklch": [
+          0.71,
+          0.0832,
+          266
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-12.jpg",
+    "src": "portfolio%20images/sample-12.jpg",
+    "hash": "c8e3a40819ae",
+    "dominant": {
+      "hex": "#388ff6",
+      "oklch": [
+        0.65,
+        0.175,
+        255
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#0086d8",
+        "oklch": [
+          0.59,
+          0.175,
+          239
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#1b8bdd",
+        "oklch": [
+          0.62,
+          0.154,
+          247
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#5391de",
+        "oklch": [
+          0.65,
+          0.133,
+          255
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#7397de",
+        "oklch": [
+          0.68,
+          0.112,
+          263
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#8c9fdb",
+        "oklch": [
+          0.71,
+          0.091,
+          271
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-13.jpg",
+    "src": "portfolio%20images/sample-13.jpg",
+    "hash": "4c60ffbb9d9d",
+    "dominant": {
+      "hex": "#438aff",
+      "oklch": [
+        0.65,
+        0.19,
+        260
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#0083e4",
+        "oklch": [
+          0.59,
+          0.19,
+          244
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#2588e6",
+        "oklch": [
+          0.62,
+          0.1672,
+          252
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#598ee6",
+        "oklch": [
+          0.65,
+          0.1444,
+          260
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#7895e4",
+        "oklch": [
+          0.68,
+          0.1216,
+          268
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#919cdf",
+        "oklch": [
+          0.71,
+          0.0988,
+          276
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-14.jpg",
+    "src": "portfolio%20images/sample-14.jpg",
+    "hash": "394d90782215",
+    "dominant": {
+      "hex": "#86ab72",
+      "oklch": [
+        0.7,
+        0.09,
+        135
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#869453",
+        "oklch": [
+          0.64,
+          0.09,
+          119
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#889f69",
+        "oklch": [
+          0.67,
+          0.0792,
+          127
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#8ca87d",
+        "oklch": [
+          0.7,
+          0.0684,
+          135
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#93b291",
+        "oklch": [
+          0.73,
+          0.0576,
+          143
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#9cbaa2",
+        "oklch": [
+          0.76,
+          0.0468,
+          151
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-15.jpg",
+    "src": "portfolio%20images/sample-15.jpg",
+    "hash": "ccbde5c34905",
+    "dominant": {
+      "hex": "#7dae70",
+      "oklch": [
+        0.7,
+        0.102,
+        139
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#80964d",
+        "oklch": [
+          0.64,
+          0.102,
+          123
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#82a166",
+        "oklch": [
+          0.67,
+          0.0898,
+          131
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#86aa7c",
+        "oklch": [
+          0.7,
+          0.0775,
+          139
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#8db390",
+        "oklch": [
+          0.73,
+          0.0653,
+          147
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#97bca3",
+        "oklch": [
+          0.76,
+          0.053,
+          155
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-16.jpg",
+    "src": "portfolio%20images/sample-16.jpg",
+    "hash": "a7029201a169",
+    "dominant": {
+      "hex": "#72b16f",
+      "oklch": [
+        0.7,
+        0.114,
+        143
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#799948",
+        "oklch": [
+          0.64,
+          0.114,
+          127
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#7aa363",
+        "oklch": [
+          0.67,
+          0.1003,
+          135
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#7ead7b",
+        "oklch": [
+          0.7,
+          0.0866,
+          143
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#86b590",
+        "oklch": [
+          0.73,
+          0.073,
+          151
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#91bda4",
+        "oklch": [
+          0.76,
+          0.0593,
+          159
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-17.jpg",
+    "src": "portfolio%20images/sample-17.jpg",
+    "hash": "016d4f60a104",
+    "dominant": {
+      "hex": "#65b36f",
+      "oklch": [
+        0.7,
+        0.126,
+        147
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#719b45",
+        "oklch": [
+          0.64,
+          0.126,
+          131
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#71a662",
+        "oklch": [
+          0.67,
+          0.1109,
+          139
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#75af7b",
+        "oklch": [
+          0.7,
+          0.0958,
+          147
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#7eb792",
+        "oklch": [
+          0.73,
+          0.0806,
+          155
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#8bbfa5",
+        "oklch": [
+          0.76,
+          0.0655,
+          163
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-18.jpg",
+    "src": "portfolio%20images/sample-18.jpg",
+    "hash": "155e30dbd13f",
+    "dominant": {
+      "hex": "#53b671",
+      "oklch": [
+        0.7,
+        0.138,
+        151
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#669e42",
+        "oklch": [
+          0.64,
+          0.138,
+          135
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#66a862",
+        "oklch": [
+          0.67,
+          0.1214,
+          143
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#6bb17d",
+        "oklch": [
+          0.7,
+          0.1049,
+          151
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#75b994",
+        "oklch": [
+          0.73,
+          0.0883,
+          159
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#84c0a7",
+        "oklch": [
+          0.76,
+          0.0718,
+          167
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-19.jpg",
+    "src": "portfolio%20images/sample-19.jpg",
+    "hash": "69df5dc0aa36",
+    "dominant": {
+      "hex": "#ceb0a3",
+      "oklch": [
+        0.78,
+        0.04,
+        45
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#bd9c96",
+        "oklch": [
+          0.72,
+          0.04,
+          29
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#c3a79e",
+        "oklch": [
+          0.75,
+          0.0352,
+          37
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#c9b2a8",
+        "oklch": [
+          0.78,
+          0.0304,
+          45
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#cfbdb2",
+        "oklch": [
+          0.81,
+          0.0256,
+          53
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#d5c8bd",
+        "oklch": [
+          0.84,
+          0.0208,
+          61
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-20.jpg",
+    "src": "portfolio%20images/sample-20.jpg",
+    "hash": "14a13a8a3a65",
+    "dominant": {
+      "hex": "#d2af9d",
+      "oklch": [
+        0.78,
+        0.048,
+        48
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#c19a92",
+        "oklch": [
+          0.72,
+          0.048,
+          32
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#c7a69a",
+        "oklch": [
+          0.75,
+          0.0422,
+          40
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#ccb1a4",
+        "oklch": [
+          0.78,
+          0.0365,
+          48
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#d1bcae",
+        "oklch": [
+          0.81,
+          0.0307,
+          56
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#d7c8ba",
+        "oklch": [
+          0.84,
+          0.025,
+          64
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-21.jpg",
+    "src": "portfolio%20images/sample-21.jpg",
+    "hash": "5f14ae106920",
+    "dominant": {
+      "hex": "#d6ae97",
+      "oklch": [
+        0.78,
+        0.056,
+        51
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#c5998d",
+        "oklch": [
+          0.72,
+          0.056,
+          35
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#caa495",
+        "oklch": [
+          0.75,
+          0.0493,
+          43
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#cfb09f",
+        "oklch": [
+          0.78,
+          0.0426,
+          51
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#d3bcab",
+        "oklch": [
+          0.81,
+          0.0358,
+          59
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#d8c7b7",
+        "oklch": [
+          0.84,
+          0.0291,
+          67
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-22.jpg",
+    "src": "portfolio%20images/sample-22.jpg",
+    "hash": "d1afdc65974e",
+    "dominant": {
+      "hex": "#d9ad91",
+      "oklch": [
+        0.78,
+        0.064,
+        54
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#c99788",
+        "oklch": [
+          0.72,
+          0.064,
+          38
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#cda490",
+        "oklch": [
+          0.75,
+          0.0563,
+          46
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#d1b09b",
+        "oklch": [
+          0.78,
+          0.0486,
+          54
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#d5bca7",
+        "oklch": [
+          0.81,
+          0.041,
+          62
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#d9c7b4",
+        "oklch": [
+          0.84,
+          0.0333,
+          70
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-23.jpg",
+    "src": "portfolio%20images/sample-23.jpg",
+    "hash": "51d7f38c02f1",
+    "dominant": {
+      "hex": "#dbac8a",
+      "oklch": [
+        0.78,
+        0.072,
+        57
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#cc9682",
+        "oklch": [
+          0.72,
+          0.072,
+          41
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#d0a38b",
+        "oklch": [
+          0.75,
+          0.0634,
+          49
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#d3af96",
+        "oklch": [
+          0.78,
+          0.0547,
+          57
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#d6bba2",
+        "oklch": [
+          0.81,
+          0.0461,
+          65
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#dac7b0",
+        "oklch": [
+          0.84,
+          0.0374,
+          73
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-24.jpg",
+    "src": "portfolio%20images/sample-24.jpg",
+    "hash": "997c2f0b340f",
+    "dominant": {
+      "hex": "#687475",
+      "oklch": [
+        0.55,
+        0.015,
+        200
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#576361",
+        "oklch": [
+          0.49,
+          0.015,
+          184
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#616b6b",
+        "oklch": [
+          0.52,
+          0.0132,
+          192
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#6a7474",
+        "oklch": [
+          0.55,
+          0.0114,
+          200
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#747c7d",
+        "oklch": [
+          0.58,
+          0.01,
+          208
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#7d8587",
+        "oklch": [
+          0.61,
+          0.01,
+          216
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-25.jpg",
+    "src": "portfolio%20images/sample-25.jpg",
+    "hash": "a55eef01e0b6",
+    "dominant": {
+      "hex": "#748389",
+      "oklch": [
+        0.6,
+        0.02,
+        220
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#627274",
+        "oklch": [
+          0.54,
+          0.02,
+          204
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#6c7a7d",
+        "oklch": [
+          0.57,
+          0.0176,
+          212
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#778387",
+        "oklch": [
+          0.6,
+          0.0152,
+          220
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#828b8f",
+        "oklch": [
+          0.63,
+          0.0128,
+          228
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#8c9398",
+        "oklch": [
+          0.66,
+          0.0104,
+          236
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-26.jpg",
+    "src": "portfolio%20images/sample-26.jpg",
+    "hash": "b32c55cae8b8",
+    "dominant": {
+      "hex": "#82929d",
+      "oklch": [
+        0.65,
+        0.025,
+        240
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#6e8188",
+        "oklch": [
+          0.59,
+          0.025,
+          224
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#7a8991",
+        "oklch": [
+          0.62,
+          0.022,
+          232
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#85919a",
+        "oklch": [
+          0.65,
+          0.019,
+          240
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#9199a2",
+        "oklch": [
+          0.68,
+          0.016,
+          248
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#9ca2aa",
+        "oklch": [
+          0.71,
+          0.013,
+          256
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-27.jpg",
+    "src": "portfolio%20images/sample-27.jpg",
+    "hash": "e9023bea19d5",
+    "dominant": {
+      "hex": "#949fb2",
+      "oklch": [
+        0.7,
+        0.03,
+        260
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#7d8f9d",
+        "oklch": [
+          0.64,
+          0.03,
+          244
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#8a97a5",
+        "oklch": [
+          0.67,
+          0.0264,
+          252
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#969fad",
+        "oklch": [
+          0.7,
+          0.0228,
+          260
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#a2a8b4",
+        "oklch": [
+          0.73,
+          0.0192,
+          268
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#aeb0bb",
+        "oklch": [
+          0.76,
+          0.0156,
+          276
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-28.jpg",
+    "src": "portfolio%20images/sample-28.jpg",
+    "hash": "afb3cc005c1f",
+    "dominant": {
+      "hex": "#c27cbb",
+      "oklch": [
+        0.68,
+        0.12,
+        330
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#a06fb8",
+        "oklch": [
+          0.62,
+          0.12,
+          314
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#ad79b5",
+        "oklch": [
+          0.65,
+          0.1056,
+          322
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#b984b3",
+        "oklch": [
+          0.68,
+          0.0912,
+          330
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#c28fb2",
+        "oklch": [
+          0.71,
+          0.0768,
+          338
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#c99bb3",
+        "oklch": [
+          0.74,
+          0.0624,
+          346
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-29.jpg",
+    "src": "portfolio%20images/sample-29.jpg",
+    "hash": "b9be8bcced12",
+    "dominant": {
+      "hex": "#c878b9",
+      "oklch": [
+        0.68,
+        0.13,
+        334
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#a66bb9",
+        "oklch": [
+          0.62,
+          0.13,
+          318
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#b376b4",
+        "oklch": [
+          0.65,
+          0.1144,
+          326
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#be81b2",
+        "oklch": [
+          0.68,
+          0.0988,
+          334
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#c68db0",
+        "oklch": [
+          0.71,
+          0.0832,
+          342
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#cd9ab1",
+        "oklch": [
+          0.74,
+          0.0676,
+          350
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-30.jpg",
+    "src": "portfolio%20images/sample-30.jpg",
+    "hash": "c3fdad1b4fd7",
+    "dominant": {
+      "hex": "#cf74b6",
+      "oklch": [
+        0.68,
+        0.14,
+        338
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#ad67b8",
+        "oklch": [
+          0.62,
+          0.14,
+          322
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#b972b3",
+        "oklch": [
+          0.65,
+          0.1232,
+          330
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#c37eaf",
+        "oklch": [
+          0.68,
+          0.1064,
+          338
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#cb8bad",
+        "oklch": [
+          0.71,
+          0.0896,
+          346
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#d098ae",
+        "oklch": [
+          0.74,
+          0.0728,
+          354
+        ],
+        "weight": 0.08
+      }
+    ]
+  },
+  {
+    "id": "sample-31.jpg",
+    "src": "portfolio%20images/sample-31.jpg",
+    "hash": "0c13e346ed6a",
+    "dominant": {
+      "hex": "#d56fb2",
+      "oklch": [
+        0.68,
+        0.15,
+        342
+      ]
+    },
+    "palette": [
+      {
+        "hex": "#b362b6",
+        "oklch": [
+          0.62,
+          0.15,
+          326
+        ],
+        "weight": 0.45
+      },
+      {
+        "hex": "#bf6eb0",
+        "oklch": [
+          0.65,
+          0.132,
+          334
+        ],
+        "weight": 0.22
+      },
+      {
+        "hex": "#c87bac",
+        "oklch": [
+          0.68,
+          0.114,
+          342
+        ],
+        "weight": 0.15
+      },
+      {
+        "hex": "#cf88aa",
+        "oklch": [
+          0.71,
+          0.096,
+          350
+        ],
+        "weight": 0.1
+      },
+      {
+        "hex": "#d496aa",
+        "oklch": [
+          0.74,
+          0.078,
+          358
+        ],
+        "weight": 0.08
+      }
+    ]
+  }
+]
