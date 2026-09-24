@@ -72,6 +72,8 @@
             var pos = positionFromPolar(hue, chroma, maxRadius());
             puck.style.left = 50 + (pos.x / root.clientWidth) * 100 + '%';
             puck.style.top = 50 + (pos.y / root.clientHeight) * 100 + '%';
+            // Selector doubles as the live color swatch.
+            puck.style.background = 'oklch(' + FIXED_L + ' ' + chroma + ' ' + hue + ')';
         }
 
         function emit() {

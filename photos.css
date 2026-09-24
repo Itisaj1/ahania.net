@@ -63,14 +63,6 @@
     text-align: left;
 }
 
-.photos-swatch__chip {
-    width: 72px;
-    height: 72px;
-    border: 1px solid #ddd;
-    background: #fff;
-    margin-bottom: 12px;
-}
-
 .photos-swatch__meta {
     font-size: 0.9rem;
     line-height: 1.55;

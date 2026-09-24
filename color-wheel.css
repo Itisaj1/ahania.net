@@ -112,7 +112,7 @@
     height: var(--cw-puck);
     margin: calc(var(--cw-puck) / -2) 0 0 calc(var(--cw-puck) / -2);
     border-radius: 50%;
-    background: #9a9a9a;
+    background: oklch(0.7 0 0);
     border: 1.5px solid #fff;
     box-shadow: 0 0 0 1px #ccc, 0 1px 2px rgba(0, 0, 0, 0.15);
     left: 50%;
@@ -120,11 +120,14 @@
     z-index: 3;
     cursor: grab;
     touch-action: none;
+    transform: scale(1);
+    transition: transform 0.15s ease, width 0.15s ease, height 0.15s ease, margin 0.15s ease;
 }
 
 .color-wheel__puck:active,
 .color-wheel.is-dragging .color-wheel__puck {
     cursor: grabbing;
+    transform: scale(1.85);
 }
 
 .color-wheel:focus {
@@ -149,6 +152,10 @@
 @media (prefers-reduced-motion: reduce) {
     .color-wheel__puck {
         transition: none;
+    }
+
+    .color-wheel.is-dragging .color-wheel__puck {
+        transform: scale(1.85);
     }
 }
 

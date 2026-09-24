@@ -173,7 +173,6 @@
         var wheelRoot = document.getElementById('photos-wheel');
         var grid = document.getElementById('photos-grid');
         var status = document.getElementById('photos-status');
-        var chip = document.getElementById('swatch-chip');
         var hexEl = document.getElementById('swatch-hex');
         var hslEl = document.getElementById('swatch-hsl');
         var pantoneEl = document.getElementById('swatch-pantone');
@@ -201,7 +200,6 @@
             var rgb = oklabToRgb(lab.L, lab.a, lab.b);
             var hex = toHex(rgb.r, rgb.g, rgb.b);
             var hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
-            chip.style.background = hex;
             hexEl.textContent = hex;
             hslEl.textContent = hsl.h + '°, ' + hsl.s + '%, ' + hsl.l + '%';
             if (pantones.length) {
