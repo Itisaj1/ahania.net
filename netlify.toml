@@ -1,3 +1,6 @@
 [build]
-  command = "pip install -r requirements.txt && python3 scripts/generate-site-data.py"
+  command = "python3 -m pip install -r requirements.txt && python3 scripts/generate-site-data.py"
   publish = "."
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
