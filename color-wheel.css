@@ -1,7 +1,7 @@
 /* Color wheel — scoped; does not alter global site tokens. */
 
 .color-wheel {
-    --cw-size: min(320px, 78vw);
+    --cw-size: min(240px, 62vw);
     --cw-ring: 3px;
     --cw-puck: 12px;
     --cw-cross: #bbb;
@@ -154,7 +154,7 @@
 
 @media (max-width: 480px) {
     .color-wheel {
-        --cw-size: min(280px, 86vw);
+        --cw-size: min(210px, 72vw);
         --cw-ring: 2.5px;
         --cw-puck: 14px;
     }
