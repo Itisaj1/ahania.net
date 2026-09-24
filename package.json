@@ -2,6 +2,7 @@
   "name": "ahania.net",
   "private": true,
   "scripts": {
-    "generate": "python3 scripts/generate-site-data.py"
+    "generate": "python3 scripts/generate-site-data.py",
+    "color-index": "python3 scripts/build-color-index.py"
   }
 }

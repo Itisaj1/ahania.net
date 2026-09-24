@@ -6,81 +6,58 @@
     <title>Austin Hania</title>
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="gallery.css">
     <link rel="stylesheet" href="/transitions.css">
 </head>
 <body>
-    <div class="page-viewport">
-        <div class="page-track" id="page-track">
-            <section class="page-panel home-panel">
-                <div class="container">
-                    <h1 class="name">AUSTIN HANIA</h1>
+    <section class="home-panel">
+        <div class="container">
+            <h1 class="name">AUSTIN HANIA</h1>
 
-                    <div class="image-container">
-                        <img id="random-image" src="portfolio%20images/building.JPG" alt="photo taken by yours truly" data-open-gallery>
-                    </div>
+            <a class="image-container" href="/photos/" aria-label="photos i've taken">
+                <img id="random-image" src="portfolio%20images/building.JPG" alt="photo taken by yours truly">
+            </a>
 
-                    <p class="time-info">
-                        TIME IN SPOKANE - <a href="https://24timezones.com/time-zone/pst" target="_blank" class="time" id="current-time">9:37:51 AM PST</a>
-                    </p>
+            <p class="time-info">
+                TIME IN SPOKANE - <a href="https://24timezones.com/time-zone/pst" target="_blank" class="time" id="current-time">9:37:51 AM PST</a>
+            </p>
 
-                    <nav class="navigation">
-                        <a href="/blog/index.html">blog</a> //
-                        <a href="/portfolio/index.html">portfolio</a> //
-                        <a href="resume/AHania-Resume.pdf" download="Austin-Hania-Resume.pdf">resume</a> //
-                        <a href="#photography" data-open-gallery>photos</a> //
-                        <a href="contact.html">contact</a>
-                    </nav>
-                </div>
-            </section>
-
-            <section class="page-panel gallery-panel">
-                <div class="gallery-panel-header">
-                    <button class="gallery-back" type="button" data-close-gallery>← back</button>
-                    <h1>photos i've taken</h1>
-                </div>
-                <div class="gallery-stage" id="gallery-stage">
-                    <div class="gallery-media" id="gallery-media"></div>
-                    <aside class="gallery-story" id="gallery-story" hidden></aside>
-                </div>
-                <p class="gallery-caption" id="gallery-caption"></p>
-                <div class="gallery-strip" id="gallery-strip"></div>
-            </section>
+            <nav class="navigation">
+                <a href="/blog/index.html">blog</a> //
+                <a href="/portfolio/index.html">portfolio</a> //
+                <a href="resume/AHania-Resume.pdf" download="Austin-Hania-Resume.pdf">resume</a> //
+                <a href="/photos/">photos</a> //
+                <a href="contact.html">contact</a>
+            </nav>
         </div>
-    </div>
+    </section>
 
-    <script src="gallery.js"></script>
     <script>
-        Gallery.initPageSlider();
-        Gallery.initRandomImage({
-            manifest: 'portfolio%20images/manifest.json',
-            base: 'portfolio%20images/',
-            imageId: 'random-image'
-        });
-        Gallery.initViewer({
-            manifest: 'portfolio%20images/manifest.json',
-            stories: 'portfolio%20images/stories.json',
-            base: 'portfolio%20images/'
-        });
+        fetch('portfolio%20images/manifest.json')
+            .then(function (response) {
+                if (!response.ok) throw new Error('manifest');
+                return response.json();
+            })
+            .then(function (images) {
+                if (!images.length) return;
+                var pick = images[Math.floor(Math.random() * images.length)];
+                document.getElementById('random-image').src =
+                    'portfolio%20images/' + encodeURIComponent(pick.filename);
+            })
+            .catch(function () { /* keep fallback */ });
 
         function updateTime() {
             const now = new Date();
-
             const spokaneTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-
             let hours = spokaneTime.getHours();
             const minutes = spokaneTime.getMinutes().toString().padStart(2, '0');
             const seconds = spokaneTime.getSeconds().toString().padStart(2, '0');
-
             const ampm = hours >= 12 ? 'PM' : 'AM';
             hours = hours % 12;
             hours = hours ? hours : 12;
-
             const timeZoneName = now.toLocaleString('en-US', {
                 timeZone: 'America/Los_Angeles',
                 timeZoneName: 'short'
             }).split(' ').pop();
-
             document.getElementById('current-time').textContent =
                 `${hours}:${minutes}:${seconds} ${ampm} ${timeZoneName}`;
         }

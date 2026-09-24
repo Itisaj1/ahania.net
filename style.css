@@ -10,8 +10,9 @@ body {
     overflow-x: hidden;
 }
 
-.page-panel.home-panel {
-    height: 100%;
+.home-panel {
+    min-height: 100vh;
+    min-height: 100dvh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -47,6 +48,8 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .image-container img {

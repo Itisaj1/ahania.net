@@ -4,6 +4,7 @@ import html
 import json
 import re
 import subprocess
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -226,3 +227,10 @@ def collect_media(directory: Path, label: str) -> None:
 build_markdown_pages(BLOG_DIR, BLOG_DIR / "posts.json", "blog", "blog posts")
 build_markdown_pages(PORTFOLIO_DIR, PORTFOLIO_DIR / "items.json", "portfolio", "portfolio items")
 collect_media(GALLERY_DIR, "gallery media")
+
+color_index = subprocess.run(
+    [sys.executable, str(Path(__file__).resolve().parent / "build-color-index.py")],
+    check=False,
+)
+if color_index.returncode != 0:
+    raise SystemExit(color_index.returncode)
