@@ -1,4 +1,6 @@
 .DS_Store
+node_modules/
+scripts/.vendor-cache/
 
 # Rendered from the .md sources by scripts/generate-site-data.py
 blog/*.html
