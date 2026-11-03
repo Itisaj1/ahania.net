@@ -4,3 +4,27 @@
 
 [build.environment]
   PYTHON_VERSION = "3.11"
+
+[[redirects]]
+  from = "/blog/_drafts/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/scripts/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/requirements.txt"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/runtime.txt"
+  to = "/404"
+  status = 404
+  force = true

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="/post.css">
+    <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="/admin/" id="index-link" aria-label="back to index"><span class="back-long">← index of /admin</span><span class="back-short" aria-hidden="true">←</span></a>
+        <div class="topbar-center">
+            <span id="file-name" class="file-name"></span>
+            <span id="file-status" class="file-status" role="status"></span>
+        </div>
+        <div class="topbar-right">
+            <button type="button" class="as-link" id="save-draft">save draft</button>
+            <button type="button" class="publish" id="publish">publish</button>
+            <button type="button" class="as-link" id="more" aria-haspopup="menu" aria-expanded="false">more</button>
+        </div>
+    </header>
+    <p id="save-notice" class="save-notice" hidden></p>
+    <div id="backup-banner" class="backup-banner" hidden role="status">
+        <span id="backup-banner-text"></span>
+        <a href="#" id="backup-restore">restore them</a>
+        <a href="#" id="backup-discard">discard</a>
+    </div>
+    <div id="more-menu" class="menu" hidden role="menu">
+        <button type="button" id="menu-save" role="menuitem">save draft</button>
+        <a id="view-live" role="menuitem" href="/" target="_blank" rel="noopener" hidden>view live ↗</a>
+        <button type="button" id="menu-details" role="menuitem">edit details</button>
+        <button type="button" id="unpublish" role="menuitem" hidden>unpublish (move to drafts)</button>
+        <div class="menu-sep" role="separator"></div>
+        <button type="button" id="delete-post" class="menu-danger" role="menuitem">delete post…</button>
+    </div>
+    <div class="toolbar" role="toolbar" aria-label="formatting">
+        <button type="button" class="tool phone-only" id="insert-block" aria-label="insert block" aria-haspopup="menu">+</button>
+        <button type="button" class="tool phone-only" id="style-button" aria-label="text style" aria-haspopup="menu" aria-expanded="false">Aa ▾</button>
+        <select id="style-select" class="style-select desk-only" aria-label="text style">
+            <option value="p">normal text</option>
+            <option value="1">heading 1</option>
+            <option value="2">heading 2</option>
+            <option value="3">heading 3</option>
+            <option value="4">heading 4</option>
+        </select>
+        <span class="tool-sep desk-only" aria-hidden="true"></span>
+        <button type="button" class="tool" data-cmd="bold" aria-label="bold">B</button>
+        <button type="button" class="tool" data-cmd="italic" aria-label="italic">I</button>
+        <button type="button" class="tool" data-cmd="underline" aria-label="underline">U</button>
+        <button type="button" class="tool desk-only" data-cmd="strike" aria-label="strikethrough">S</button>
+        <button type="button" class="tool desk-only" data-cmd="code" aria-label="inline code">&lt;&gt;</button>
+        <button type="button" class="tool desk-only" id="color-button" aria-label="text color" aria-haspopup="true">A<span class="color-bar" id="color-bar"></span></button>
+        <button type="button" class="tool" data-cmd="link" aria-label="link">link</button>
+        <span class="tool-sep desk-only" aria-hidden="true"></span>
+        <button type="button" class="tool" data-cmd="bullet" aria-label="bullet list">•</button>
+        <button type="button" class="tool desk-only" data-cmd="ordered" aria-label="numbered list">1.</button>
+        <button type="button" class="tool" data-cmd="task" aria-label="task list">☐</button>
+        <span class="tool-sep desk-only" aria-hidden="true"></span>
+        <button type="button" class="tool desk-only" data-cmd="table" aria-label="table">table</button>
+        <button type="button" class="tool desk-only" data-cmd="codeBlock" aria-label="code block">{ }</button>
+        <button type="button" class="tool desk-only" data-cmd="quote" aria-label="quote">”</button>
+        <button type="button" class="tool desk-only" id="panel-button" aria-label="panel" aria-haspopup="true">panel ▾</button>
+        <button type="button" class="tool desk-only" data-cmd="expand" aria-label="expand">expand</button>
+        <button type="button" class="tool desk-only" data-cmd="hr" aria-label="divider">—</button>
+        <button type="button" class="tool" data-cmd="image" aria-label="image">image</button>
+        <span class="tool-sep desk-only" aria-hidden="true"></span>
+        <button type="button" class="tool desk-only" data-cmd="undo" aria-label="undo">undo</button>
+        <button type="button" class="tool desk-only" data-cmd="redo" aria-label="redo">redo</button>
+    </div>
+    <div id="style-menu" class="menu" hidden role="menu" aria-label="text style">
+        <button type="button" role="menuitemradio" data-style="p">normal text</button>
+        <button type="button" role="menuitemradio" data-style="1">heading 1</button>
+        <button type="button" role="menuitemradio" data-style="2">heading 2</button>
+        <button type="button" role="menuitemradio" data-style="3">heading 3</button>
+        <button type="button" role="menuitemradio" data-style="4">heading 4</button>
+    </div>
+    <article class="post">
+        <textarea id="title" class="post-title" rows="1" placeholder="untitled" aria-label="title"></textarea>
+        <p class="post-meta">
+            <span id="meta-description">description: auto, from the first sentence</span>
+            <span aria-hidden="true"> · </span>
+            <span id="meta-date">date: not set</span>
+            <span aria-hidden="true"> · </span>
+            <a href="#" id="edit-details">edit details</a>
+        </p>
+        <div id="editor"></div>
+        <p class="post-updated" id="backup-line">local backup saved —:— · last saved to github —:—</p>
+    </article>
+    <div id="details-popover" class="popover details-popover" hidden>
+        <label for="description-input">description</label>
+        <input id="description-input" type="text" autocomplete="off">
+        <p class="helper">leave blank to use the first sentence</p>
+        <label for="date-input">date</label>
+        <input id="date-input" type="date">
+    </div>
+    <div id="bubble" class="bubble" hidden role="toolbar" aria-label="selection">
+        <button type="button" class="tool" data-cmd="bold" aria-label="bold">B</button>
+        <button type="button" class="tool" data-cmd="italic" aria-label="italic">I</button>
+        <button type="button" class="tool" data-cmd="underline" aria-label="underline">U</button>
+        <button type="button" class="tool" data-cmd="strike" aria-label="strikethrough">S</button>
+        <button type="button" class="tool" data-cmd="code" aria-label="inline code">&lt;&gt;</button>
+        <button type="button" class="tool" data-cmd="link" aria-label="link">link</button>
+        <button type="button" class="tool" id="bubble-color" aria-label="text color">A</button>
+    </div>
+    <form id="link-form" class="popover link-form" hidden>
+        <input id="link-url" type="text" placeholder="https://" aria-label="link url" autocomplete="off" spellcheck="false">
+        <button type="submit" class="apply">apply</button>
+        <button type="button" class="as-link" id="link-remove">remove</button>
+    </form>
+    <form id="alt-form" class="popover alt-form" hidden>
+        <h2 id="alt-heading">describe this image</h2>
+        <label for="alt-input">alt text, for screen readers and if the image fails to load</label>
+        <input id="alt-input" type="text" autocomplete="off">
+        <div class="alt-actions">
+            <button type="button" class="as-link" id="alt-skip">skip</button>
+            <button type="submit" class="apply">done</button>
+        </div>
+    </form>
+    <input id="image-file" type="file" accept="image/*" multiple hidden>
+    <div id="color-menu" class="popover swatches" hidden role="menu" aria-label="text color"></div>
+    <div id="panel-menu" class="menu" hidden role="menu" aria-label="panel"></div>
+    <div id="slash-menu" class="slash" hidden>
+        <div id="slash-list" class="slash-list" role="listbox" aria-label="blocks"></div>
+        <div class="slash-foot">↑ ↓ to move · enter to insert · esc to close</div>
+    </div>
+    <div id="image-bar" class="tablebar" hidden role="toolbar" aria-label="image">
+        <button type="button" class="tool" id="image-alt">edit alt text</button>
+        <button type="button" class="tool" id="image-remove">remove</button>
+    </div>
+    <div id="table-bar" class="tablebar" hidden role="toolbar" aria-label="table">
+        <button type="button" class="tool" id="row-above" aria-label="add row above">row above</button>
+        <button type="button" class="tool" id="row-below" aria-label="add row below">row below</button>
+        <button type="button" class="tool" id="col-left" aria-label="add column left">column left</button>
+        <button type="button" class="tool" id="col-right" aria-label="add column right">column right</button>
+        <button type="button" class="tool" id="del-row" aria-label="delete row">delete row</button>
+        <button type="button" class="tool" id="del-col" aria-label="delete column">delete column</button>
+        <button type="button" class="tool" id="del-table" aria-label="delete table">delete table</button>
+    </div>
+    <div id="toast" class="toast" hidden role="status">
+        <p class="toast-title">published</p>
+        <p>committed to main. live in about a minute, once netlify rebuilds.</p>
+        <p><a id="toast-link" href="/" target="_blank" rel="noopener"></a></p>
+        <button type="button" class="as-link" id="toast-dismiss">dismiss</button>
+    </div>
+    <div id="delete-dialog" class="modal" hidden>
+        <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="delete-title" aria-describedby="delete-text">
+            <h2 id="delete-title"></h2>
+            <p id="delete-text">it comes off the site and out of the repo, including any draft copy. it can still be recovered from git history.</p>
+            <div class="dialog-actions">
+                <button type="button" class="as-link" id="delete-cancel">cancel</button>
+                <button type="button" class="danger-button" id="delete-confirm">delete post</button>
+            </div>
+        </div>
+    </div>
+    <div id="conflict-dialog" class="modal" hidden>
+        <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="conflict-title" aria-describedby="conflict-text">
+            <h2 id="conflict-title"></h2>
+            <p id="conflict-text">a newer version was saved after you opened this post, maybe from another device. nothing of yours has been lost.</p>
+            <ul>
+                <li>reload the post from github. your edits stay in the local backup on this device.</li>
+                <li>save your version over the newer one.</li>
+            </ul>
+            <div class="dialog-actions">
+                <button type="button" class="as-link" id="load-theirs">load theirs</button>
+                <button type="button" class="keep-mine" id="keep-mine">keep mine</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="editor.js"></script>
+</body>
+</html>

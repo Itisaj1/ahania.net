@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index of /admin</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="container container-narrow sign-in" id="sign-in">
+        <h1>Index of /admin</h1>
+        <div class="panel">
+            <p class="intro">sign in with a github token to edit blog posts. it stays in this browser only.</p>
+            <form id="sign-in-form">
+                <div class="field">
+                    <label for="token">github token</label>
+                    <input id="token" name="token" type="password" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="github_pat_…" required>
+                    <p class="helper">fine-grained token, this repo only, contents: read &amp; write. <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener noreferrer">how to make one</a></p>
+                </div>
+                <div class="split">
+                    <div class="field">
+                        <label for="owner-repo">owner / repo</label>
+                        <input id="owner-repo" name="owner-repo" type="text" autocomplete="off" spellcheck="false" autocapitalize="off" placeholder="Itisaj1/ahania.net" value="Itisaj1/ahania.net" required>
+                    </div>
+                    <div class="field">
+                        <label for="branch">branch</label>
+                        <input id="branch" name="branch" type="text" autocomplete="off" spellcheck="false" autocapitalize="off" value="main" required>
+                    </div>
+                </div>
+                <button class="primary" type="submit">sign in</button>
+                <p id="sign-in-error" class="form-error" role="status"></p>
+            </form>
+            <p class="after-form"><a href="/">back to site</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="listing" hidden>
+        <div class="heading-row">
+            <h1>Index of /admin</h1>
+            <a class="new-post is-disabled" id="new-post-link" href="#new-post" aria-disabled="true" tabindex="-1">
+                <span class="long">+ new post</span>
+                <span class="short">+ new</span>
+            </a>
+        </div>
+        <div class="file-list">
+            <div class="header-row">
+                <div>Filename</div>
+                <div>Status</div>
+                <div class="col-size">Size</div>
+                <div class="col-date">Last Modified</div>
+            </div>
+            <p id="list-error" class="form-error" role="status"></p>
+            <div class="file-row">
+                <div class="file-name parent-dir">
+                    <span class="file-icon" aria-hidden="true">📁</span>
+                    <a href="/">back to ahania.net</a>
+                </div>
+                <div></div>
+                <div class="file-size col-size">-</div>
+                <div class="file-date col-date">-</div>
+            </div>
+            <div class="group-label">_drafts/</div>
+            <div id="draft-rows"></div>
+            <div class="group-label">published</div>
+            <div id="published-rows"></div>
+        </div>
+        <div class="footer">
+            <span id="signed-in-as"></span>
+            <button type="button" class="as-link" id="sign-out">sign out</button>
+        </div>
+    </div>
+
+    <dialog id="new-post" aria-labelledby="new-post-heading">
+        <form id="new-post-form" method="dialog">
+            <h2 id="new-post-heading">new post</h2>
+            <div class="field">
+                <label for="post-title">title</label>
+                <input id="post-title" name="title" type="text" autocomplete="off" spellcheck="false">
+            </div>
+            <p class="preview">saves as <code id="slug-preview">blog/_drafts/….md</code></p>
+            <p id="new-post-error" class="form-error" role="status"></p>
+            <div class="dialog-actions">
+                <button type="button" class="as-link" id="cancel-new">cancel</button>
+                <button type="submit" class="primary" id="create-draft" disabled>create draft</button>
+            </div>
+        </form>
+    </dialog>
+
+    <script type="module" src="list.js"></script>
+</body>
+</html>

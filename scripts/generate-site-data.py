@@ -6,7 +6,12 @@ import re
 import subprocess
 import sys
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
+
+from markdown_it import MarkdownIt
+from mdit_py_plugins.container import container_plugin
+from mdit_py_plugins.tasklists import tasklists_plugin
 
 ROOT = Path(__file__).resolve().parent.parent
 BLOG_DIR = ROOT / "blog"
@@ -66,8 +71,13 @@ def format_size(size: int) -> str:
     return f"{size / (1024 * 1024):.1f} MB"
 
 
+def file_clock(path: Path) -> datetime:
+    """mtime on the Pacific clock the rest of the site was generated with."""
+    return datetime.fromtimestamp(path.stat().st_mtime, ZoneInfo("America/Los_Angeles")).replace(tzinfo=None)
+
+
 def last_updated(path: Path) -> datetime:
-    """Commit date of the last change to a file, falling back to its mtime."""
+    """Commit date of the last change to a file, on the clock recorded in the commit."""
     try:
         result = subprocess.run(
             ["git", "log", "-1", "--format=%cI", "--", str(path)],
@@ -79,11 +89,11 @@ def last_updated(path: Path) -> datetime:
         )
         stamp = result.stdout.strip()
         if stamp:
-            return datetime.fromisoformat(stamp).astimezone().replace(tzinfo=None)
+            return datetime.fromisoformat(stamp).replace(tzinfo=None)
     except (OSError, ValueError):
         pass
 
-    return datetime.fromtimestamp(path.stat().st_mtime)
+    return file_clock(path)
 
 
 def plain_description(body: str, fallback: str, limit: int = 160) -> str:
@@ -111,70 +121,47 @@ def split_front_matter(text: str) -> tuple[dict, str]:
     for line in text[4:end].splitlines():
         if ":" in line:
             key, value = line.split(":", 1)
-            meta[key.strip()] = value.strip()
+            value = value.strip()
+            if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+                value = value[1:-1]
+            meta[key.strip()] = value
 
     return meta, text[end + 4 :].lstrip("\n")
 
 
-def render_inline(text: str) -> str:
-    text = html.escape(text, quote=False)
-    text = re.sub(r"`([^`]+)`", r"<code>\1</code>", text)
-    text = re.sub(r"!\[([^\]]*)\]\(([^)\s]+)\)", r'<img src="\2" alt="\1">', text)
-    text = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", r'<a href="\2">\1</a>', text)
-    text = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", text)
-    text = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", text)
-    return text
+def _render_panel(kind: str):
+    def render(renderer, tokens, idx, options, env) -> str:
+        if tokens[idx].nesting == 1:
+            return (
+                f'<div class="panel panel--{kind}">'
+                f'<p class="panel-label">{kind}</p>\n'
+            )
+        return "</div>\n"
+
+    return render
+
+
+def _render_expand(renderer, tokens, idx, options, env) -> str:
+    if tokens[idx].nesting != 1:
+        return "</details>\n"
+
+    parts = tokens[idx].info.strip().split(None, 1)
+    title = parts[1] if len(parts) > 1 else "details"
+    return f'<details class="expand"><summary>{html.escape(title)}</summary>\n'
+
+
+MARKDOWN = (
+    MarkdownIt("commonmark", {"html": True, "linkify": False})
+    .enable(["table", "strikethrough"])
+    .use(tasklists_plugin, enabled=False)
+)
+for _kind in ("info", "note", "success", "warning", "error"):
+    MARKDOWN.use(container_plugin, _kind, render=_render_panel(_kind))
+MARKDOWN.use(container_plugin, "expand", render=_render_expand)
 
 
 def render_markdown(text: str) -> str:
-    lines = text.replace("\r\n", "\n").split("\n")
-    blocks = []
-    index = 0
-
-    def is_list_item(line: str) -> bool:
-        return line.strip().startswith(("- ", "* "))
-
-    while index < len(lines):
-        line = lines[index].strip()
-
-        if not line:
-            index += 1
-        elif line in ("---", "***", "___"):
-            blocks.append("<hr>")
-            index += 1
-        elif line.startswith("#"):
-            level = min(len(line) - len(line.lstrip("#")), 6)
-            blocks.append(f"<h{level}>{render_inline(line[level:].strip())}</h{level}>")
-            index += 1
-        elif is_list_item(line):
-            items = []
-            while index < len(lines) and is_list_item(lines[index]):
-                items.append(f"<li>{render_inline(lines[index].strip()[2:].strip())}</li>")
-                index += 1
-            blocks.append("<ul>\n" + "\n".join(items) + "\n</ul>")
-        elif line.startswith(">"):
-            quoted = []
-            while index < len(lines) and lines[index].strip().startswith(">"):
-                quoted.append(lines[index].strip().lstrip(">").strip())
-                index += 1
-            blocks.append(f"<blockquote>{render_inline(' '.join(quoted))}</blockquote>")
-        elif line.startswith("<"):
-            raw = []
-            while index < len(lines) and lines[index].strip():
-                raw.append(lines[index].rstrip())
-                index += 1
-            blocks.append("\n".join(raw))
-        else:
-            paragraph = []
-            while index < len(lines):
-                current = lines[index].strip()
-                if not current or current.startswith(("#", ">", "<")) or is_list_item(current):
-                    break
-                paragraph.append(current)
-                index += 1
-            blocks.append(f"<p>{render_inline(' '.join(paragraph))}</p>")
-
-    return "\n".join(blocks)
+    return MARKDOWN.render(text).strip("\n")
 
 
 def indent(text: str, spaces: int) -> str:
@@ -182,15 +169,33 @@ def indent(text: str, spaces: int) -> str:
     return "\n".join(pad + line if line else line for line in text.split("\n"))
 
 
+def indent_page_body(text: str, spaces: int = 8) -> str:
+    """Indent generated HTML, then drop that padding inside <pre>.
+
+    indent() is for the page source. <pre> would otherwise display it.
+    """
+    padded = indent(text, spaces)
+    pad = " " * spaces
+
+    def restore(match: re.Match) -> str:
+        return "<pre>" + match.group(1).replace("\n" + pad, "\n") + "</pre>"
+
+    return re.sub(r"<pre>(.*?)</pre>", restore, padded, flags=re.DOTALL)
+
+
 def build_markdown_pages(directory: Path, output_path: Path, label: str) -> None:
     """Render every .md in a folder to a sibling .html page, then index the sources."""
     items = []
     section = directory.name
 
+    # Top-level *.md only, on purpose: blog/_drafts/ and blog/images/ are never rendered.
     for source in sorted(directory.glob("*.md")):
         meta, body = split_front_matter(source.read_text(encoding="utf-8"))
         title = meta.get("title") or source.stem.replace("_", " ").replace("-", " ")
-        updated = last_updated(source)
+        if meta.get("date"):
+            updated = datetime.strptime(meta["date"], "%Y-%m-%d")
+        else:
+            updated = last_updated(source)
         target = source.with_suffix(".html")
         page_url = f"{SITE}/{section}/{target.name}"
         description = meta.get("description") or plain_description(
@@ -202,7 +207,7 @@ def build_markdown_pages(directory: Path, output_path: Path, label: str) -> None
             description=html.escape(description, quote=True),
             url=html.escape(page_url, quote=True),
             image=html.escape(OG_IMAGE, quote=True),
-            body=indent(render_markdown(body), 8),
+            body=indent_page_body(render_markdown(body)),
             updated=f"{MONTH_NAMES[updated.month - 1]} {updated.day}, {updated.year}",
             title_text=html.escape(title, quote=False),
         )
@@ -246,7 +251,7 @@ def collect_media(directory: Path, label: str) -> None:
             {
                 "filename": file_path.name,
                 "type": media_type,
-                "date": format_file_date(datetime.fromtimestamp(stat.st_mtime)),
+                "date": format_file_date(file_clock(file_path)),
                 "size": format_size(stat.st_size),
             }
         )

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown round trip</title>
+    <meta name="robots" content="noindex">
+    <style>
+        body { margin: 0; background: #fff; color: #37352f; font-family: "Times New Roman", Times, serif; }
+        main { max-width: 900px; margin: 0 auto; padding: 32px 24px 80px; }
+        a { color: #0000ee; }
+        h1 { font-weight: 400; font-size: 1.75rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 8px; }
+        #summary { font-style: italic; font-size: 1.1rem; }
+        #summary.pass { color: #2e6b30; }
+        #summary.fail { color: #a8321f; }
+        article { border-top: 1px solid #e9e9e7; padding: 12px 0; }
+        h2 { font-size: 1.05rem; font-weight: 600; display: flex; justify-content: space-between; gap: 12px; }
+        article.pass h2 span { color: #2e6b30; }
+        article.fail h2 span { color: #a8321f; }
+        pre { background: #fafaf7; border: 1px solid #e9e9e7; border-radius: 3px; padding: 10px 12px; overflow-x: auto; font-family: "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.82rem; white-space: pre-wrap; }
+        .del { background: #fdeceb; color: #a8321f; }
+        .add { background: #e8f5ec; color: #23683a; }
+        .same, .del, .add { padding: 0 4px; }
+        #roundtrip-editor { position: absolute; left: -9999px; top: 0; width: 720px; }
+        p.note { color: #6b6a66; }
+    </style>
+</head>
+<body>
+    <main>
+        <p><a href="/admin/">← index of /admin</a></p>
+        <h1>Markdown round trip</h1>
+        <p class="note">load each post into the editor and serialize it back. a pass is an exact match, or the same text once wrapped lines are joined.</p>
+        <p id="summary">loading…</p>
+        <div id="results"></div>
+    </main>
+    <div id="roundtrip-editor"></div>
+    <script type="module" src="roundtrip.js"></script>
+</body>
+</html>
