@@ -1,8 +1,10 @@
 (function (global) {
     'use strict';
 
-    // Max OKLCH chroma treated as the wheel rim (sRGB-safe).
-    var CHROMA_MAX = 0.32;
+    // Rim chroma at L=0.7. Photo dominants top out near 0.13, so 0.2 covers
+    // them and still lets a drag go more saturated. This is not sRGB-safe;
+    // the puck is gamut-mapped for display.
+    var CHROMA_MAX = 0.2;
     var FIXED_L = 0.7;
 
     function clamp(value, min, max) {
@@ -21,7 +23,7 @@
         var dist = Math.sqrt(dx * dx + dy * dy);
         var clamped = Math.min(dist, maxR);
         var angle = Math.atan2(dy, dx);
-        // CSS conic starts at top (-90deg); match that so red sits at 12 o'clock.
+        // CSS conic starts at 12 o'clock with no offset, so hue 0 is red at the top.
         var hue = ((angle * 180) / Math.PI + 90 + 360) % 360;
         var chroma = (clamped / maxR) * CHROMA_MAX;
         return { hue: hue, chroma: chroma, x: dx * (clamped / (dist || 1)), y: dy * (clamped / (dist || 1)), maxR: maxR };
@@ -72,8 +74,9 @@
             var pos = positionFromPolar(hue, chroma, maxRadius());
             puck.style.left = 50 + (pos.x / root.clientWidth) * 100 + '%';
             puck.style.top = 50 + (pos.y / root.clientHeight) * 100 + '%';
-            // Selector doubles as the live color swatch.
-            puck.style.background = 'oklch(' + FIXED_L + ' ' + chroma + ' ' + hue + ')';
+            // Display the in-gamut chroma. Selection still stores the unmapped value.
+            var shown = gamutMapChroma(FIXED_L, chroma, hue);
+            puck.style.background = 'oklch(' + FIXED_L + ' ' + shown + ' ' + hue + ')';
         }
 
         function emit() {
@@ -225,5 +228,53 @@
         };
     }
 
-    global.ColorWheel = { create: createColorWheel, CHROMA_MAX: CHROMA_MAX, FIXED_L: FIXED_L };
+    function oklchToLinearRgb(L, C, h) {
+        var rad = (h * Math.PI) / 180;
+        var a = C * Math.cos(rad);
+        var b = C * Math.sin(rad);
+        var l_ = L + 0.3963377774 * a + 0.2158037573 * b;
+        var m_ = L - 0.1055613458 * a - 0.0638541728 * b;
+        var s_ = L - 0.0894841775 * a - 1.2914855480 * b;
+        var l = l_ * l_ * l_;
+        var m = m_ * m_ * m_;
+        var s = s_ * s_ * s_;
+        return [
+            4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
+            -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+            -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s,
+        ];
+    }
+
+    function inGamut(L, C, h) {
+        var channels = oklchToLinearRgb(L, C, h);
+        return channels[0] >= 0 && channels[0] <= 1 && channels[1] >= 0 && channels[1] <= 1 && channels[2] >= 0 && channels[2] <= 1;
+    }
+
+    // Largest chroma at or below C that stays inside linear sRGB, at this L and h.
+    function gamutMapChroma(L, C, h) {
+        if (!(C > 0)) {
+            return 0;
+        }
+        if (inGamut(L, C, h)) {
+            return C;
+        }
+        var lo = 0;
+        var hi = C;
+        for (var step = 0; step < 20; step += 1) {
+            var mid = (lo + hi) / 2;
+            if (inGamut(L, mid, h)) {
+                lo = mid;
+            } else {
+                hi = mid;
+            }
+        }
+        return lo;
+    }
+
+    global.ColorWheel = {
+        create: createColorWheel,
+        CHROMA_MAX: CHROMA_MAX,
+        FIXED_L: FIXED_L,
+        gamutMapChroma: gamutMapChroma,
+    };
 })(window);

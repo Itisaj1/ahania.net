@@ -2,7 +2,7 @@
     'use strict';
 
     var FIXED_L = 0.7;
-    var CHROMA_MAX = window.ColorWheel ? ColorWheel.CHROMA_MAX : 0.32;
+    var CHROMA_MAX = ColorWheel.CHROMA_MAX;
     var SIGMA = 0.09;
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -139,7 +139,8 @@
         var selection = { hue: 0, chroma: 0 };
 
         function updateSwatch(sel) {
-            var lab = oklchToOklab(FIXED_L, sel.chroma, sel.hue);
+            var chroma = ColorWheel.gamutMapChroma(FIXED_L, sel.chroma, sel.hue);
+            var lab = oklchToOklab(FIXED_L, chroma, sel.hue);
             var rgb = oklabToRgb(lab.L, lab.a, lab.b);
             var hex = toHex(rgb.r, rgb.g, rgb.b);
             var hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);

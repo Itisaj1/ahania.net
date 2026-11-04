@@ -24,6 +24,7 @@ IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp", ".tif", ".
 LONG_EDGE = 64
 PALETTE_SIZE = 5
 KMEANS_ITERS = 12
+ALGO_VERSION = 2
 
 
 # --- OKLab / OKLCH (Björn Ottosson) -----------------------------------------
@@ -40,9 +41,9 @@ def linear_to_srgb(c: float) -> float:
 
 def rgb_to_oklab(r: int, g: int, b: int) -> tuple[float, float, float]:
     lr, lg, lb = srgb_to_linear(r), srgb_to_linear(g), srgb_to_linear(b)
-    l = math.sqrt(0.4122214708 * lr + 0.5363325363 * lg + 0.0514459929 * lb)
-    m = math.sqrt(0.2119034982 * lr + 0.6806995451 * lg + 0.1073969566 * lb)
-    s = math.sqrt(0.0883024619 * lr + 0.2817188376 * lg + 0.6299787005 * lb)
+    l = (0.4122214708 * lr + 0.5363325363 * lg + 0.0514459929 * lb) ** (1 / 3)
+    m = (0.2119034982 * lr + 0.6806995451 * lg + 0.1073969566 * lb) ** (1 / 3)
+    s = (0.0883024619 * lr + 0.2817188376 * lg + 0.6299787005 * lb) ** (1 / 3)
     L = 0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s
     a = 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s
     b_ = 0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s
@@ -199,6 +200,7 @@ def index_image(path: Path, digest: str) -> dict:
         "id": path.name,
         "src": f"portfolio%20images/{path.name}",
         "hash": digest,
+        "algo": ALGO_VERSION,
         "dominant": dominant,
         "palette": palette,
     }
@@ -216,7 +218,31 @@ def load_cache(path: Path) -> dict[str, dict]:
     return {entry["id"]: entry for entry in data if isinstance(entry, dict) and "id" in entry and "hash" in entry}
 
 
+def assert_oklab() -> None:
+    """Known OKLab values, plus a round trip through sRGB."""
+
+    def close(name: str, actual: float, expected: float, tol: float = 1e-3) -> None:
+        if abs(actual - expected) > tol:
+            raise RuntimeError(f"oklab self-check failed: {name}={actual} expected {expected}")
+
+    L, a, b_ = rgb_to_oklab(255, 0, 0)
+    close("red L", L, 0.6280)
+    close("red a", a, 0.2249)
+    close("red b", b_, 0.1258)
+
+    L, a, b_ = rgb_to_oklab(128, 128, 128)
+    close("gray L", L, 0.5999)
+    close("gray a", a, 0)
+    close("gray b", b_, 0)
+
+    for rgb in ((230, 120, 40), (110, 160, 220), (60, 110, 60)):
+        back = oklab_to_rgb(*rgb_to_oklab(*rgb))
+        if back != rgb:
+            raise RuntimeError(f"oklab self-check failed: {rgb} round-tripped to {back}")
+
+
 def build_color_index() -> None:
+    assert_oklab()
     if not GALLERY_DIR.is_dir():
         raise SystemExit(f"gallery folder missing: {GALLERY_DIR}")
 
@@ -237,7 +263,13 @@ def build_color_index() -> None:
     for path in images:
         digest = file_hash(path)
         cached = cache.get(path.name)
-        if cached and cached.get("hash") == digest and "dominant" in cached and "palette" in cached:
+        if (
+            cached
+            and cached.get("hash") == digest
+            and cached.get("algo") == ALGO_VERSION
+            and "dominant" in cached
+            and "palette" in cached
+        ):
             entries.append(cached)
             reused += 1
             continue
