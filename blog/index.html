@@ -191,6 +191,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg==" crossorigin="anonymous"></script>
     <script>
+        const CARTO_KEY = 'cb1_535z_1_e35154e9e490203e10dacc0f';
+
         function formatDate() {
             const now = new Date();
             const day = String(now.getDate()).padStart(2, '0');
@@ -245,11 +247,14 @@
                 fadeAnimation: motion,
                 markerZoomAnimation: motion,
             });
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            const tiles = L.tileLayer(`https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}{r}.png?key=${CARTO_KEY}`, {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-                subdomains: 'abcd',
                 maxZoom: 20,
             }).addTo(map);
+            tiles.on('tileerror', (event) => {
+                event.tile.style.display = 'none';
+                document.getElementById('post-map').style.background = '#f5f5f5';
+            });
 
             const points = [];
             groups.forEach((group) => {
