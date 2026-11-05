@@ -83,6 +83,8 @@
             <span aria-hidden="true"> · </span>
             <span id="meta-date">date: not set</span>
             <span aria-hidden="true"> · </span>
+            <span id="meta-location">location: none</span>
+            <span aria-hidden="true"> · </span>
             <a href="#" id="edit-details">edit details</a>
         </p>
         <div id="editor"></div>
@@ -94,6 +96,18 @@
         <p class="helper">leave blank to use the first sentence</p>
         <label for="date-input">date</label>
         <input id="date-input" type="date">
+        <label for="location-input">location</label>
+        <input id="location-input" type="text" role="combobox" aria-expanded="false" aria-controls="location-suggestions" aria-autocomplete="list" autocomplete="off">
+        <div id="location-suggestions" class="location-suggestions" role="listbox" aria-label="location suggestions" hidden></div>
+        <p id="location-search-help" class="helper" hidden>search unavailable — you can still type a name</p>
+        <label for="location-precision">precision</label>
+        <select id="location-precision">
+            <option value="neighborhood">neighborhood (~1 km)</option>
+            <option value="city">city (~10 km)</option>
+            <option value="exact">exact</option>
+        </select>
+        <p id="location-coords" class="helper">no coordinates</p>
+        <button type="button" class="as-link" id="location-clear">clear location</button>
     </div>
     <div id="bubble" class="bubble" hidden role="toolbar" aria-label="selection">
         <button type="button" class="tool" data-cmd="bold" aria-label="bold">B</button>

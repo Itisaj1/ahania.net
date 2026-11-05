@@ -50,7 +50,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <body>
     <article class="post">
         <h1>{title_text}</h1>
-{body}
+{location_line}{body}
         <p class="post-updated">updated on {updated}</p>
     </article>
 </body>
@@ -183,6 +183,25 @@ def indent_page_body(text: str, spaces: int = 8) -> str:
     return re.sub(r"<pre>(.*?)</pre>", restore, padded, flags=re.DOTALL)
 
 
+def blog_location(source: Path, meta: dict) -> dict | None:
+    """Coords for a blog post. A name alone is not a location. A half pair fails the build."""
+    has_lat = "lat" in meta
+    has_lng = "lng" in meta
+    if not has_lat and not has_lng:
+        return None
+    if not has_lat or not has_lng:
+        raise SystemExit(f"{source.name}: location needs both lat and lng")
+    try:
+        lat = float(meta["lat"])
+        lng = float(meta["lng"])
+    except (TypeError, ValueError):
+        raise SystemExit(f"{source.name}: location lat and lng must be numbers") from None
+    if lat < -90 or lat > 90 or lng < -180 or lng > 180:
+        raise SystemExit(f"{source.name}: location lat/lng is out of range")
+    name = meta.get("location", "").strip()
+    return {"name": name or None, "lat": lat, "lng": lng}
+
+
 def build_markdown_pages(directory: Path, output_path: Path, label: str) -> None:
     """Render every .md in a folder to a sibling .html page, then index the sources."""
     items = []
@@ -201,6 +220,14 @@ def build_markdown_pages(directory: Path, output_path: Path, label: str) -> None
         description = meta.get("description") or plain_description(
             body, f"{title} — Austin Hania"
         )
+        location_line = ""
+        location = blog_location(source, meta) if directory == BLOG_DIR else None
+        if directory == BLOG_DIR:
+            place = meta.get("location", "").strip()
+            if place:
+                location_line = (
+                    f'        <p class="post-location">written from {html.escape(place)}</p>\n'
+                )
 
         page = PAGE_TEMPLATE.format(
             title=html.escape(title, quote=True),
@@ -208,21 +235,23 @@ def build_markdown_pages(directory: Path, output_path: Path, label: str) -> None
             url=html.escape(page_url, quote=True),
             image=html.escape(OG_IMAGE, quote=True),
             body=indent_page_body(render_markdown(body)),
+            location_line=location_line,
             updated=f"{MONTH_NAMES[updated.month - 1]} {updated.day}, {updated.year}",
             title_text=html.escape(title, quote=False),
         )
 
         target.write_text(page, encoding="utf-8")
 
-        items.append(
-            {
-                "filename": source.name,
-                "url": target.name,
-                "title": title,
-                "date": format_file_date(updated),
-                "size": format_size(source.stat().st_size),
-            }
-        )
+        item = {
+            "filename": source.name,
+            "url": target.name,
+            "title": title,
+            "date": format_file_date(updated),
+            "size": format_size(source.stat().st_size),
+        }
+        if location is not None:
+            item["location"] = location
+        items.append(item)
 
     items.sort(key=lambda item: item["filename"])
     output_path.write_text(f"{json.dumps(items, indent=2)}\n", encoding="utf-8")

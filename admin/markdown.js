@@ -98,15 +98,26 @@ function cleanMarkdown(markdown) {
     return kept.join("\n").replace(/^\n+/, "").replace(/\n+$/, "");
 }
 
+function plainNumber(value) {
+    const text = String(value ?? "").trim();
+    return /^-?\d+(\.\d+)?$/.test(text) ? text : "";
+}
+
 export function composeMarkdown(meta, body) {
     const text = cleanMarkdown(unescapeSerialized(body));
     const title = (meta && meta.title ? String(meta.title) : "").replace(/\s+/g, " ").trim();
     const description = (meta && meta.description ? String(meta.description) : "").replace(/\s+/g, " ").trim();
     const date = (meta && meta.date ? String(meta.date) : "").trim();
-    if (!title && !description && !date) return text ? `${text}\n` : "";
+    const location = (meta && meta.location ? String(meta.location) : "").replace(/\s+/g, " ").trim();
+    const lat = plainNumber(meta && meta.lat);
+    const lng = plainNumber(meta && meta.lng);
+    if (!title && !description && !date && !location && !lat && !lng) return text ? `${text}\n` : "";
     const lines = ["---", `title: ${title}`];
     if (description) lines.push(`description: ${description}`);
     if (date) lines.push(`date: ${date}`);
+    if (location) lines.push(`location: ${location}`);
+    if (lat) lines.push(`lat: ${lat}`);
+    if (lng) lines.push(`lng: ${lng}`);
     lines.push("---", "");
     return `${lines.join("\n")}${text}\n`;
 }

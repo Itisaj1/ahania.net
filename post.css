@@ -26,6 +26,13 @@ body {
     margin-bottom: 32px;
 }
 
+.post-location {
+    margin: -24px 0 32px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #9b9a97;
+}
+
 .post h2 {
     font-size: 1.5rem;
     font-weight: 600;

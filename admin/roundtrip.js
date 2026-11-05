@@ -189,6 +189,44 @@ async function files() {
     ];
 }
 
+const FRONT_MATTER = [
+    {
+        name: "front matter: title, description, date, location",
+        markdown: [
+            "---",
+            "title: a walk",
+            "description: along the river",
+            "date: 2026-11-01",
+            "location: Spokane, Washington",
+            "lat: 47.66",
+            "lng: -117.43",
+            "---",
+            "hello",
+            "",
+        ].join("\n"),
+    },
+    {
+        name: "front matter: location only",
+        markdown: [
+            "---",
+            "title: ",
+            "location: Lisbon, Portugal",
+            "---",
+            "a note",
+            "",
+        ].join("\n"),
+    },
+    {
+        name: "front matter: none",
+        markdown: "a note without details.\n",
+    },
+];
+
+function composeSplit(markdown) {
+    const parsed = splitFrontMatter(markdown);
+    return composeMarkdown(parsed.meta, parsed.body);
+}
+
 async function main() {
     const paths = await files();
     let passed = 0;
@@ -222,6 +260,19 @@ async function main() {
                 results.lastElementChild.appendChild(note);
                 results.lastElementChild.className = "fail";
             }
+        } catch (error) {
+            ok = renderResult(sample.name, sample.markdown, "", error.stack || error.message);
+        }
+        if (ok) passed += 1;
+        else failed += 1;
+        tally();
+    }
+    for (const sample of FRONT_MATTER) {
+        let ok = false;
+        try {
+            const after = composeSplit(sample.markdown);
+            ok = renderResult(sample.name, sample.markdown, after) && after === sample.markdown;
+            if (after !== sample.markdown) results.lastElementChild.className = "fail";
         } catch (error) {
             ok = renderResult(sample.name, sample.markdown, "", error.stack || error.message);
         }

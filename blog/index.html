@@ -109,6 +109,27 @@
             color: #888;
         }
 
+        .post-map {
+            height: 320px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        #post-map {
+            height: 100%;
+            width: 100%;
+        }
+
+        .post-map-popup a {
+            display: block;
+            color: #2563eb;
+        }
+
+        .post-map-place {
+            margin-top: 4px;
+            color: #666;
+            font-style: italic;
+        }
+
         @media (max-width: 768px) {
             .header-row, .file-row {
                 grid-template-columns: 1fr 80px 140px;
@@ -126,14 +147,22 @@
             .footer {
                 padding: 15px 20px;
             }
+
+            .post-map {
+                height: 220px;
+            }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w==" crossorigin="anonymous">
     <link rel="stylesheet" href="/transitions.css">
 </head>
 <body>
     <div class="container">
         <h1>Index of /blog</h1>
-        
+        <section class="post-map" hidden>
+            <div id="post-map"></div>
+        </section>
+
         <div class="file-list">
             <div class="header-row">
                 <div>Filename</div>
@@ -160,6 +189,7 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg==" crossorigin="anonymous"></script>
     <script>
         function formatDate() {
             const now = new Date();
@@ -189,6 +219,74 @@
             });
         }
 
+        function renderMap(posts) {
+            const section = document.querySelector('.post-map');
+            const located = posts.filter((post) => {
+                const place = post.location;
+                return place && Number.isFinite(place.lat) && Number.isFinite(place.lng);
+            });
+            if (typeof L === 'undefined' || !located.length) {
+                section.hidden = true;
+                return;
+            }
+
+            const groups = new Map();
+            located.forEach((post) => {
+                const key = `${post.location.lat},${post.location.lng}`;
+                if (!groups.has(key)) groups.set(key, []);
+                groups.get(key).push(post);
+            });
+
+            section.hidden = false;
+            const motion = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const map = L.map('post-map', {
+                scrollWheelZoom: false,
+                zoomAnimation: motion,
+                fadeAnimation: motion,
+                markerZoomAnimation: motion,
+            });
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                subdomains: 'abcd',
+                maxZoom: 20,
+            }).addTo(map);
+
+            const points = [];
+            groups.forEach((group) => {
+                const place = group[0].location;
+                const marker = L.circleMarker([place.lat, place.lng], {
+                    radius: 6,
+                    color: '#2563eb',
+                    fillColor: '#2563eb',
+                    fillOpacity: 0.8,
+                });
+                const popup = document.createElement('div');
+                popup.className = 'post-map-popup';
+                group.forEach((post) => {
+                    const link = document.createElement('a');
+                    link.href = post.url;
+                    link.textContent = post.title || post.filename;
+                    popup.appendChild(link);
+                });
+                if (place.name) {
+                    const name = document.createElement('p');
+                    name.className = 'post-map-place';
+                    name.textContent = place.name;
+                    popup.appendChild(name);
+                }
+                marker.bindPopup(popup);
+                marker.addTo(map);
+                points.push([place.lat, place.lng]);
+            });
+
+            if (points.length === 1) map.setView(points[0], 6);
+            else map.fitBounds(points, { padding: [24, 24] });
+
+            map.on('click', () => map.scrollWheelZoom.enable());
+            map.on('mouseout', () => map.scrollWheelZoom.disable());
+            map.invalidateSize();
+        }
+
         async function loadBlogPosts() {
             const container = document.getElementById('file-listing');
 
@@ -201,6 +299,11 @@
                 const posts = await response.json();
                 posts.sort((a, b) => a.filename.localeCompare(b.filename));
                 renderBlogPosts(posts);
+                try {
+                    renderMap(posts);
+                } catch (mapError) {
+                    document.querySelector('.post-map').hidden = true;
+                }
             } catch (error) {
                 container.innerHTML = `
                     <div class="file-row">

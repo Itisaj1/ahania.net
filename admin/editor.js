@@ -46,10 +46,17 @@ const ui = {
     title: $("title"),
     metaDescription: $("meta-description"),
     metaDate: $("meta-date"),
+    metaLocation: $("meta-location"),
     editDetails: $("edit-details"),
     details: $("details-popover"),
     description: $("description-input"),
     date: $("date-input"),
+    locationInput: $("location-input"),
+    locationList: $("location-suggestions"),
+    locationHelp: $("location-search-help"),
+    locationPrecision: $("location-precision"),
+    locationCoords: $("location-coords"),
+    locationClear: $("location-clear"),
     backup: $("backup-line"),
     bubble: $("bubble"),
     linkForm: $("link-form"),
@@ -82,6 +89,16 @@ let publishedSnapshot = null;
 let publishedText = null;
 let description = "";
 let date = "";
+let postLocation = "";
+let postLat = "";
+let postLng = "";
+let postPrecision = "neighborhood";
+let rawLat = null;
+let rawLng = null;
+let locationTimer = 0;
+let locationAbort = null;
+let locationSuggestions = [];
+let locationSuggestIndex = -1;
 let backupAt = null;
 let githubAt = null;
 let saveState = "";
@@ -119,6 +136,9 @@ function meta() {
         title: ui.title.value.replace(/\s+/g, " ").trim(),
         description: description.trim(),
         date: date.trim(),
+        location: postLocation.trim(),
+        lat: postLat.trim(),
+        lng: postLng.trim(),
     };
 }
 
@@ -519,6 +539,7 @@ function paint() {
         ? `description: ${description.trim()}`
         : "description: auto, from the first sentence";
     ui.metaDate.textContent = `date: ${formatDate(date)}`;
+    ui.metaLocation.textContent = postLocation.trim() ? `location: ${postLocation.trim()}` : "location: none";
     ui.backup.textContent = `local backup saved ${clock(backupAt)} · last saved to github ${clock(githubAt)}`;
     ui.viewLive.href = `/blog/${slug}.html`;
     ui.viewLive.hidden = !hasLive();
@@ -1094,11 +1115,7 @@ function showBackupBanner(savedAt) {
 
 function applyDocument(markdown) {
     const parsed = splitFrontMatter(markdown);
-    ui.title.value = parsed.meta.title || "";
-    description = parsed.meta.description || "";
-    date = parsed.meta.date || "";
-    ui.description.value = description;
-    ui.date.value = date;
+    applyMeta(parsed.meta);
     editor.commands.setContent(markdownToEditorHtml(parsed.body), { emitUpdate: false, contentType: "html" });
     growTitle();
 }
@@ -1287,11 +1304,7 @@ async function loadTheirs() {
             publishedSnapshot = null;
         }
         const editingMeta = loadIntoEditor(draft || published);
-        ui.title.value = editingMeta.title || "";
-        description = editingMeta.description || "";
-        date = editingMeta.date || "";
-        ui.description.value = description;
-        ui.date.value = date;
+        applyMeta(editingMeta);
         growTitle();
         baseline = currentMarkdown();
         githubAt = await github.latestCommit(draft ? draftPath : publishedPath);
@@ -1332,9 +1345,208 @@ async function keepMine() {
     await commitAction(pendingAction, { skipExpect: true });
 }
 
+function decimalPlaces(value) {
+    const text = String(value || "").trim();
+    const dot = text.indexOf(".");
+    return dot === -1 ? 0 : text.length - dot - 1;
+}
+
+function coordPrecision(lat, lng) {
+    if (!String(lat || "").trim() && !String(lng || "").trim()) return "neighborhood";
+    const places = Math.max(decimalPlaces(lat), decimalPlaces(lng));
+    if (places >= 5) return "exact";
+    if (places === 1) return "city";
+    return "neighborhood";
+}
+
+function roundCoord(value, places) {
+    if (value == null || String(value).trim() === "") return "";
+    const number = Number(value);
+    if (!Number.isFinite(number)) return "";
+    return number.toFixed(places);
+}
+
+function renderCoords() {
+    ui.locationCoords.textContent = postLat.trim() && postLng.trim()
+        ? `${postLat.trim()}, ${postLng.trim()}`
+        : "no coordinates";
+}
+
+function applyCoordPrecision() {
+    const places = { neighborhood: 2, city: 1, exact: 5 }[postPrecision] || 2;
+    const latSource = rawLat == null ? postLat : rawLat;
+    const lngSource = rawLng == null ? postLng : rawLng;
+    postLat = roundCoord(latSource, places);
+    postLng = roundCoord(lngSource, places);
+    renderCoords();
+}
+
+function closeLocationSuggest() {
+    locationSuggestions = [];
+    locationSuggestIndex = -1;
+    ui.locationList.replaceChildren();
+    ui.locationList.hidden = true;
+    ui.locationInput.setAttribute("aria-expanded", "false");
+    ui.locationInput.removeAttribute("aria-activedescendant");
+}
+
+function applyMeta(meta) {
+    const source = meta || {};
+    ui.title.value = source.title || "";
+    description = source.description || "";
+    date = source.date || "";
+    postLocation = source.location || "";
+    postLat = source.lat == null ? "" : String(source.lat);
+    postLng = source.lng == null ? "" : String(source.lng);
+    rawLat = null;
+    rawLng = null;
+    window.clearTimeout(locationTimer);
+    if (locationAbort) locationAbort.abort();
+    postPrecision = coordPrecision(postLat, postLng);
+    ui.description.value = description;
+    ui.date.value = date;
+    ui.locationInput.value = postLocation;
+    ui.locationPrecision.value = postPrecision;
+    ui.locationHelp.hidden = true;
+    closeLocationSuggest();
+    renderCoords();
+}
+
+function locationParts(props) {
+    const parts = [];
+    for (const part of [props.name, props.city, props.state, props.country]) {
+        const text = String(part || "").trim();
+        if (!text || parts.some((existing) => existing.toLowerCase() === text.toLowerCase())) continue;
+        parts.push(text);
+    }
+    return parts.join(", ");
+}
+
+function chosenPlaceName(props) {
+    const code = String(props.countrycode || "").toUpperCase();
+    if (code === "US" && props.city && props.state) return `${props.city}, ${props.state}`;
+    if (code !== "US" && props.city && props.country) return `${props.city}, ${props.country}`;
+    return props.name || props.city || props.country || "";
+}
+
+function markLocationActive() {
+    [...ui.locationList.children].forEach((option, index) => {
+        const active = index === locationSuggestIndex;
+        option.classList.toggle("is-active", active);
+        option.setAttribute("aria-selected", active ? "true" : "false");
+    });
+    const active = ui.locationList.children[locationSuggestIndex];
+    if (active) {
+        ui.locationInput.setAttribute("aria-activedescendant", active.id);
+        active.scrollIntoView({ block: "nearest" });
+    } else {
+        ui.locationInput.removeAttribute("aria-activedescendant");
+    }
+}
+
+function moveLocationSuggest(delta) {
+    if (!locationSuggestions.length) return;
+    const count = locationSuggestions.length;
+    locationSuggestIndex = locationSuggestIndex < 0
+        ? (delta > 0 ? 0 : count - 1)
+        : (locationSuggestIndex + delta + count) % count;
+    markLocationActive();
+}
+
+function chooseLocation(feature) {
+    const props = feature.properties || {};
+    const coords = feature.geometry && feature.geometry.coordinates;
+    window.clearTimeout(locationTimer);
+    postLocation = chosenPlaceName(props);
+    ui.locationInput.value = postLocation;
+    const lng = coords ? Number(coords[0]) : NaN;
+    const lat = coords ? Number(coords[1]) : NaN;
+    rawLat = Number.isFinite(lat) ? lat : null;
+    rawLng = Number.isFinite(lng) ? lng : null;
+    applyCoordPrecision();
+    closeLocationSuggest();
+    paint();
+}
+
+function renderLocationSuggestions(features) {
+    locationSuggestions = features;
+    locationSuggestIndex = -1;
+    ui.locationList.replaceChildren();
+    features.forEach((feature, index) => {
+        const option = document.createElement("div");
+        option.className = "location-option";
+        option.setAttribute("role", "option");
+        option.id = `location-option-${index}`;
+        option.textContent = locationParts(feature.properties || {});
+        option.addEventListener("pointerdown", (event) => {
+            event.preventDefault();
+            chooseLocation(feature);
+        });
+        ui.locationList.appendChild(option);
+    });
+    const open = features.length > 0;
+    ui.locationList.hidden = !open;
+    ui.locationInput.setAttribute("aria-expanded", open ? "true" : "false");
+    ui.locationInput.removeAttribute("aria-activedescendant");
+}
+
+async function searchLocations(query) {
+    if (locationAbort) locationAbort.abort();
+    const controller = new AbortController();
+    locationAbort = controller;
+    try {
+        const response = await fetch(
+            `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=6&lang=en`,
+            { signal: controller.signal }
+        );
+        if (!response.ok) throw new Error("search failed");
+        const data = await response.json();
+        if (locationAbort !== controller || ui.details.hidden) return;
+        ui.locationHelp.hidden = true;
+        renderLocationSuggestions(Array.isArray(data.features) ? data.features : []);
+    } catch (error) {
+        if (error.name === "AbortError" || locationAbort !== controller) return;
+        ui.locationHelp.hidden = false;
+        closeLocationSuggest();
+    }
+}
+
+function scheduleLocationSearch() {
+    window.clearTimeout(locationTimer);
+    const query = ui.locationInput.value.trim();
+    if (query.length < 3) {
+        if (locationAbort) locationAbort.abort();
+        closeLocationSuggest();
+        ui.locationHelp.hidden = true;
+        return;
+    }
+    locationTimer = window.setTimeout(() => searchLocations(query), 300);
+}
+
+function clearPostLocation() {
+    window.clearTimeout(locationTimer);
+    if (locationAbort) locationAbort.abort();
+    postLocation = "";
+    postLat = "";
+    postLng = "";
+    rawLat = null;
+    rawLng = null;
+    postPrecision = "neighborhood";
+    ui.locationInput.value = "";
+    ui.locationPrecision.value = postPrecision;
+    ui.locationHelp.hidden = true;
+    closeLocationSuggest();
+    renderCoords();
+    paint();
+}
+
 function openDetails(anchor) {
     ui.description.value = description;
     ui.date.value = date;
+    ui.locationInput.value = postLocation;
+    ui.locationPrecision.value = postPrecision;
+    renderCoords();
+    closeLocationSuggest();
     openPop(ui.details, anchor);
     ui.description.focus();
 }
@@ -1433,6 +1645,19 @@ function bind() {
     ui.date.addEventListener("input", () => {
         date = ui.date.value;
         paint();
+    });
+    ui.locationInput.addEventListener("input", () => {
+        postLocation = ui.locationInput.value;
+        scheduleLocationSearch();
+        paint();
+    });
+    ui.locationPrecision.addEventListener("change", () => {
+        postPrecision = ui.locationPrecision.value;
+        applyCoordPrecision();
+        paint();
+    });
+    ui.locationClear.addEventListener("click", () => {
+        clearPostLocation();
     });
     ui.title.addEventListener("input", () => {
         growTitle();
@@ -1576,6 +1801,28 @@ function bind() {
             }
             return;
         }
+        if (openEl === ui.details && event.target === ui.locationInput && !ui.locationList.hidden) {
+            if (event.key === "ArrowDown") {
+                event.preventDefault();
+                moveLocationSuggest(1);
+                return;
+            }
+            if (event.key === "ArrowUp") {
+                event.preventDefault();
+                moveLocationSuggest(-1);
+                return;
+            }
+            if (event.key === "Enter") {
+                event.preventDefault();
+                if (locationSuggestIndex >= 0) chooseLocation(locationSuggestions[locationSuggestIndex]);
+                return;
+            }
+            if (event.key === "Escape") {
+                event.preventDefault();
+                closeLocationSuggest();
+                return;
+            }
+        }
         if (openEl) {
             if (event.key === "Escape") {
                 event.preventDefault();
@@ -1677,11 +1924,7 @@ async function boot() {
             publishedSnapshot = composeMarkdown(publishedMeta, editor.getMarkdown());
         }
         const editingMeta = loadIntoEditor(editing);
-        ui.title.value = editingMeta.title || "";
-        description = editingMeta.description || "";
-        date = editingMeta.date || "";
-        ui.description.value = description;
-        ui.date.value = date;
+        applyMeta(editingMeta);
         growTitle();
         baseline = currentMarkdown();
         const backup = getBackup(slug);
