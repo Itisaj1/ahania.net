@@ -1,7 +1,9 @@
 ---
 title: my firefox extensions
+location: Greensboro
+lat: 36.07
+lng: -79.79
 ---
-
 though I don't think these are essential for everyone, i think these few firefox extensions make my user experience, as well as my traceability on the internet much better. though we are never really untraceable (this is why we have tor, though some will tell you it is backdoored i dont pay them any heed) it is nice to not have "personalized" ads everywhere i go, plauging me like some kind of sick, orwellian joke.
 
 - imagus: makes image viewing much easier on the eyes
